@@ -32,9 +32,6 @@ tmp*/**
 # macOS에서 생성되는 파일
 .DS_Store
 
-# 로컬 설정 파일
-application.properties
-
 # External tool builders
 .externalToolBuilders/
 
