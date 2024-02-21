@@ -1,0 +1,51 @@
+@charset "UTF-8";
+	/* 헤더 스타일 */
+	body {
+	    margin: 0;
+	    padding: 0;
+	    font-family: Arial, sans-serif;
+	}
+	header {
+	    background-color: #00796b; /* 배경색: 진한 초록색 */
+	    padding: 20px; /* 위아래 여백 */
+	    text-align: center;
+	    position: relative;
+	}
+	.welcome_logout {
+		color: #fff;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+	h1 {
+	    color: #fff; /* 제목 텍스트 색상: 흰색 */
+	}
+	.header-buttons {
+	    margin-top: 10px;
+	}
+	.header-buttons a {
+	    text-decoration: none;
+	    color: #00796b; /* 버튼 텍스트 색상: 진한 초록색 */
+	    margin: 0 10px;
+	    padding: 10px 20px;
+	    border: 1px solid #00796b; /* 버튼 테두리 색상: 진한 초록색 */
+	    border-radius: 5px;
+	    background-color: #fff; /* 버튼 배경색: 흰색 */
+	    transition: background-color 0.3s ease;
+	}
+	.header-buttons a:hover {
+	    background-color: #004d40; /* 버튼 호버시 배경색: 진한 초록색 */
+	    color: #fff; /* 버튼 호버시 텍스트 색상: 흰색 */
+	}
+	.img-button {
+		background-image: url("/images/cat1.png");
+		background-repeat : no-repeat;
+		width: 50px;
+		height: 30px;
+	}
+	.welcome {
+		background-color: transparent; /* 배경색을 투명하게 설정 */
+		color: #fff;
+		border: none; /* 테두리 제거 */
+		outline: none; /* 아웃라인 제거 (포커스 효과 제거) */
+	}
