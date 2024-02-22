@@ -14,12 +14,13 @@ $(document).ready(function() {
 	        // 비밀번호 확인을 위한 AJAX 요청
 			$.ajax({
 				type: "POST",
-				url: "loginverification", 	// class 명
+				url: "loginverification", 	// servlet으로 보낼 url
+				dataType: "json",	// 받을 data 타입 
 				data: {
 					"mid" : loginID,
 				},		// key와 value, 변수 이름(key)과 let name에 받아온 value값(value), dictionary라고 함
 				success: function(data){
-					alert(data.mid + data.mpw);
+					console.log(data)
 					// 서버에서 받은 응답 처리
 					dataReal = Array.from(data); // Json을 Array로 변환
 					mpw = data.mpw
