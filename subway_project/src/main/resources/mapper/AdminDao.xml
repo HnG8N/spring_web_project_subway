@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- LoginVerification_Dao의 위치를 알려주기 위해 namespace를 씀 -->
+<mapper namespace="com.springlec.base.dao.admin.AdminDao">
+	<select id="loginVerification" resultType="com.springlec.base.model.admin.LoginVerification_Dto">
+		SELECT mid, mpw
+		FROM member
+		WHERE mid = #{mid}
+	</select>
+</mapper>

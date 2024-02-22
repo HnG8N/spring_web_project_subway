@@ -17,10 +17,9 @@ $(document).ready(function() {
 				url: "loginverification", 	// class 명
 				data: {
 					"mid" : loginID,
-					"mpw" : loginPW
 				},		// key와 value, 변수 이름(key)과 let name에 받아온 value값(value), dictionary라고 함
 				success: function(data){
-					alert(data);
+					alert(data.mid + data.mpw);
 					// 서버에서 받은 응답 처리
 					dataReal = Array.from(data); // Json을 Array로 변환
 					mpw = data.mpw
