@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.card {
+  background-color: #ffffff;
+  border-color: #dddddd;
+  border-radius: 4px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 100px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.btn-primary {
+  background-color: #000000;
+  border-color: #000000;
+  color: #ffffff;
+}
