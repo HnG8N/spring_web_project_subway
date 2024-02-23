@@ -3,9 +3,25 @@
 
 <!-- LoginVerification_Dao의 위치를 알려주기 위해 namespace를 씀 -->
 <mapper namespace="com.springlec.base.dao.admin.AdminDao">
+	
+	<!-- adminLogin을 위한 query -->
 	<select id="loginVerification" resultType="com.springlec.base.model.admin.LoginVerification_Dto">
 		SELECT mid, mpw
 		FROM member
 		WHERE mid = #{mid}
 	</select>
+	
+	<!-- ProductInsertDB TASK query-->
+	<insert id="insertMenuAction">
+		INSERT INTO menu (mnctg, mnname, mnengname, mninfo, mnimg, mnprice)
+		VALUES (#{mnctg}, #{mnname}, #{mnengname}, #{mninfo}, #{mnimg}, #{mnprice})
+	</insert>
+	<insert id="insertMenuSpecAction">
+	INSERT INTO menuspec (mncode, mngram, mnkcal, mnprotein, mnfat, mnsugar, mnnatrum)
+	VALUES
+	((SELECT mncode FROM menu ORDER BY mncode DESC LIMIT 1), 
+			#{mngram}, #{mnkcal}, #{mnprotein}, #{mnfat}, #{mnsugar}, #{mnnatrum})
+	</insert>
+	<!-- ProductInsertDB TASK query End -->
+	
 </mapper>
