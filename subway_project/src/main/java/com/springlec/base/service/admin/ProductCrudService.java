@@ -17,6 +17,7 @@ public interface ProductCrudService {
 
 	public List<ProductCrudDto> productListSearchTask(
 			String selectSearch, String search) throws Exception;
-
+	
+	public ProductCrudDto productDetailTask(int mncode) throws Exception;
 
 }

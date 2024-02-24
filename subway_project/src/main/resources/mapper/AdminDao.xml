@@ -38,4 +38,11 @@
 		WHERE ${selectSearch} LIKE #{search} OR mnengname LIKE #{search}
 	</select>
 	
+	<select id="productDetail">
+	SELECT m.mncode, m.mnctg, m.mnname, m.mnengname, m.mninfo, m.mnimg, m.mnprice,
+			s.mngram, s.mnkcal, s.mnprotein, s.mnfat, s.mnsugar, s.mnnatrum
+	FROM menu AS m, menuspec AS s
+	WHERE m.mncode = #{mncode} AND m.mncode = s.mncode
+	</select>
+	
 </mapper>

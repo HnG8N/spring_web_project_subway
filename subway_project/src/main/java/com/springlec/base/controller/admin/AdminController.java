@@ -2,11 +2,14 @@ package com.springlec.base.controller.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.springlec.base.model.admin.ProductCrudDto;
 import com.springlec.base.service.admin.ProductCrudService;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,7 +20,7 @@ import jakarta.servlet.http.HttpSession;
 public class AdminController {
 	
 	@Autowired
-	ProductCrudService productCrudService;
+	ProductCrudService serivice;
 	
 	@GetMapping("/login")
 	public String login() throws Exception {
@@ -45,21 +48,15 @@ public class AdminController {
 	public String productlist() throws Exception {
 		return "/admin/productlist";
 	}
-	@GetMapping("/memberinformation")
-	public String memberinformation() throws Exception {
-		return "/admin/memberinformation";
-	}
-	
 	@PostMapping("/productinsert")
 	public String productinsertForm() throws Exception {
 		return "/admin/productinsert";
 	}
-
 	// 이미지를 업로드 하면서 DB에 정보를 insert
 	@PostMapping("/productinsertDB")
 	public String productinsertDB(MultipartHttpServletRequest request) throws Exception {
 		
-		productCrudService.ProductInsertTask(
+		serivice.ProductInsertTask(
 			request.getFile("mnimg"), request.getParameter("mnctg"), 
 			request.getParameter("mnname"), request.getParameter("mnengname"), 
 			request.getParameter("mninfo"), request.getParameter("mnprice"), 
@@ -69,6 +66,17 @@ public class AdminController {
 			);
 		
 		return "redirect:/admin/productlist";
+	}
+	@GetMapping("/productdetail")
+	public String productdetailForm(HttpServletRequest request, Model model) throws Exception {
+		ProductCrudDto dto = serivice.productDetailTask(
+				Integer.parseInt(request.getParameter("mncode")));
+		model.addAttribute("MENU", dto);
+		return "/admin/productdetail";
+	}
+	@GetMapping("/memberinformation")
+	public String memberinformation() throws Exception {
+		return "/admin/memberinformation";
 	}
 	
 	

@@ -20,15 +20,12 @@
 	}
 	</style>
 <link href="../css/admin/home.css" rel="stylesheet" />
-<section>
-<!-- 	<c:import url="../sidebar/sidebar.jsp" />
- --></section>
 <body>
 <div>
 	<c:import url="../adminheaderfooter/header.jsp" />
 </div>
 <div>
-<form action="productcrud.do" name="product" id="product" method="post" enctype="multipart/form-data" class="product">
+<form action="productupdateDB" name="product" id="product" method="post" enctype="multipart/form-data" class="product">
 	<section style="display: flex;">
 	    <div style="flex: 1;">
 			<h2>상품 수정</h2>
@@ -57,7 +54,7 @@
 			<br>
 			이미지:
 			<input type="file" id="mnimg" name="mnimg" onchange="previewImage(event)"><br>
-			<img id="imgPreview" src="img/cat1.png" alt="이미지를 등록 해주세요."/>
+			<img id="imgPreview" src="../images/cat1.png" alt="이미지를 등록 해주세요."/>
 	    </div>
 	    <div style="flex: 1;">
 	        <h2>영양성분표 수정</h2>
@@ -79,7 +76,7 @@
 			나트륨(mg):
 			<input type="text" id="mnnatrum" name="mnnatrum" placeholder="나트륨(mg)을 입력해주세요. (숫자만 가능)" size="40" value="${dto.mnnatrum }"><br>
 			<br>
-			<img id="img" name="img" src="img/${dto.mnimg }" alt="..."/><br>
+			<img id="img" name="img" src="../views/upload/menu/${dto.mnimg }" alt="..."/><br>
 			<button type="submit" name="insertBtn" id="insertBtn" value="insertBtn">입력</button>
 	    </div>
 	</section>
