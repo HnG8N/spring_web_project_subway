@@ -41,8 +41,8 @@
 <h2 id="title">상품 리스트</h2><br>
 <div class="container">
 	 	<select name="selectSearch" id="selectSearch">
-	 		<option value="nameSearch">이름(영문명 가능)</option>
-			<option value="codeSearch">상품코드</option>
+	 		<option value="MNNAME">이름(영문명 가능)</option>
+			<option value="MNCODE">상품코드</option>
 	 	</select>
 	 	<input type="text" name="search" id="search">
 	 	<input type="button" id="searchBtn" name="searchBtn" value="검색">
