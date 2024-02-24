@@ -78,9 +78,15 @@ public List<ProductCrudDto> productListSelectTask() throws Exception {
 @Override
 public List<ProductCrudDto> productListSearchTask(
 		String selectSearch, String search) throws Exception {
-//	search = '%' + search + '%';
 	return dao.productListSearch(selectSearch, '%'+search+'%');
 }
 //*************************** productListSearchTask Task End ***************************
- 
+
+//*************************** productDetailTask Task ***************************
+@Override
+public ProductCrudDto productDetailTask(int mncode) throws Exception {
+	return dao.productDetail(mncode);
+}
+//*************************** productDetailTask Task End***************************
+
 }

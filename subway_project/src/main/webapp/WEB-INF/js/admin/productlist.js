@@ -33,7 +33,7 @@ function createList(data){
 	          	'<td style="width: 8%; text-align: right;">' + 
 	          	data[i].mnprice.toLocaleString() + 
 	          	"원" + '</td>' +
-	            '<td style="width: 10%; text-align: center;"><a href="productdetail.do?mncode='
+	            '<td style="width: 10%; text-align: center;"><a href="productdetail?mncode='
 	             + data[i].mncode + '" class="btn btn-primary">수정</a></td>'+
 	          	'</tr>' +
 	            '</table>' +
