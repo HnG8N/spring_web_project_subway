@@ -20,5 +20,8 @@ public interface AdminDao {
 	// ProductListSelect Task
 	public List<ProductCrudDto> productListSelect() throws Exception;
 
+	// productListSearch Task
+	public List<ProductCrudDto> productListSearch(String selectSearch, String search) throws Exception;
+
 
 }

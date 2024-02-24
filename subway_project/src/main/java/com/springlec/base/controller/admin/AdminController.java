@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.springlec.base.service.admin.ProductCrudService;
@@ -59,21 +58,15 @@ public class AdminController {
 	// 이미지를 업로드 하면서 DB에 정보를 insert
 	@PostMapping("/productinsertDB")
 	public String productinsertDB(MultipartHttpServletRequest request) throws Exception {
-		MultipartFile file = request.getFile("mnimg");
-		String mnctg = request.getParameter("mnctg");
-		String mnname = request.getParameter("mnname");
-		String mnengname = request.getParameter("mnengname");
-		String mninfo = request.getParameter("mninfo");
-		String mnprice = request.getParameter("mnprice");
-		String mngram = request.getParameter("mngram");
-		String mnkcal = request.getParameter("mnkcal");
-		String mnprotein = request.getParameter("mnprotein");
-		String mnfat = request.getParameter("mnfat");
-		String mnsugar = request.getParameter("mnsugar");
-		String mnnatrum = request.getParameter("mnnatrum");
 		
-		productCrudService.ProductInsertTask(file, mnctg, mnname, mnengname, mninfo, 
-				mnprice, mngram, mnkcal, mnprotein, mnfat, mnsugar, mnnatrum);
+		productCrudService.ProductInsertTask(
+			request.getFile("mnimg"), request.getParameter("mnctg"), 
+			request.getParameter("mnname"), request.getParameter("mnengname"), 
+			request.getParameter("mninfo"), request.getParameter("mnprice"), 
+			request.getParameter("mngram"), request.getParameter("mnkcal"), 
+			request.getParameter("mnprotein"), request.getParameter("mnfat"), 
+			request.getParameter("mnsugar"), request.getParameter("mnnatrum")
+			);
 		
 		return "redirect:/admin/productlist";
 	}

@@ -65,14 +65,22 @@ public class ProductCrudServiceImpl implements ProductCrudService {
      dao.insertMenuSpecAction(mngram, mnkcal, mnprotein, mnfat, mnsugar, mnnatrum);
      
  }
-//**************************************** ProductInsert Task End ****************************************
+//*************************** ProductInsert Task End ***************************
 
-//************************************** productListSelectTask Task **************************************
+//*************************** productListSelectTask Task ***************************
 @Override
 public List<ProductCrudDto> productListSelectTask() throws Exception {
 	return dao.productListSelect();
 }
-//************************************ productListSelectTask Task End **********************************
+//*************************** productListSelectTask Task End ***************************
 
+//*************************** productListSearchTask Task ***************************
+@Override
+public List<ProductCrudDto> productListSearchTask(
+		String selectSearch, String search) throws Exception {
+//	search = '%' + search + '%';
+	return dao.productListSearch(selectSearch, '%'+search+'%');
+}
+//*************************** productListSearchTask Task End ***************************
  
 }

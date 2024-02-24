@@ -15,5 +15,8 @@ public interface ProductCrudService {
 	
 	public List<ProductCrudDto> productListSelectTask() throws Exception;
 
+	public List<ProductCrudDto> productListSearchTask(
+			String selectSearch, String search) throws Exception;
+
 
 }

@@ -63,17 +63,15 @@ $(document).ready(function() {
   $("#searchBtn").click(function() {
     // 선택한 옵션의 값을 가져옴
     let selectSearch = $("#selectSearch").val();
-    let mnname = $("#search").val().trim();
-    let mnengname = $("#search").val().trim();
-    let mncode = $("#search").val().trim();
+    let search = $("#search").val().trim();
     
-    if(selectSearch==="nameSearch"){    // AJAX를 사용하여 서버에 값을 전달
+	  // AJAX를 사용하여 서버에 값을 전달
       $.ajax({
         type: "POST",
-        url: "PLSearchName_Servlet",
+        url: "productListSearch",
         data: {
-			mnname : mnname,
-			mnengname : mnengname
+			"search" : search,
+			"selectSearch" : selectSearch
 		}, // 전달할 데이터
         success: function(response) {
           // 성공적으로 서버로부터 응답을 받았을 때 실행할 코드
@@ -85,24 +83,5 @@ $(document).ready(function() {
           alert(error);
         }
       });
-    }
-    if(selectSearch==="codeSearch"){    // AJAX를 사용하여 서버에 값을 전달
-      $.ajax({
-        type: "POST",
-        url: "PLSearchName_Servlet",
-        data: {
-			mncode : mncode,
-		}, // 전달할 데이터
-        success: function(response) {
-          // 성공적으로 서버로부터 응답을 받았을 때 실행할 코드
-          console.log(response);
-          createList(response)
-        },
-        error: function(xhr, status, error) {
-          // 요청이 실패했을 때 실행할 코드
-          alert(error);
-        }
-      });
-    }
   });
 });
