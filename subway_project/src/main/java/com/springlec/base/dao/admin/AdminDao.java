@@ -1,6 +1,9 @@
 package com.springlec.base.dao.admin;
 
+import java.util.List;
+
 import com.springlec.base.model.admin.LoginVerification_Dto;
+import com.springlec.base.model.admin.ProductCrudDto;
 
 public interface AdminDao {
 	
@@ -13,6 +16,9 @@ public interface AdminDao {
 	public void insertMenuSpecAction(String mngram, String mnkcal, String mnprotein, 
 			String mnfat, String mnsugar, String mnnatrum) throws Exception;
 	// ******************************************************************************
+	
+	// ProductListSelect Task
+	public List<ProductCrudDto> productListSelect() throws Exception;
 
 
 }

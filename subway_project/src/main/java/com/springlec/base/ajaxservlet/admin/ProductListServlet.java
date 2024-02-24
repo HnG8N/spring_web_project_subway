@@ -2,31 +2,31 @@ package com.springlec.base.ajaxservlet.admin;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.gson.Gson;
-import com.springlec.base.model.admin.LoginVerification_Dto;
-import com.springlec.base.service.admin.LoginService;
+import com.springlec.base.model.admin.ProductCrudDto;
+import com.springlec.base.service.admin.ProductCrudService;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns = "/admin/loginverification")
-public class LoginVerificationServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/admin/productList")
+public class ProductListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private static final String CONTENT_TYPE = "application/json;charset=UTF-8";
-	
-	@Autowired
+
+    @Autowired
 	Gson gson;
 	@Autowired
-	LoginService service;
+	ProductCrudService service;
 	
-	public LoginVerificationServlet() {
+	public ProductListServlet() {
 		super();
 	}
 	
@@ -34,29 +34,24 @@ public class LoginVerificationServlet extends HttpServlet {
 	   protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			   throws ServletException, IOException {
 		
-		HttpSession session = request.getSession();
+		String mnname = request.getParameter("mnname");
+		System.out.println(mnname);
+		response.setContentType("text/html;charset=UTF-8");
 		
-		String mid = request.getParameter("mid");
-		
-		LoginVerification_Dto data = null;
+		List<ProductCrudDto> dtos = null;
 		
 		try {
-			data = service.loginVerificationTask(mid);
+			dtos = service.productListSelectTask();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		session.setAttribute("Logged_in_ID", data.getMid());
-		if(data.getMid() != null) {
-			session.setAttribute("welcome", data.getMid() + "님 환영합니다.");
-		}
-
-//		 List에 담겨 있는 데이터를 JSON으로 변경하여 전송
-		PrintWriter out = response.getWriter();
+		// List에 담겨 있는 데이터를 JSON으로 변경하여 전송
 		response.setContentType(CONTENT_TYPE);
+		PrintWriter out = response.getWriter();
 		
 		try {
-			out.print(gson.toJson(data));	// Json형태로 변환
+			out.print(gson.toJson(dtos));	// Json형태로 변환
 			out.flush();	// 실행 시키는 명령어
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -64,6 +59,5 @@ public class LoginVerificationServlet extends HttpServlet {
 
 		
 	}
-
 
 }

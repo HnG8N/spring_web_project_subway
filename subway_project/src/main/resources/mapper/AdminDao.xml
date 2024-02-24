@@ -11,17 +11,25 @@
 		WHERE mid = #{mid}
 	</select>
 	
-	<!-- ProductInsertDB TASK query-->
+	<!-- ProductInsertDB TASK query *********************************************-->
 	<insert id="insertMenuAction">
 		INSERT INTO menu (mnctg, mnname, mnengname, mninfo, mnimg, mnprice)
 		VALUES (#{mnctg}, #{mnname}, #{mnengname}, #{mninfo}, #{mnimg}, #{mnprice})
 	</insert>
 	<insert id="insertMenuSpecAction">
-	INSERT INTO menuspec (mncode, mngram, mnkcal, mnprotein, mnfat, mnsugar, mnnatrum)
-	VALUES
-	((SELECT mncode FROM menu ORDER BY mncode DESC LIMIT 1), 
-			#{mngram}, #{mnkcal}, #{mnprotein}, #{mnfat}, #{mnsugar}, #{mnnatrum})
+		INSERT INTO menuspec (mncode, mngram, mnkcal, mnprotein, mnfat, mnsugar, mnnatrum)
+		VALUES
+		((SELECT mncode FROM menu ORDER BY mncode DESC LIMIT 1), 
+				#{mngram}, #{mnkcal}, #{mnprotein}, #{mnfat}, #{mnsugar}, #{mnnatrum})
 	</insert>
-	<!-- ProductInsertDB TASK query End -->
+	<!-- ProductInsertDB Task query End ****************************************-->
+	
+	<!-- ProductListSelect Task query  -->
+	<select id="productListSelect" resultType="com.springlec.base.model.admin.ProductCrudDto">
+		SELECT m.mncode, m.mnctg, m.mnname, m.mnengname, m.mninfo, m.mnimg, m.mnprice, 
+		    s.mngram, s.mnkcal, s.mnprotein, s.mnfat, s.mnsugar, s.mnnatrum
+		FROM menu AS m, menuspec AS s
+		WHERE m.mncode = s.mncode
+	</select>
 	
 </mapper>

@@ -2,7 +2,7 @@ window.onload = function(){
 	// AJAX 요청
 	$.ajax({
 	type: "POST",
-	url: "ProductList_Servlet", 	// class 명
+	url: "productList", 	// class 명
 	data: {mnname : ""},		// key와 value, 변수 이름(key)과 let name에 받아온 value값(value), dictionary라고 함
 	success: function(response){
 		// 서버에서 받은 응답 처리
@@ -24,7 +24,7 @@ function createList(data){
 		list += '<div class="card">' +
 	            '<table style="width: 100%;">' +
 	          	'<tr>' +
-	 			'<td style="width: 12%;"><img src="img/' + data[i].mnimg + '" class="card-img-top" alt="..." ></td>' +
+	 			'<td style="width: 12%;"><img src="../views/upload/menu/' + data[i].mnimg + '" class="card-img-top" alt="..." ></td>' +
 	          	'<td style="width: 5%;">' + data[i].mncode + '</td>' +
 	          	'<td style="width: 10%;">' + data[i].mnctg + '</td>' +
 	          	'<td style="width: 15%;">' + data[i].mnname + '</td>' +

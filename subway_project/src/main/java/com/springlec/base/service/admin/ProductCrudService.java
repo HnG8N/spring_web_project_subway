@@ -1,6 +1,10 @@
 package com.springlec.base.service.admin;
 
+import java.util.List;
+
 import org.springframework.web.multipart.MultipartFile;
+
+import com.springlec.base.model.admin.ProductCrudDto;
 
 public interface ProductCrudService {
 	
@@ -8,5 +12,8 @@ public interface ProductCrudService {
 			String mninfo, String mnprice, 
 			String mngram, String mnkcal, String mnprotein, 
 			String mnfat, String mnsugar, String mnnatrum) throws Exception;
+	
+	public List<ProductCrudDto> productListSelectTask() throws Exception;
+
 
 }
