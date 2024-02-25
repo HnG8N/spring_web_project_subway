@@ -11,6 +11,9 @@
 		WHERE mid = #{mid}
 	</select>
 	
+	<!-- ********************************************************* -->
+	<!-- ************************ Product ************************ -->
+	
 	<!--************************ ProductInsertDB TASK query *********************-->
 	<insert id="insertMenuAction">
 		INSERT INTO menu (mnctg, mnname, mnengname, mninfo, mnimg, mnprice)
@@ -65,4 +68,26 @@
 		WHERE mncode = #{mncode}
 	</update>
 	<!--************************ ProductInsertDB TASK query End *********************-->
+	
+	<!-- ************************ Product End ************************ -->
+	<!-- ************************************************************* -->
+
+
+	<!-- ************************************************************* -->
+	<!-- ************************SalesStatus************************** -->
+	
+	<!-- ********************monthlySalesChartData Task******************** -->
+	<select id="monthlySalesChartData" resultType="com.springlec.base.model.admin.SalesStatusDto">
+		SELECT MONTH (odate) as omonth, SUM(oprice) as omonthsum
+		FROM orderpurchase
+		WHERE YEAR (odate) BETWEEN YEAR (NOW())-1 AND YEAR (NOW())
+		GROUP BY omonth
+	</select>
+	<!-- *******************monthlySalesChartData Task End****************** -->
+	
+
+
+
+	<!-- ************************SalesStatus End************************ -->
+	<!-- *************************************************************** -->
 </mapper>

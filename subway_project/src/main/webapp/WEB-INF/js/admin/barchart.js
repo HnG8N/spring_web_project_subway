@@ -7,8 +7,9 @@ $(document).ready(function() {
 // 초기 화면에 barChart를 생성
   $.ajax({
 	    type: "POST",
-	    url: "Salesstatus_Servlet",
+	    url: "SalesStatusServlet",
 	    success: function(data) {
+			console.log(data)
 			for(i=0; i<data.length; i++){
 				odateArray.push(data[i].omonth + "월");
 			};

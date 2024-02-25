@@ -39,10 +39,6 @@ public class AdminController {
 		return "/admin/home";
 	}
 	
-	@GetMapping("/salesstatus")
-	public String salesstatus() throws Exception {
-		return "/admin/salesstatus";
-	}
 	@GetMapping("/productlist")
 	public String productlist() throws Exception {
 		return "/admin/productlist";

@@ -4,10 +4,13 @@ import java.util.List;
 
 import com.springlec.base.model.admin.LoginVerification_Dto;
 import com.springlec.base.model.admin.ProductCrudDto;
+import com.springlec.base.model.admin.SalesStatusDto;
 
 public interface AdminDao {
 	
 	public LoginVerification_Dto loginVerification(String mid) throws Exception;
+	
+	// ******************************** Product ********************************
 	
 	// productInsertDB TASK *********************************************************
 	public void insertMenuAction(String mnctg, String mnname, String mnengname, 
@@ -37,6 +40,16 @@ public interface AdminDao {
 	
 	public void updateImgAction(int mncode, String mnimg) throws Exception;
 	// ******************************************************************************
+
+	// ****************************** Product End *******************************
+	
+	
+	
+	// ****************************** salesStatus *******************************
+	// monthlySalesChartData Task
+	public List<SalesStatusDto> monthlySalesChartData() throws Exception;
+	
+	// **************************** salesStatus End ******************************
 
 
 
