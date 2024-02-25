@@ -22,37 +22,6 @@ public class ProductCrudDto {
 		
 	}
 	
-	public ProductCrudDto(int mncode, String mnctg, String mnname, String mnengname, String mninfo, int mnprice,
-			String mnimg) {
-		super();
-		this.mncode = mncode;
-		this.mnctg = mnctg;
-		this.mnname = mnname;
-		this.mnengname = mnengname;
-		this.mninfo = mninfo;
-		this.mnprice = mnprice;
-		this.mnimg = mnimg;
-	}
-	
-	public ProductCrudDto(int mncode, String mnctg, String mnname, String mnengname, String mninfo, int mnprice,
-			String mnimg, double mngram, double mnkcal, double mnprotein, double mnfat, double mnsugar,
-			double mnnatrum) {
-		super();
-		this.mncode = mncode;
-		this.mnctg = mnctg;
-		this.mnname = mnname;
-		this.mnengname = mnengname;
-		this.mninfo = mninfo;
-		this.mnprice = mnprice;
-		this.mnimg = mnimg;
-		this.mngram = mngram;
-		this.mnkcal = mnkcal;
-		this.mnprotein = mnprotein;
-		this.mnfat = mnfat;
-		this.mnsugar = mnsugar;
-		this.mnnatrum = mnnatrum;
-	}
-
 	// Method
 	public int getMncode() {
 		return mncode;
