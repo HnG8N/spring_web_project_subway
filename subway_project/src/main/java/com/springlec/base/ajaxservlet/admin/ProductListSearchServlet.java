@@ -37,7 +37,6 @@ public class ProductListSearchServlet extends HttpServlet{
 		
 		String selectSearch = request.getParameter("selectSearch");
 		String search = request.getParameter("search");
-		System.out.println(search + selectSearch);
 		response.setContentType("text/html;charset=UTF-8");
 		
 		List<ProductCrudDto> dtos = null;

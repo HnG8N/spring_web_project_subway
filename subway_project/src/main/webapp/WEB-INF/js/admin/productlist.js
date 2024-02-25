@@ -40,7 +40,19 @@ function createList(data){
 	            '</div>'
 	}
 	
+	let buttonCount = 5;
+
+    // 버튼 HTML 생성
+    for (let i = 0; i < buttonCount; i++) {
+      list += '<button onclick="buttonClick(' + (i+1) + ')">' + (i+1) + '</button>'; // 버튼 HTML 추가
+      console.log(i);
+    }
+    
 	$("#result").html(list);
+}
+
+function buttonClick(page){
+    alert(page)
 }
 
 // 엔터를 눌렀을 때 검색버튼이 클릭되게 하는 function

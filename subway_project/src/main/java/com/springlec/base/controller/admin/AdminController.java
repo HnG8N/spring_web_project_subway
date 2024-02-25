@@ -2,7 +2,6 @@ package com.springlec.base.controller.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -73,6 +72,22 @@ public class AdminController {
 				Integer.parseInt(request.getParameter("mncode")));
 		model.addAttribute("MENU", dto);
 		return "/admin/productdetail";
+	}
+	@PostMapping("/productupdateDB")
+	public String productdetailDB(MultipartHttpServletRequest request) throws Exception {
+		
+		serivice.ProductUpdateTask(
+				request.getFile("mnimg"), 
+				Integer.parseInt(request.getParameter("mncode")),
+				request.getParameter("mnctg"), 
+				request.getParameter("mnname"), request.getParameter("mnengname"), 
+				request.getParameter("mninfo"), request.getParameter("mnprice"), 
+				request.getParameter("mngram"), request.getParameter("mnkcal"), 
+				request.getParameter("mnprotein"), request.getParameter("mnfat"), 
+				request.getParameter("mnsugar"), request.getParameter("mnnatrum")
+				);
+		
+		return "redirect:/admin/productlist";
 	}
 	@GetMapping("/memberinformation")
 	public String memberinformation() throws Exception {

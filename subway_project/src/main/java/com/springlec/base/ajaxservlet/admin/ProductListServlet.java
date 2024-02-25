@@ -20,7 +20,12 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ProductListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private static final String CONTENT_TYPE = "application/json;charset=UTF-8";
-
+    
+    int listCount;
+    int limit;
+    int offset;
+    int buttonCount;
+    
     @Autowired
 	Gson gson;
 	@Autowired
@@ -34,14 +39,21 @@ public class ProductListServlet extends HttpServlet {
 	   protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			   throws ServletException, IOException {
 		
-		String mnname = request.getParameter("mnname");
-		System.out.println(mnname);
 		response.setContentType("text/html;charset=UTF-8");
+		
+		try {
+			listCount = service.ProductListCountTask();
+			limit = 6;
+			buttonCount = (int)Math.ceil((double)listCount / limit);
+			offset = (1-1) * limit;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		List<ProductCrudDto> dtos = null;
 		
 		try {
-			dtos = service.productListSelectTask();
+			dtos = service.productListSelectTask(limit, offset);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
