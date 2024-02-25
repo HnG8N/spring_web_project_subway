@@ -13,13 +13,11 @@ public interface ProductCrudService {
 			String mngram, String mnkcal, String mnprotein, 
 			String mnfat, String mnsugar, String mnnatrum) throws Exception;
 	
-	public int ProductListCountTask() throws Exception;
+	public int ProductListCountTask(String selectSearch, String search) throws Exception;
 	
-	public List<ProductCrudDto> productListSelectTask(int limit, int offset) throws Exception;
+	public List<ProductCrudDto> productListSelectTask(
+			String selectSearch, String search, int limit, int offset) throws Exception;
 
-	public List<ProductCrudDto> productListSearchTask(
-			String selectSearch, String search) throws Exception;
-	
 	public ProductCrudDto productDetailTask(int mncode) throws Exception;
 
 	public void ProductUpdateTask(MultipartFile file, int mncode, String mnctg, String mnname, String mnengname, 

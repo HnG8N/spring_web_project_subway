@@ -18,14 +18,11 @@ public interface AdminDao {
 	// ******************************************************************************
 	
 	// productListCount Task
-	public int productListCount() throws Exception;
+	public int productListCount(String selectSearch, String search) throws Exception;
 	
 	// productListSelect Task
-	public List<ProductCrudDto> productListSelect(int limit, int offset) throws Exception;
+	public List<ProductCrudDto> productListSelect(String selectSearch, String search, int limit, int offset) throws Exception;
 
-	// productListSearch Task
-	public List<ProductCrudDto> productListSearch(String selectSearch, String search) throws Exception;
-	
 	// productDetail Task
 	public ProductCrudDto productDetail(int mncode) throws Exception;
 	

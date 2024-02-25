@@ -1,19 +1,23 @@
-window.onload = function(){
-	// AJAX 요청
+// **************************** Method 모음 ****************************
+// AJAX 요청 function
+function requestAjax(url, data){
 	$.ajax({
-	type: "POST",
-	url: "productList", 	// class 명
-	data: {mnname : ""},		// key와 value, 변수 이름(key)과 let name에 받아온 value값(value), dictionary라고 함
-	success: function(response){
-		// 서버에서 받은 응답 처리
-		createList(response)
-		}
-	})
+		type: "POST",
+		url: url,
+		data: data,
+		success: function(response){
+			console.log(response.products, response.buttonCount);
+			createList(response.products, response.buttonCount);
+		},
+		error : function(xhr, status, error) {
+          // 요청이 실패했을 때 실행할 코드
+          alert(error);
+        }
+	});
+};
 
-}
-
-// response를 data로 받음
-function createList(data){	
+// response를 data로 받음, table과 버튼을 만드는 function
+function createList(data, buttonCount){
 	
 	// 검색해온 데이터를 다른 function에서 사용하기 위해 전역변수의 배열변수로 복사
 	dataReal = Array.from(data)	// Json을 Array로 변환
@@ -40,60 +44,79 @@ function createList(data){
 	            '</div>'
 	}
 	
-	let buttonCount = 5;
-
     // 버튼 HTML 생성
     for (let i = 0; i < buttonCount; i++) {
-      list += '<button onclick="buttonClick(' + (i+1) + ')">' + (i+1) + '</button>'; // 버튼 HTML 추가
-      console.log(i);
+      list += '<button onclick = "buttonClick(' + (i+1) + ')">' + (i+1) + '</button>'; // 버튼 HTML 추가
     }
     
 	$("#result").html(list);
 }
 
-function buttonClick(page){
-    alert(page)
-}
-
 // 엔터를 눌렀을 때 검색버튼이 클릭되게 하는 function
-$(document).ready(function() {
-  // 검색 input 엘리먼트를 찾습니다.
-  let input = $("#search");
-  
-  // input 엘리먼트에 대해 keypress 이벤트를 추가합니다.
-  input.on("keypress", function(event) {
-    // Enter 키의 keyCode는 13입니다.
-    if (event.keyCode === 13) {
-      // Enter 키가 눌렸을 때 검색 버튼을 클릭합니다.
-      $("#searchBtn").click();
-    }
-  });
-});
+function enterInput() {
+	// 검색 input 엘리먼트를 찾습니다.
+	let input = $("#search");
+	  
+	// input 엘리먼트에 대해 keypress 이벤트를 추가합니다.
+	input.on("keypress", function(event) {
+		// Enter 키의 keyCode는 13입니다.
+		if (event.keyCode === 13) {
+			// Enter 키가 눌렸을 때 검색 버튼을 클릭합니다.
+			$("#searchBtn").click();
+		}
+	});
+};
+// **************************** Method 모음 End ****************************
 
-// 검색에서 이름이나 코드를 선택해 검색
+
+
+// **************************** 기능 구현 ****************************
+
+
+
 $(document).ready(function() {
-  $("#searchBtn").click(function() {
-    // 선택한 옵션의 값을 가져옴
-    let selectSearch = $("#selectSearch").val();
-    let search = $("#search").val().trim();
+	
+	// 엔터를 눌렀을 때 검색버튼이 클릭
+//	enterInput();
+	
+	// productList 첫 화면에서 Ajax 호출
+	requestAjax(
+		"productList",
+		{"buttonNum" : 1,
+		"search" : "",
+		"selectSearch" : "mnname"
+		}
+	);
+	
+	// 검색에서 이름이나 코드를 선택해 검색
+	$("#searchBtn").on("click",function() {
+	    // combobox의 value와 text에 입력된 value를 가져옴
+	    let selectSearch = $("#selectSearch").val();
+	    let search = $("#search").val().trim();
     
 	  // AJAX를 사용하여 서버에 값을 전달
-      $.ajax({
-        type: "POST",
-        url: "productListSearch",
-        data: {
+	  requestAjax(
+		  "productList",
+		  {
+			"buttonNum" : 1,
 			"search" : search,
 			"selectSearch" : selectSearch
-		}, // 전달할 데이터
-        success: function(response) {
-          // 성공적으로 서버로부터 응답을 받았을 때 실행할 코드
-          console.log(response);
-          createList(response)
-        },
-        error: function(xhr, status, error) {
-          // 요청이 실패했을 때 실행할 코드
-          alert(error);
-        }
-      });
-  });
+		  }
+	  );
+   });
 });
+
+// 버튼을 클릭 했을 때 해당 페이지를 보여주는 function
+function buttonClick(page){
+	
+	let selectSearch = $("#selectSearch").val();
+	let search = $("#search").val().trim();
+	
+    requestAjax(
+		"productList",
+    	{"buttonNum" : page,
+    	"search" : search,
+		"selectSearch" : selectSearch}
+    )
+}
+// **************************** End ****************************

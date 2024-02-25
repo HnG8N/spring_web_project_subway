@@ -74,27 +74,19 @@ public class ProductCrudServiceImpl implements ProductCrudService {
 //*************************** ProductListCountTask Task ***************************
 
  @Override
- public int ProductListCountTask() throws Exception {
-	 return dao.productListCount();
+ public int ProductListCountTask(String selectSearch, String search) throws Exception {
+	 return dao.productListCount(selectSearch, '%'+search+'%');
  }
 //*************************** ProductListCountTask Task End ***************************
 
  
 //*************************** productListSelectTask Task ***************************
 @Override
-public List<ProductCrudDto> productListSelectTask(int limit, int offset) throws Exception {
-	return dao.productListSelect(limit, offset);
+public List<ProductCrudDto> productListSelectTask(
+		String selectSearch, String search, int limit, int offset) throws Exception {
+	return dao.productListSelect(selectSearch, '%'+search+'%', limit, offset);
 }
 //*************************** productListSelectTask Task End ***************************
-
-
-//*************************** productListSearchTask Task ***************************
-@Override
-public List<ProductCrudDto> productListSearchTask(
-		String selectSearch, String search) throws Exception {
-	return dao.productListSearch(selectSearch, '%'+search+'%');
-}
-//*************************** productListSearchTask Task End ***************************
 
 
 //*************************** productDetailTask Task ***************************
