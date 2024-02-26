@@ -3,6 +3,7 @@ package com.springlec.base.dao.admin;
 import java.util.List;
 
 import com.springlec.base.model.admin.LoginVerification_Dto;
+import com.springlec.base.model.admin.MemberInformationDto;
 import com.springlec.base.model.admin.ProductCrudDto;
 import com.springlec.base.model.admin.SalesStatusDto;
 
@@ -50,9 +51,13 @@ public interface AdminDao {
 	public List<SalesStatusDto> monthlySalesChartData() throws Exception;
 	public List<SalesStatusDto> daySalesChartData(String startDay, String endDay) throws Exception;
 	public List<SalesStatusDto> menuCountChartData(String startDay, String endDay) throws Exception;
+	// **************************** salesStatus End *****************************
 	
-	// **************************** salesStatus End ******************************
-
-
+	
+	
+	// ****************************** memberInfo *******************************
+	// memberInfoList Task
+	public List<MemberInformationDto> memberInfoList() throws Exception;
+	// **************************** memberInfo End *****************************
 
 }

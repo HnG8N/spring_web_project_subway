@@ -99,10 +99,11 @@
 		GROUP BY m.mnname
 	</select>
 	<!-- *******************monthlySalesChartData Task End****************** -->
-	
-
-
 
 	<!-- ************************SalesStatus End************************ -->
+	<select id="memberInfoList" resultType="com.springlec.base.model.admin.MemberInformationDto">
+		SELECT mid ,mpw ,mname ,maddress ,mtel ,mbirth ,memail ,mregdate ,menddate
+		FROM member
+	</select>
 	<!-- *************************************************************** -->
 </mapper>
