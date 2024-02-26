@@ -31,8 +31,6 @@
 							<ul>
 								<li><a href="newsList">공지사항</a></li>
 								<li><a href="board">이용후기</a></li>
-								<li><a href="faq">FAQ</a></li>
-								<li><a href="qna">1:1문의</a></li>
 							</ul>
 						</div></li>
 					<li><a href="#none" class="dp1">써브웨이</a>
@@ -58,20 +56,20 @@
 					<%
 					if (session.getAttribute("userId") == null) {
 					%>
-					<li class="after_sign"><a href="login_view.do">로그인</a></li>
-					<li class="after_sign"><a href="signup_view.do">회원가입</a></li>
+					<li class="after_sign"><a href="login">로그인</a></li>
+					<li class="after_sign"><a href="signup">회원가입</a></li>
 					<%
 					} else {
 					%>
 					<li class="after_sign"><a><%=session.getAttribute("userId")%></a></li>
-					<li class="after_sign"><a href="logout.do">로그아웃</a></li>
-					<li class="after_sign"><a href="mypage.do">MY-SUB</a></li>
+					<li class="after_sign"><a href="logout">로그아웃</a></li>
+					<li class="after_sign"><a href="mypage">MY-SUB</a></li>
 					<%
 					}
 					%>
 					<li class="icon_menu cart on">
 						<!-- 장바구니담았을때 class="on"추가 --> <a href="cart"> <span
-							class="blind">장바구니</span> <strong>1</strong>
+							class="blind">장바구니</span> 
 					</a>
 					</li>
 					<li class="icon_menu global_subway"><a
