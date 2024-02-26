@@ -6,7 +6,7 @@
 	<div id="header">
 		<div class="content">
 			<h1 class="logo">
-				<a href="home">SUBWAY</a>
+				<a href="/">SUBWAY</a>
 			</h1>
 			<!-- gnb -->
 			<nav id="gnb">
@@ -43,7 +43,7 @@
 					<li><a class="dp1" href="javascript:void(0);">온라인 주문</a>
 						<div class="dp2">
 							<ul>
-								<li><a href="step2">FAST-SUB</a></li>
+								<li><a href="step2?item=sandwich">FAST-SUB</a></li>
 							</ul>
 						</div></li>
 				</ul>

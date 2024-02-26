@@ -41,7 +41,7 @@
 	</script>
 </head>
 <body>
-	<%@ include file="/jsp/include/header.jsp"%>
+	<%@ include file="../../include/header.jsp"%>
 	<!-- container s -->
 	<div id="container">
 		<form method="post" name="moveForm">
@@ -232,6 +232,6 @@
 		</div>
 		<!--// container -->
 	</div>
-	<%@ include file="/jsp/include/footer.jsp"%>
+	<%@ include file="../../include/footer.jsp"%>
 </body>
 </html>
