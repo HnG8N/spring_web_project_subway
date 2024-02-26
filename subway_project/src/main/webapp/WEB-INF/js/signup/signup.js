@@ -59,7 +59,7 @@ $(document).ready(function() {
 					$("#result2").text("");
 					// 중복되지 않은 경우에만 이메일 전송
 					$.ajax({
-						type: "GET",
+						type: "POST",
 						url: "SendEmail", // SendEmail 서블릿의 URL
 						data: { email: email },
 						success: function(data) {
