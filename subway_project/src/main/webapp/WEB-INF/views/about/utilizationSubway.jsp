@@ -7,32 +7,32 @@
 <title>써브웨이 이용방법</title>
     <link href="http://subway.co.kr/" rel="canonical" /><!-- 20180221 -->
     <meta content="신선하고 건강한 글로벌 NO.1 샌드위치 브랜드, 써브웨이" name="description" /><!-- 20181212 -->
-    <link rel="shortcut icon" type="image/x-icon" href="./images/common/subway_favicon.ico?v=2023051202" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/common/subway_favicon.ico?v=2023051202" />
         <!-- 20180131 -->
-        <link rel="stylesheet" type="text/css" href="./css/ui.common.css?v=2023051202" />
-        <link rel="stylesheet" type="text/css" href="./css/jquery.mCustomScrollbar.min.css?v=2023051202" />
-		<link rel="stylesheet" type="text/css" href="./css/ui.utilization.css?v=2023051202" />
+        <link rel="stylesheet" type="text/css" href="/css/ui.common.css?v=2023051202" />
+        <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.min.css?v=2023051202" />
+		<link rel="stylesheet" type="text/css" href="/css/ui.utilization.css?v=2023051202" />
 		<!-- 써브웨이 css -->
-		<link rel="stylesheet" href="./css/aos.css?v=2023051202" />
+		<link rel="stylesheet" href="/css/aos.css?v=2023051202" />
         
-        <script type="text/javascript" src="./js/jquery/jquery-1.12.4.min.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/jquery/jquery-ui-1.12.0.min.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/jquery/jquery.easing.1.3.min.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/jquery/jquery.bxslider.min.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/jquery/jquery.mCustomScrollbar.concat.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery-1.12.4.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery-ui-1.12.0.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.easing.1.3.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.bxslider.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.mCustomScrollbar.concat.min.js?v=2023051202"></script>
         <!-- block ui -->
-        <script type="text/javascript" src="./js/jquery/jquery.blockUI.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.blockUI.min.js?v=2023051202"></script>
 
-        <script type="text/javascript" src="./js/jquery/TweenMax.min.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/jquery/jquery.cookie.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/TweenMax.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.cookie.js?v=2023051202"></script>
         <!--<script type="text/javascript" th:src="'/js/lottie.js?v=' + ${cacheParam}"></script>-->
-        <script type="text/javascript" src="./js/ui.common.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/subway.common.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/util/jsrender.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/waffle/waffle.utils.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/ui.common.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/subway.common.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/util/jsrender.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/waffle/waffle.utils.js?v=2023051202"></script>
 
-		<script src="./js/jquery/aos.js?v=2023051202"></script>
+		<script src="/js/jquery/aos.js?v=2023051202"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				subwayUtilization();//써브웨이 이용방법
@@ -40,17 +40,17 @@
 		</script>
 </head>
 <body>
-<%@ include file="/jsp/include/header.jsp" %>
+<%@ include file="../include/header.jsp" %>
  <!-- container s -->
 	<div id="container">
 		<div class="sub_header">
 			<div class="content">
-				<a class="logo" href="home.do">HOME</a>
+				<a class="logo" href="/">HOME</a>
 				<!-- sub location -->
 				<div class="sub_loc">
 					<ul>
-						<li class="active"><a href="utilizationSubway.do">써브웨이 이용방법</a></li>
-						<li><a href="freshInfo.do">신선한 재료 소개</a></li>
+						<li class="active"><a href="utilizationSubway">써브웨이 이용방법</a></li>
+						<li><a href="freshInfo">신선한 재료 소개</a></li>
 					</ul>
 				</div>
 				<!--// sub location -->
@@ -101,23 +101,23 @@
 							<!-- 20180202 -->
 							<li class="active"><div class="img">
 									<img alt="메뉴 선택"
-										src="./images/utilization/img_store_order01.png" />
+										src="/images/utilization/img_store_order01.png" />
 								</div></li>
 							<li><div class="img">
 									<img alt="빵 선택 "
-										src="./images/utilization/img_store_order02.png" />
+										src="/images/utilization/img_store_order02.png" />
 								</div></li>
 							<li><div class="img">
 									<img alt="토핑 추가"
-										src="./images/utilization/img_store_order03.png" />
+										src="/images/utilization/img_store_order03.png" />
 								</div></li>
 							<li><div class="img">
 									<img alt="야채&소스 선택"
-										src="./images/utilization/img_store_order04.png" />
+										src="/images/utilization/img_store_order04.png" />
 								</div></li>
 							<li><div class="img">
 									<img alt="세트 선택"
-										src="./images/utilization/img_store_order05.png" />
+										src="/images/utilization/img_store_order05.png" />
 								</div></li>
 							<!--// 20180202 -->
 						</ol>
@@ -217,7 +217,7 @@
 
 								<div class="sandwich">
 									<img alt="스테이크 & 치즈" data-aos="fade-left"
-										src="./images/utilization/img_sandwich01.png" />
+										src="/images/utilization/img_sandwich01.png" />
 								</div>
 							</div>
 						</div>
@@ -227,7 +227,7 @@
 								<ul>
 									<li>
 										<div class="img">
-											<img alt="CHEESE" src="./images/utilization/img_cheese.jpg" />
+											<img alt="CHEESE" src="/images/utilization/img_cheese.jpg" />
 										</div> <em>CHEESE</em>
 										<p>
 											더블치즈로 치즈와 쇠고기의<br />완벽한 조화!
@@ -235,7 +235,7 @@
 									</li>
 									<li>
 										<div class="img">
-											<img alt="SAUCE" src="./images/utilization/img_sauce01.jpg" />
+											<img alt="SAUCE" src="/images/utilization/img_sauce01.jpg" />
 										</div> <em>SAUCE</em>
 										<p>
 											달콤하게 즐기고 싶다면 스윗어니언+마요네즈!<br />스테이크의 맛을 즐기고 싶다면 후추만 톡톡!
@@ -245,7 +245,7 @@
 										<!-- 20180213 -->
 										<div class="img">
 											<img alt="VEGETABLE"
-												src="./images/utilization/img_vegetable.jpg" />
+												src="/images/utilization/img_vegetable.jpg" />
 										</div> <em>VEGETABLE</em>
 										<p>
 											토마토, 오이를 빼면<br />고기의 풍미를 즐길 수 있습니다.
@@ -271,7 +271,7 @@
 
 								<div class="sandwich">
 									<img alt="로스트치킨" data-aos="fade-left"
-										src="./images/utilization/img_sandwich02.png" />
+										src="/images/utilization/img_sandwich02.png" />
 								</div>
 							</div>
 						</div>
@@ -281,7 +281,7 @@
 								<ul>
 									<li>
 										<div class="img">
-											<img alt="SALAD" src="./images/utilization/img_salad.jpg" />
+											<img alt="SALAD" src="/images/utilization/img_salad.jpg" />
 										</div> <em>SALAD</em>
 										<p>
 											로스트치킨은 샐러드로 드셔도 좋습니다.<br />관리의 시작은 써브웨이로부터!
@@ -289,14 +289,14 @@
 									</li>
 									<li>
 										<div class="img">
-											<img alt="SAUCE" src="./images/utilization/img_sauce02.jpg" />
+											<img alt="SAUCE" src="/images/utilization/img_sauce02.jpg" />
 										</div> <em>SAUCE</em>
 										<p>랜치로 고소하게 즐겨보세요!</p>
 									</li>
 									<li class="bul02">
 										<div class="img">
 											<img alt="TOPPING"
-												src="./images/utilization/img_topping.jpg" />
+												src="/images/utilization/img_topping.jpg" />
 										</div> <em>TOPPING</em>
 										<p>
 											올리브, 피클, 할라피뇨를 빼고 드시면,<br /> 담백하고 부드러운 로스트 치킨을<br /> 제대로 즐길
@@ -323,7 +323,7 @@
 
 								<div class="sandwich">
 									<img alt="써브웨이 클럽" data-aos="fade-left"
-										src="./images/utilization/img_sandwich03.png" />
+										src="/images/utilization/img_sandwich03.png" />
 								</div>
 							</div>
 						</div>
@@ -333,7 +333,7 @@
 								<ul>
 									<li>
 										<div class="img">
-											<img alt="SAUCE" src="./images/utilization/img_sauce03.jpg" />
+											<img alt="SAUCE" src="/images/utilization/img_sauce03.jpg" />
 										</div> <em>SAUCE</em>
 										<p>
 											올리브오일과 후추를 살짝 뿌리면,<br />짜지않고 담백한 행복한 맛을 느낄 수 있습니다.
@@ -341,7 +341,7 @@
 									</li>
 									<li class="bul02">
 										<div class="img">
-											<img alt="CHEESE" src="./images/utilization/img_cheese.jpg" />
+											<img alt="CHEESE" src="/images/utilization/img_cheese.jpg" />
 										</div> <em>CHEESE</em>
 										<p>
 											치즈를 빼고 터키, 베이컨,<br /> 햄의 완벽한 조화를 느껴보세요!
@@ -350,7 +350,7 @@
 									<li class="bul02">
 										<div class="img">
 											<img alt="TOPPING"
-												src="./images/utilization/img_topping.jpg" />
+												src="/images/utilization/img_topping.jpg" />
 										</div> <em>TOPPING</em>
 										<p>
 											올리브, 피클, 할라피뇨를 빼고 드시면<br />야채들의 싱싱한 맛을 하나하나 느끼실 수<br />있습니다.
@@ -367,6 +367,6 @@
 		</div>
 		<!--// 써브웨이 이용방법 -->
 	</div>
-	<%@ include file="/jsp/include/footer.jsp" %>
+	<%@ include file="../include/footer.jsp" %>
 </body>
 </html>

@@ -8,39 +8,39 @@
 <title>Fast-Sub Step2</title>
 	<link href="http://subway.co.kr/" rel="canonical" /><!-- 20180221 -->
 	<meta content="신선하고 건강한 글로벌 NO.1 샌드위치 브랜드, 써브웨이" name="description" /><!-- 20181212 -->
-	<link rel="shortcut icon" type="image/x-icon" href="./images/common/subway_favicon.ico?v=2023051202" />
+	<link rel="shortcut icon" type="image/x-icon" href="/images/common/subway_favicon.ico?v=2023051202" />
 	    <!-- 20180131 -->
-	<link rel="stylesheet" type="text/css" href="./css/ui.common.css?v=2023051202" />
-	<link rel="stylesheet" type="text/css" href="./css/jquery.mCustomScrollbar.min.css?v=2023051202" />
+	<link rel="stylesheet" type="text/css" href="/css/ui.common.css?v=2023051202" />
+	<link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.min.css?v=2023051202" />
 	
 	
 	
-	<script type="text/javascript" src="./js/jquery/jquery-1.12.4.min.js?v=2023051202"></script>
-	<script type="text/javascript" src="./js/jquery/jquery-ui-1.12.0.min.js?v=2023051202"></script>
-	<script type="text/javascript" src="./js/jquery/jquery.easing.1.3.min.js?v=2023051202"></script>
-	<script type="text/javascript" src="./js/jquery/jquery.bxslider.min.js?v=2023051202"></script>
-	<script type="text/javascript" src="./js/jquery/jquery.mCustomScrollbar.concat.min.js?v=2023051202"></script>
+	<script type="text/javascript" src="/js/jquery/jquery-1.12.4.min.js?v=2023051202"></script>
+	<script type="text/javascript" src="/js/jquery/jquery-ui-1.12.0.min.js?v=2023051202"></script>
+	<script type="text/javascript" src="/js/jquery/jquery.easing.1.3.min.js?v=2023051202"></script>
+	<script type="text/javascript" src="/js/jquery/jquery.bxslider.min.js?v=2023051202"></script>
+	<script type="text/javascript" src="/js/jquery/jquery.mCustomScrollbar.concat.min.js?v=2023051202"></script>
 	<!-- block ui -->
-	<script type="text/javascript" src="./js/jquery/jquery.blockUI.min.js?v=2023051202"></script>
+	<script type="text/javascript" src="/js/jquery/jquery.blockUI.min.js?v=2023051202"></script>
 	
-	<script type="text/javascript" src="./js/jquery/TweenMax.min.js?v=2023051202"></script>
-	<script type="text/javascript" src="./js/jquery/jquery.cookie.js?v=2023051202"></script>
+	<script type="text/javascript" src="/js/jquery/TweenMax.min.js?v=2023051202"></script>
+	<script type="text/javascript" src="/js/jquery/jquery.cookie.js?v=2023051202"></script>
 	<!--<script type="text/javascript" th:src="'/js/lottie.js?v=' + ${cacheParam}"></script>-->
-	<script type="text/javascript" src="./js/ui.common.js?v=2023051202"></script>
-	<script type="text/javascript" src="./js/subway.common.js?v=2023051202"></script>
-	<script type="text/javascript" src="./js/util/jsrender.js?v=2023051202"></script>
-	<script type="text/javascript" src="./js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
-	<script type="text/javascript" src="./js/waffle/waffle.utils.js?v=2023051202"></script>
+	<script type="text/javascript" src="/js/ui.common.js?v=2023051202"></script>
+	<script type="text/javascript" src="/js/subway.common.js?v=2023051202"></script>
+	<script type="text/javascript" src="/js/util/jsrender.js?v=2023051202"></script>
+	<script type="text/javascript" src="/js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
+	<script type="text/javascript" src="/js/waffle/waffle.utils.js?v=2023051202"></script>
 	
-	<link rel="stylesheet" type="text/css" href="./css/ui.order.css?v=2023051202" />
-	<script type="text/javascript" src="./js/order/common/item-list.js?v=2023051202"></script>
+	<link rel="stylesheet" type="text/css" href="/css/ui.order.css?v=2023051202" />
+	<script type="text/javascript" src="/js/order/common/item-list.js?v=2023051202"></script>
 	<script>
 		var imagePath = null
 	</script>
 	
 </head>
 <body>
-<%@ include file="/jsp/include/header.jsp" %>
+<%@ include file="../../include/header.jsp" %>
 	<!-- container s -->
 	<div id="container">
 		<input id="menuType" name="menuType" type="hidden" value="" /> 
@@ -77,16 +77,14 @@
 							<li th:class="${itemSearchVO.cateCd eq 'ITEM_MORNING' ? 'active' : ''}" th:if="${'Y' == franchiseInfoVO.morningTimeYn}">
 								<a href="javascript:;" name="itemMenu" th:attr="data-category-code=${'ITEM_MORNING'}" >아침메뉴</a>
 							</li>-->
-						<li class="active"><a href="sandwich_view.do" name="itemMenu"
+						<li class="active"><a href="step2?item=sandwich" name="itemMenu"
 							data-category-code="ITEM_SANDWICH">샌드위치</a></li>
 						<!-- #211019 FAST-SUB/HOME-SUB 샐러드 일시 판매 중지로 인한 주석처리, #211104 판매 재개 -->
-						<li><a href="salad_view.do" name="itemMenu"
+						<li><a href="step2?item=salad" name="itemMenu"
 							data-category-code="ITEM_SALAD">샐러드</a></li>
-						<li><a href="wrap_view.do" name="itemMenu"
+						<li><a href="step2?item=wrap" name="itemMenu"
 							data-category-code="ITEM_UNIT" data-grilled-sale-yn="N">랩ㆍ기타</a>
 						</li>
-						<li><a href="javascript:;" name="itemMenu"
-							data-category-code="ITEM_SIDEDRINK">사이드ㆍ음료</a></li>
 					</ul>
 				</div>
 				<!-- 컨텐츠 리스트 -->
@@ -94,8 +92,8 @@
 					<ul class="list">
 						<c:forEach items="${MenuList}" var="dto" varStatus="status">
 							<li>
-								<a href="menuView.do?mncode=${dto.mncode}" name="itemDetailBtn" data-item-idx="${dto.mncode}" data-category-code="ITEM_SANDWICH" data-group-cd="104" data-menu-type="ITEM_SANDWICH">
-									<img src="./upload/menu/${dto.mnimg}" alt="${dto.mnname}" onerror="this.src='./images/common/noneImage.jpg'">
+								<a href="menuView?mncode=${dto.mncode}" name="itemDetailBtn" data-item-idx="${dto.mncode}" data-category-code="ITEM_SANDWICH" data-group-cd="104" data-menu-type="ITEM_SANDWICH">
+									<img src="/views/upload/menu/${dto.mnimg}" alt="${dto.mnname}" onerror="this.src='/images/common/noneImage.jpg'">
 										<p>
 												<strong>${dto.mnname}</strong>
 												<span class="eng_name ">${dto.mnengname}</span>
@@ -236,6 +234,6 @@
 				</div>
 			</script>
 	</div>
-	<%@ include file="/jsp/include/footer.jsp" %>
+	<%@ include file="../../include/footer.jsp" %>
 </body>
 </html>
