@@ -8,6 +8,7 @@ $(document).ready(function() {
   $.ajax({
 	    type: "POST",
 	    url: "SalesStatusServlet",
+	    data: {"chart": "monthlyBarChart"},
 	    success: function(data) {
 			console.log(data)
 			for(i=0; i<data.length; i++){

@@ -16,29 +16,8 @@ $(document).ready(function() {
 	        "toLabel": "To", 
 	        "customRangeLabel": "Custom", 
 	        "weekLabel": "주", 
-	        "daysOfWeek": [ 
-	             "토",
-	             "일", 
-	             "월", 
-	             "화", 
-	             "수", 
-	             "목", 
-	             "금"
-	       ],
-	      "monthNames": [ 
-	             "01월", 
-	             "02월", 
-	             "03월", 
-	             "04월", 
-	             "05월", 
-	             "06월", 
-	             "07월", 
-	             "08월", 
-	             "09월", 
-	             "10월", 
-	             "11월", 
-	             "12월" 
-	        ],
+	        "daysOfWeek": ["토", "일", "월", "화", "수", "목", "금"],
+	      "monthNames": ["01월", "02월", "03월", "04월", "05월", "06월", "07월", "08월", "09월", "10월", "11월", "12월" ],
 	        "firstDay": 1 
 	    },
   }, function(start) {
@@ -56,29 +35,8 @@ $(document).ready(function() {
 	        "toLabel": "To", 
 	        "customRangeLabel": "Custom", 
 	        "weekLabel": "주", 
-	        "daysOfWeek": [ 
-	             "토",
-	             "일", 
-	             "월", 
-	             "화", 
-	             "수", 
-	             "목", 
-	             "금"
-	       ],
-	      "monthNames": [ 
-	             "01월", 
-	             "02월", 
-	             "03월", 
-	             "04월", 
-	             "05월", 
-	             "06월", 
-	             "07월", 
-	             "08월", 
-	             "09월", 
-	             "10월", 
-	             "11월", 
-	             "12월" 
-	        ],
+	        "daysOfWeek": ["토", "일", "월", "화", "수", "목", "금"],
+	      "monthNames": ["01월", "02월", "03월", "04월", "05월", "06월", "07월", "08월", "09월", "10월", "11월", "12월" ],
 	        "firstDay": 1 
 	    },
   }, function(end) {
@@ -91,6 +49,7 @@ $("#calendar").on("click",function(){
 	    type: "POST",
 	    url: "SalesStatusServlet",
 	    data:{
+			chart: "dailyLineChart",
 			startDay : startDay,
 			endDay : endDay
 		},

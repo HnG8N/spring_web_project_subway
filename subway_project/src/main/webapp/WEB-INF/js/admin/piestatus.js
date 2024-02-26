@@ -1,8 +1,8 @@
 $(document).ready(function() {
     
     // Field
-    let startDay = ''; // 달력에서 시작 날짜
-    let endDay = ''; // 달력에서 마지막 날짜
+	let startDay = '23-01-01'; // 달력에서 시작 날짜
+	let endDay = '24-12-31'; // 달력에서 마지막 날짜
     let myChart = null; // 차트 객체를 저장할 변수
 
     // 텍스트필드를 클릭해 시작 날짜를 선택하는 function
@@ -52,6 +52,7 @@ $(document).ready(function() {
             type: "POST",
             url: "MenuStatus_Servlet",
             data: {
+				chart: "menuPieChart",
                 startDay: startDay,
                 endDay: endDay
             },

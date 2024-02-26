@@ -34,6 +34,7 @@ public class SalesStatusServlet extends HttpServlet {
 	   protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			   throws ServletException, IOException {
 		
+		String chart = request.getParameter("chart");
 		String startDay = request.getParameter("startDay");
 		String endDay = request.getParameter("endDay");
 		
@@ -43,7 +44,7 @@ public class SalesStatusServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		// List에 담겨 있는 데이터를 JSON으로 변경하여 전송
 		try {
-			dtos = service.salesChartDataTask(startDay, endDay);
+			dtos = service.salesChartDataTask(chart ,startDay, endDay);
 			out.print(gson.toJson(dtos));	// Json형태로 변환
 			out.flush();	// 실행 시키는 명령어
 		} catch (Exception e) {

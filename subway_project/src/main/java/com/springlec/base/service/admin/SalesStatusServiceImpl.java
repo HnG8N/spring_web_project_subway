@@ -1,7 +1,6 @@
 package com.springlec.base.service.admin;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,17 +16,22 @@ public class SalesStatusServiceImpl implements SalesStatusService {
 	
 	@Override
 	public List<SalesStatusDto> salesChartDataTask(
-			String startDay, String endDay) throws Exception {
+			String chart, String startDay, String endDay) throws Exception {
 		
 		List<SalesStatusDto> chartData = null;
 		
-		Optional<String> optStartDay = Optional.ofNullable(startDay);
-		Optional<String> optEndDay = Optional.ofNullable(endDay);
-		
-		if(optStartDay.isPresent() && optEndDay.isPresent()) {
-			chartData = dao.daySalesChartData(startDay, endDay);
-		}else {
-			chartData = dao.monthlySalesChartData();
+		switch(chart) {
+			case ("monthlyBarChart") :
+				chartData = dao.monthlySalesChartData();
+			break;
+			case ("dailyLineChart") :
+				chartData = dao.daySalesChartData(startDay, endDay);
+			break;
+			case ("menuPieChart") :
+				chartData = dao.daySalesChartData(startDay, endDay);
+			break;
+			default :
+			break;
 		}
 		
 		return chartData;
