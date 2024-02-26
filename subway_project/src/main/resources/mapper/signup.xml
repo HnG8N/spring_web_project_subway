@@ -15,8 +15,13 @@
 		SELECT count(mid) FROM member WHERE mid = #{mid}
 	</select>
 	
+	<!-- 로그인 시 비밀번호 체크 -->
+	<select id="checkPw">
+		SELECT mpw FROM member WHERE mid = #{mid}
+	</select>
+	
 	<!-- 이메일 중복 체크 -->
 	<select id="checkEmail">
-		SELECT count(memail) FROM member WHERE mid = #{memail}
+		SELECT count(memail) FROM member WHERE memail = #{memail}
 	</select>
 </mapper>
