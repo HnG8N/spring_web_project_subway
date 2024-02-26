@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 import com.springlec.base.model.admin.ProductCrudDto;
 import com.springlec.base.service.admin.ProductCrudService;
@@ -64,7 +65,7 @@ public class ProductListServlet extends HttpServlet{
 			e.printStackTrace();
 		}
 		
-	    HashMap<String, Object> map = new HashMap<String, Object>();
+	    HashMap<String, Object> map = Maps.newHashMap();
 		
 		map.put("products", dtos);
 		map.put("buttonCount", buttonCount);
