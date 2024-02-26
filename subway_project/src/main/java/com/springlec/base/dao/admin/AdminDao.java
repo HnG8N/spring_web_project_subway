@@ -49,6 +49,7 @@ public interface AdminDao {
 	// monthlySalesChartData Task
 	public List<SalesStatusDto> monthlySalesChartData() throws Exception;
 	public List<SalesStatusDto> daySalesChartData(String startDay, String endDay) throws Exception;
+	public List<SalesStatusDto> menuCountChartData(String startDay, String endDay) throws Exception;
 	
 	// **************************** salesStatus End ******************************
 

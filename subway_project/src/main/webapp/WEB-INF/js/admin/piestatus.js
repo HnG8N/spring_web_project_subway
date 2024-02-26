@@ -50,40 +50,41 @@ $(document).ready(function() {
     $("#calendar").on("click", function() {
         $.ajax({
             type: "POST",
-            url: "MenuStatus_Servlet",
+            url: "SalesStatusServlet",
             data: {
 				chart: "menuPieChart",
                 startDay: startDay,
                 endDay: endDay
             },
             success: function(data) {
-                let odayArray = [];
+				console.log(data)
                 let omenuArray = [];
+                let ocountmncodeArray = [];
                 for (let i = 0; i < data.length; i++) {
-                    odayArray.push(data[i].mnname);
-                    omenuArray.push(data[i].countMncode * 1);
+                    omenuArray.push(data[i].mnname);
+                    ocountmncodeArray.push(data[i].countmncode * 1);
                 }
                 // 기존 차트가 존재한다면 제거
                 if (myChart !== null) {
                     myChart.destroy();
                 }
-                console.log(odayArray);
                 console.log(omenuArray);
-                pieChart(odayArray, omenuArray);
+                console.log(ocountmncodeArray);
+                pieChart(omenuArray, ocountmncodeArray);
             }
         });
     });
 
     // 검색하면 pieChart를 생성
-    function pieChart(odayArray, omenuArray){
+    function pieChart(omenuArray, ocountmncodeArray){
         const ctx = document.getElementById('myChart');
         const config = {
             type: 'pie',
             data: {
-                labels: odayArray,
+                labels: omenuArray,
                 datasets:[{
                     label: "Menu",
-                    data: omenuArray,
+                    data: ocountmncodeArray,
                     borderWidth: 1
                 }]
             },

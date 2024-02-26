@@ -24,7 +24,7 @@ public class SalesStatusDto {
 	String mnengname;
 	String mninfo;
 	String mnimg;
-	int countMncode;
+	int countmncode;
 	
 	// Constructor
 	public SalesStatusDto() {
@@ -199,12 +199,12 @@ public class SalesStatusDto {
 		this.mnimg = mnimg;
 	}
 
-	public int getCountMncode() {
-		return countMncode;
+	public int getcountmncode() {
+		return countmncode;
 	}
 
-	public void setCountMncode(int countMncode) {
-		this.countMncode = countMncode;
+	public void setcountmncode(int countmncode) {
+		this.countmncode = countmncode;
 	}
 
 

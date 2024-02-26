@@ -28,7 +28,7 @@ public class SalesStatusServiceImpl implements SalesStatusService {
 				chartData = dao.daySalesChartData(startDay, endDay);
 			break;
 			case ("menuPieChart") :
-				chartData = dao.daySalesChartData(startDay, endDay);
+				chartData = dao.menuCountChartData(startDay, endDay);
 			break;
 			default :
 			break;
