@@ -36,7 +36,7 @@
 </head>
 <body>
 <div>
-	<c:import url="../headerfooter/header.jsp" />
+	<c:import url="../adminheaderfooter/header.jsp" />
 </div>
 <h2 id="title">회원 정보</h2><br>
 		<table style="width: 100%;">
