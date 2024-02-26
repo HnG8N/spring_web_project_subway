@@ -41,7 +41,7 @@
 	</script>
 </head>
 <body>
-	<%@ include file="/jsp/include/header.jsp"%>
+	<%@ include file="../../include/header.jsp"%>
 	<!-- container s -->
 	<div id="container">
 		<form method="post" name="moveForm">
@@ -204,10 +204,10 @@
 									</p>
 								</div>
 								<ul class="table_btn">
-									<li><a class="btn bgc_black" href="origin.do" link-type="popup" onclick="popup_open(this,630,750); return false;"> 
+									<li><a class="btn bgc_black" href="origin" link-type="popup" onclick="popup_open(this,630,750); return false;"> 
 										<span>원산지 정보</span>
 									</a></li>
-									<li><a class="btn bgc_black" href="allergy.do" link-type="popup" onclick="popup_open(this,900,750); return false;"> 
+									<li><a class="btn bgc_black" href="allergy" link-type="popup" onclick="popup_open(this,900,750); return false;"> 
 										<span>알레르기 정보</span>
 									</a></li>
 								</ul>
@@ -217,7 +217,7 @@
 						<div class="btn_area">
  							<ul>
  								<li>
-	 								<a class="btn i_reg btn_order bgc_point" href="selectIngredient.do?mncode=${dto.mncode}&mnprice=${dto.mnprice}">
+	 								<a class="btn i_reg btn_order bgc_point" href="selectIngredient?mncode=${dto.mncode}&mnprice=${dto.mnprice}">
 										<span>주문 시작하기</span>
 									</a>
 								</li>
@@ -232,6 +232,6 @@
 		</div>
 		<!--// container -->
 	</div>
-	<%@ include file="/jsp/include/footer.jsp"%>
+	<%@ include file="../../include/footer.jsp"%>
 </body>
 </html>

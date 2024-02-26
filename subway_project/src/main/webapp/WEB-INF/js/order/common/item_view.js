@@ -60,7 +60,7 @@ var item  = {
 							$(".popup_iframe_wrapper .btn_close").click();
 						}
 
-						url = targetIngredient + '.do';
+						url = targetIngredient;
 					}
 				});
 			}
@@ -77,7 +77,7 @@ var item  = {
 			e.preventDefault();
 
 			var target = $(this);
-			var url = 'combination.do' 
+			var url = 'combination' 
 
 			item.openPopup(target, url, 510);
 		});
@@ -85,31 +85,31 @@ var item  = {
 		// 빵길이 선택
 		$('#breadType').on('click', function(e) {
 			e.preventDefault();
-			item.openPopup($(this), "bread_length.do", 520);
+			item.openPopup($(this), "bread_length", 520);
 		});
 
 		// 빵 선택
 		$('#bread').on('click', function(e) {
 			e.preventDefault();
-			item.openPopup($(this), "bread.do", 630);
+			item.openPopup($(this), "bread", 630);
 		});
 
 		// 치즈 선택
 		$('#cheese').on('click', function(e) {
 			e.preventDefault();
-			item.openPopup($(this), "cheese.do", 630);
+			item.openPopup($(this), "cheese", 630);
 		});
 
 		// 야채 선택
 		$('#vegetable').on('click', function(e) {
 			e.preventDefault();
-			item.openPopup($(this), "vegetable.do", 630);
+			item.openPopup($(this), "vegetable", 630);
 		});
 
 		// 소스 선택
 		$('#sauce').on('click', function(e) {
 			e.preventDefault();
-			item.openPopup($(this), "sauce.do", 630);
+			item.openPopup($(this), "sauce", 630);
 		});
 
 		// 수량변경 이벤트
@@ -157,16 +157,16 @@ var item  = {
 //					} else {
 						switch (itemType) {
 							case "ITEM_SANDWICH":
-								url = "Y" == promotionYn ? "bread.do" : "bread_length.do";
+								url = "Y" == promotionYn ? "bread" : "bread_length";
 								width = "Y" == promotionYn ?width : 520;
 								break;
 							case "ITEM_SALAD":
-								url = "cheese.do";
+								url = "cheese";
 								break;
 							case "ITEM_UNIT":
 								if ("Y" == flatPizzaYn) {
 									if (confirm("모차렐라 치즈가 기본으로 제공 됩니다. 치즈를 추가하시겠습니까?")) {
-										url = "cheese.do";
+										url = "cheese";
 									} 
 								}
 								break;
@@ -193,7 +193,7 @@ var item  = {
 	goOrder: function(selectCupYn, cupItemCd) {
 	    var ordForm = $('[name=orderForm]');
         ordForm.append('<input type="hidden" name="qty" value="' + $('#ordQty').val() + '">');
-        ordForm.attr('action', 'checkout.do');
+        ordForm.attr('action', 'checkout');
         ordForm.attr('method', 'POST')
         ordForm.submit();
 	},
@@ -210,7 +210,7 @@ var item  = {
             alert("장바구니에 담겼습니다. 사이드 메뉴로 이동합니다.");
         } else if (confirm("장바구니에 담겼습니다. 장바구니로 이동하시겠습니까?")) {
             getType = getType.split(".").pop().replace("_", "").toLowerCase();
-            location.href = "cart.do";
+            location.href = "cart";
         } else {
             location.reload();
         }

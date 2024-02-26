@@ -2,6 +2,7 @@ package com.springlec.base.dao.subway;
 
 import java.util.List;
 
+import com.springlec.base.model.subway.IngredientDto;
 import com.springlec.base.model.subway.MenuDto;
 
 public interface MenuDao {
@@ -10,4 +11,7 @@ public interface MenuDao {
 	
 	// 메뉴 상세페이지.
 	public MenuDto getMenuDetail(int mncode);
+	
+	// 온라인주문시 재료 선택지 가져오기.
+	public List<IngredientDto> getIngredient(String ctg);
 }
