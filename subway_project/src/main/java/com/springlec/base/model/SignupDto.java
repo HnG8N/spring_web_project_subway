@@ -1,6 +1,6 @@
 package com.springlec.base.model;
 
-public class signupDto {
+public class SignupDto {
 	
 	String mid;
 	int count;
@@ -11,15 +11,15 @@ public class signupDto {
 	String mbirth;
 	String memail;
 	
-	public signupDto() {
+	public SignupDto() {
 		
 	}
 	
-	public signupDto(int count) {
+	public SignupDto(int count) {
 		this.count = count;
 	}
 	
-	public signupDto(String mid, String mpw, String mname, String maddress, String mtel, String mbirth,String memail) {
+	public SignupDto(String mid, String mpw, String mname, String maddress, String mtel, String mbirth,String memail) {
 		this.mid = mid;
 		this.mpw = mpw;
 		this.mname = mname;

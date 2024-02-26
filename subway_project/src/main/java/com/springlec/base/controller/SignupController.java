@@ -5,36 +5,36 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.springlec.base.service.signupService;
+import com.springlec.base.service.SignupService;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 
 @Controller
-public class signupController {
+public class SignupController {
 	
 	@Autowired
-	signupService service;
+	SignupService service;
 
 	@GetMapping("signup")
 	public String signup() {
-		return "signup/signup";
+		return "signup/Signup";
 	}
 
 	@GetMapping("login")
 	public String login() {
-		return "signup/login";
+		return "signup/Login";
 	}
 
 	@GetMapping("findId")
 	public String findId() {
-		return "signup/findId";
+		return "signup/FindId";
 	}
 
 	@GetMapping("findPw")
 	public String findPw() {
-		return "signup/findPw";
+		return "signup/FindPw";
 	}
 
 	@PostMapping("signupDo")

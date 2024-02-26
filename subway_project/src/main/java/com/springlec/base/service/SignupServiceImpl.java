@@ -3,13 +3,13 @@ package com.springlec.base.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springlec.base.dao.signupDao;
+import com.springlec.base.dao.SignupDao;
 
 @Service
-public class signupServiceImpl implements signupService {
+public class SignupServiceImpl implements SignupService {
 
 	@Autowired
-	signupDao dao;
+	SignupDao dao;
 	
 	@Override
 	public void signup(String mid, String mpw, String mname, String maddress, String mtel, String mbirth, String memail)
@@ -43,9 +43,9 @@ public class signupServiceImpl implements signupService {
 	}
 
 	@Override
-	public String SendId(String mname, String mbirth, String memail) throws Exception {
+	public String sendId(String mname, String mbirth, String memail) throws Exception {
 		// TODO Auto-generated method stub
-		return dao.SendId(mname, mbirth, memail);
+		return dao.sendId(mname, mbirth, memail);
 	}
 
 	@Override
@@ -55,9 +55,9 @@ public class signupServiceImpl implements signupService {
 	}
 
 	@Override
-	public String SendPw(String mid, String mname, String mbirth, String memail) throws Exception {
+	public String sendPw(String mid, String mname, String mbirth, String memail) throws Exception {
 		// TODO Auto-generated method stub
-		return dao.SendPw(mid, mname, mbirth, memail);
+		return dao.sendPw(mid, mname, mbirth, memail);
 	}
 
 }

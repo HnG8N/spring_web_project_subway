@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.gson.Gson;
-import com.springlec.base.service.signupService;
+import com.springlec.base.service.SignupService;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -22,7 +22,7 @@ public class CheckEmail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	signupService service;
+	SignupService service;
 
 	/**
 	 * @see HttpServlet#HttpServlet()

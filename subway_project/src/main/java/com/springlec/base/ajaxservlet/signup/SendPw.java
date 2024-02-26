@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 
-import com.springlec.base.service.signupService;
+import com.springlec.base.service.SignupService;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -24,7 +24,7 @@ public class SendPw extends HttpServlet {
 	private JavaMailSender javaMailSender; // JavaMailSender 주입
 
 	@Autowired
-	signupService service;
+	SignupService service;
 
 	public SendPw() {
 		// TODO Auto-generated constructor stub
@@ -48,7 +48,7 @@ public class SendPw extends HttpServlet {
 			simpleMailMessage.setSubject("[subway] 회원님의 비밀번호 입니다.");
 
 			// 3. 메일 내용 설정
-			simpleMailMessage.setText("회원님의 아이디는 [ " + service.SendPw(id, name, date, email) + " ] 입니다.");
+			simpleMailMessage.setText("회원님의 아이디는 [ " + service.sendPw(id, name, date, email) + " ] 입니다.");
 
 			// 4. 메일 전송
 			javaMailSender.send(simpleMailMessage); // JavaMailSender 인스턴스로 메일 전송
