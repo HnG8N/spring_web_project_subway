@@ -7,10 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.springlec.base.model.subway.IngredientDto;
 import com.springlec.base.model.subway.MenuDto;
 import com.springlec.base.service.subway.MenuDaoService;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class HomeController {
@@ -87,26 +89,41 @@ public class HomeController {
 		model.addAttribute("dto",dto);
 		return "order/progress/view";
 	}
+
 	//[온라인주문]
-	// 샐러드 메뉴 상세
-	@GetMapping("/saladView")
-	public String saladView(Model model) throws Exception{
-		List<MenuDto> dto = service.getMenuList("salad");
-		model.addAttribute("MenuList",dto);
-		return "order/progress/saladView";
+	// 샌드위치 메뉴 상세
+	// [팝업] 원산지 정보
+	@GetMapping("/origin")
+	public String origin() throws Exception{
+		return "ingredientNcountry/origin";
 	}
 	//[온라인주문]
-	// 랩,기타 메뉴 상세
-	@GetMapping("/unitView")
-	public String unitView(Model model) throws Exception{
-		List<MenuDto> dto = service.getMenuList("wrap");
-		model.addAttribute("MenuList",dto);
-		return "order/progress/unitView";
+	// 샌드위치 메뉴 상세
+	// [팝업] 알레르기 정보
+	@GetMapping("/allergy")
+	public String allergy() throws Exception{
+		return "ingredientNcountry/allergy";
 	}
 	//[온라인주문]
 	// 랩,기타 메뉴 상세
 	@GetMapping("/selectIngredient")
-	public String selectIngredient(Model model) throws Exception{
+	public String selectIngredient(HttpServletRequest request, Model model) throws Exception{
+		
+		List<IngredientDto> breadDtos = service.getIngredient("bread");
+		List<IngredientDto> vegitableDtos = service.getIngredient("vegetable");
+		List<IngredientDto> cheeseDtos = service.getIngredient("cheese");
+		List<IngredientDto> sauceDtos = service.getIngredient("sauce");
+		
+		model.addAttribute("breadDtos", breadDtos);
+		model.addAttribute("vegitableDtos", vegitableDtos);
+		model.addAttribute("cheeseDtos", cheeseDtos);
+		model.addAttribute("sauceDtos", sauceDtos);
+		
+		HttpSession session = request.getSession();
+		
+		session.setAttribute("mncode", request.getParameter("mncode"));
+		session.setAttribute("mnprice", request.getParameter("mnprice"));
+		
 		return "order/progress/selectIngredient";
 	}
 	//[메뉴소개]

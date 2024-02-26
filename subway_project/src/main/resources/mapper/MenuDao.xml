@@ -2,15 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.springlec.base.dao.subway.MenuDao">
+	
+	<!-- 카테고리별 메뉴리스트 가져오기 -->
 	<select id="getMenuList" resultType="com.springlec.base.model.subway.MenuDto">
 		SELECT mncode, mnname, mnengname, mninfo, mnimg, mnprice 
 		  FROM menu 
 		 WHERE mnctg = #{mnctg}
 	</select>
+	<!-- 메뉴 상세페이지 -->
 	<select id="getMenuDetail" resultType="com.springlec.base.model.subway.MenuDto">
 		SELECT m.mncode, m.mnctg, m.mnname, m.mnengname, m.mninfo, m.mnimg, m.mnprice, s.mngram, s.mnkcal, s.mnprotein, s.mnfat, s.mnsugar, s.mnnatrum 
 		  FROM menu m, menuspec s 
 		 WHERE m.mncode = s.mncode 
 	  	   AND m.mncode = #{mncode}	
+	</select>
+	<!-- 온라인주문시 재료 선택지 가져오기 -->
+	<select id="getIngredient" resultType="com.springlec.base.model.subway.IngredientDto">
+		SELECT icode, ictg, iname, iengname, iinfo, iimg 
+		  FROM ingregients 
+		 WHERE ictg = #{ictg}
 	</select>
 </mapper>

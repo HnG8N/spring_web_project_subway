@@ -57,11 +57,6 @@
 				</ol>
 				<div class="tab02">
 					<ul>
-						<li data-cate-cd="ITEM_FAVORITE"><a
-							data-cate-cd="ITEM_FAVORITE" href="javascript:;" name="itemMenu">즐겨찾기
-								메뉴</a></li>
-						<li data-cate-cd="ITEM_PROMOTION"><a
-							data-cate-cd="ITEM_PROMOTION" href="javascript:;" name="itemMenu">프로모션</a></li>
 						<li data-cate-cd="ITEM_SANDWICH" class="active"><a
 							data-cate-cd="ITEM_SANDWICH" href="javascript:;" name="itemMenu">샌드위치</a></li>
 						<!-- #211019 FAST-SUB/HOME-SUB 샐러드 일시 판매 중지로 인한 주석처리, #211104 판매 재개 -->
@@ -69,13 +64,10 @@
 							href="javascript:void(0);" name="itemMenu">샐러드</a></li>
 						<li data-cate-cd="ITEM_UNIT"><a data-cate-cd="ITEM_UNIT"
 							href="javascript:;" name="itemMenu">랩ㆍ기타</a></li>
-						<li data-cate-cd="ITEM_SIDEDRINK"><a
-							data-cate-cd="ITEM_SIDEDRINK" href="javascript:;" name="itemMenu">사이드ㆍ음료</a>
-						</li>
 					</ul>
 				</div>
 				<div class="order_con">
-				<form action="addcart.do" method="post">
+				<form action="addcart" method="post">
 					<table>
 						<tr>
 							<td>빵 길이 선택</td>
