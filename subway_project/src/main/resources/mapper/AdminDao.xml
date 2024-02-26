@@ -83,6 +83,21 @@
 		WHERE YEAR (odate) BETWEEN YEAR (NOW())-1 AND YEAR (NOW())
 		GROUP BY omonth
 	</select>
+	
+	<select id="daySalesChartData" resultType="com.springlec.base.model.admin.SalesStatusDto">
+		SELECT DATE_FORMAT(odate, '%Y-%m-%d') as oday, SUM(oprice) as odaysum
+		FROM orderpurchase
+		WHERE odate BETWEEN #{startDay} AND #{endDay}
+		GROUP BY oday
+	</select>
+	
+	<select id="menuCountChartData" resultType="com.springlec.base.model.admin.SalesStatusDto">
+		SELECT m.mnname ,COUNT(m.mncode) as countmncode
+		FROM menu m ,orderpurchase o
+		WHERE o.odate BETWEEN '2023-01-01' AND '2024-12-31'
+		AND m.mncode = o.omncode
+		GROUP BY m.mnname
+	</select>
 	<!-- *******************monthlySalesChartData Task End****************** -->
 	
 

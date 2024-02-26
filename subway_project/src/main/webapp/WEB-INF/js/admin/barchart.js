@@ -8,6 +8,7 @@ $(document).ready(function() {
   $.ajax({
 	    type: "POST",
 	    url: "SalesStatusServlet",
+	    data: {"chart": "monthlyBarChart"},
 	    success: function(data) {
 			console.log(data)
 			for(i=0; i<data.length; i++){
@@ -16,8 +17,6 @@ $(document).ready(function() {
 			for(i=0; i<data.length; i++){
 				opriceArray.push(data[i].omonthsum * 1);
 			};
-			console.log(odateArray);
-			console.log(opriceArray);
 			
 		  const ctx = document.getElementById('myChart');
 		  ctx.width = 1350;

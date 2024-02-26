@@ -15,8 +15,26 @@ public class SalesStatusServiceImpl implements SalesStatusService {
 	AdminDao dao;
 	
 	@Override
-	public List<SalesStatusDto> monthlySalesChartDataTask() throws Exception {
-		return dao.monthlySalesChartData();
+	public List<SalesStatusDto> salesChartDataTask(
+			String chart, String startDay, String endDay) throws Exception {
+		
+		List<SalesStatusDto> chartData = null;
+		
+		switch(chart) {
+			case ("monthlyBarChart") :
+				chartData = dao.monthlySalesChartData();
+			break;
+			case ("dailyLineChart") :
+				chartData = dao.daySalesChartData(startDay, endDay);
+			break;
+			case ("menuPieChart") :
+				chartData = dao.menuCountChartData(startDay, endDay);
+			break;
+			default :
+			break;
+		}
+		
+		return chartData;
 	}
 
 }
