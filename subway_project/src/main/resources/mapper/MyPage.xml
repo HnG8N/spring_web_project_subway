@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springlec.base.dao.MypageDao">
+	<select id="memberDto" resultType="com.springlec.base.model.SignupDto">
+		SELECT mid, mpw, mname, maddress, mtel, mbirth,memail
+		FROM member
+		WHERE mid=#{mid}
+	</select>
+	
+	<delete id="deleteInfo">
+		DELETE FROM member WHERE mid=#{mid}
+	</delete>
+	
+	<update id="updateInfo">
+		UPDATE member SET mpw = #{mpw}, maddress = #{maddress} WHERE mid = #{mid}
+	</update>
+</mapper>

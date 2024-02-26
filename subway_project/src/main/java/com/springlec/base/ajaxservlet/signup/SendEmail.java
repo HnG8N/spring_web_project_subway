@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 
-import com.springlec.base.service.signupService;
+import com.springlec.base.service.SignupService;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
