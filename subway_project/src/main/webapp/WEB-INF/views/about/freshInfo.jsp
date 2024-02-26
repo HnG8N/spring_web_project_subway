@@ -10,42 +10,42 @@
 <meta content="신선하고 건강한 글로벌 NO.1 샌드위치 브랜드, 써브웨이" name="description" />
 <!-- 20181212 -->
 <link rel="shortcut icon" type="image/x-icon"
-	href="./images/common/subway_favicon.ico?v=2023051202" />
+	href="/images/common/subway_favicon.ico?v=2023051202" />
 <!-- 20180131 -->
 <link rel="stylesheet" type="text/css"
-	href="./css/ui.common.css?v=2023051202" />
+	href="/css/ui.common.css?v=2023051202" />
 <link rel="stylesheet" type="text/css"
-	href="./css/jquery.mCustomScrollbar.min.css?v=2023051202" />
+	href="/css/jquery.mCustomScrollbar.min.css?v=2023051202" />
 <!-- 메뉴소개 css -->
 <link rel="stylesheet" type="text/css"
-	href="./css/ui.menu.css?v=2023051202" />
+	href="/css/ui.menu.css?v=2023051202" />
 
 <script type="text/javascript"
-	src="./js/jquery/jquery-1.12.4.min.js?v=2023051202"></script>
+	src="/js/jquery/jquery-1.12.4.min.js?v=2023051202"></script>
 <script type="text/javascript"
-	src="./js/jquery/jquery-ui-1.12.0.min.js?v=2023051202"></script>
+	src="/js/jquery/jquery-ui-1.12.0.min.js?v=2023051202"></script>
 <script type="text/javascript"
-	src="./js/jquery/jquery.easing.1.3.min.js?v=2023051202"></script>
+	src="/js/jquery/jquery.easing.1.3.min.js?v=2023051202"></script>
 <script type="text/javascript"
-	src="./js/jquery/jquery.bxslider.min.js?v=2023051202"></script>
+	src="/js/jquery/jquery.bxslider.min.js?v=2023051202"></script>
 <script type="text/javascript"
-	src="./js/jquery/jquery.mCustomScrollbar.concat.min.js?v=2023051202"></script>
+	src="/js/jquery/jquery.mCustomScrollbar.concat.min.js?v=2023051202"></script>
 <!-- block ui -->
 <script type="text/javascript"
-	src="./js/jquery/jquery.blockUI.min.js?v=2023051202"></script>
+	src="/js/jquery/jquery.blockUI.min.js?v=2023051202"></script>
 
 <script type="text/javascript"
-	src="./js/jquery/TweenMax.min.js?v=2023051202"></script>
+	src="/js/jquery/TweenMax.min.js?v=2023051202"></script>
 <script type="text/javascript"
-	src="./js/jquery/jquery.cookie.js?v=2023051202"></script>
+	src="/js/jquery/jquery.cookie.js?v=2023051202"></script>
 <!--<script type="text/javascript" th:src="'/js/lottie.js?v=' + ${cacheParam}"></script>-->
-<script type="text/javascript" src="./js/ui.common.js?v=2023051202"></script>
-<script type="text/javascript" src="./js/subway.common.js?v=2023051202"></script>
-<script type="text/javascript" src="./js/util/jsrender.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/ui.common.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/subway.common.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/util/jsrender.js?v=2023051202"></script>
 <script type="text/javascript"
-	src="./js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
+	src="/js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
 <script type="text/javascript"
-	src="./js/waffle/waffle.utils.js?v=2023051202"></script>
+	src="/js/waffle/waffle.utils.js?v=2023051202"></script>
 
 <script type="text/javascript">
         tab = null;
@@ -69,22 +69,22 @@
 	</script>
 </head>
 <body>
-	<%@ include file="/jsp/include/header.jsp"%>
+	<%@ include file="../include/header.jsp"%>
 	<!-- container s -->
 	<div id="container">
 
 		<div class="sub_header type01">
 			<!-- 메뉴소개일경우 type01클래스 추가 -->
 			<div class="content">
-				<a class="logo" href="home.do">HOME</a>
+				<a class="logo" href="/">HOME</a>
 				<!-- sub location -->
 				<div class="sub_loc">
 					<!-- 메뉴소개 -->
 
 					<!-- 이용방법 -->
 					<ul>
-						<li><a href="utilizationSubway.do">써브웨이 이용방법</a></li>
-						<li class="active"><a href="freshInfo.do">신선한 재료 소개</a></li>
+						<li><a href="utilizationSubway">써브웨이 이용방법</a></li>
+						<li class="active"><a href="freshInfo">신선한 재료 소개</a></li>
 					</ul>
 				</div>
 				<!--// sub location -->
@@ -125,7 +125,7 @@
 					<ul>
 						<li class="bread">
 							<div class="img">
-								<img alt="허니오트" src="./images/menu/img_recipe_b01.jpg" />
+								<img alt="허니오트" src="/images/menu/img_recipe_b01.jpg" />
 							</div> <strong class="tit">허니오트</strong> <span class="eng">Honey
 								Oat</span> <span class="cal">235 kcal</span>
 							<div class="summary">
@@ -137,7 +137,7 @@
 						</li>
 						<li class="bread">
 							<div class="img">
-								<img alt="하티" src="./images/menu/img_recipe_b02.jpg" />
+								<img alt="하티" src="/images/menu/img_recipe_b02.jpg" />
 							</div> <strong class="tit">하티</strong> <span class="eng">Hearty
 								Italian</span> <span class="cal">210 kcal</span>
 							<div class="summary">
@@ -149,7 +149,7 @@
 						</li>
 						<li class="bread">
 							<div class="img">
-								<img alt="위트" src="./images/menu/img_recipe_b03.jpg" />
+								<img alt="위트" src="/images/menu/img_recipe_b03.jpg" />
 							</div> <strong class="tit">위트</strong> <span class="eng">Wheat</span> <span
 							class="cal">192 kcal</span>
 							<div class="summary">
@@ -159,7 +159,7 @@
 						</li>
 						<li class="bread">
 							<div class="img">
-								<img alt="파마산 오레가노" src="./images/menu/img_recipe_b04.jpg" />
+								<img alt="파마산 오레가노" src="/images/menu/img_recipe_b04.jpg" />
 							</div> <strong class="tit">파마산 오레가노</strong> <span class="eng">Parmesan
 								Oregano</span> <span class="cal">213 kcal</span>
 							<div class="summary">
@@ -171,7 +171,7 @@
 						</li>
 						<li class="bread">
 							<div class="img">
-								<img alt="화이트" src="./images/menu/img_recipe_b05.jpg" />
+								<img alt="화이트" src="/images/menu/img_recipe_b05.jpg" />
 							</div> <strong class="tit">화이트</strong> <span class="eng">White</span>
 							<span class="cal">202 kcal</span>
 							<div class="summary">
@@ -181,7 +181,7 @@
 						</li>
 						<li class="bread">
 							<div class="img">
-								<img alt="플랫브레드" src="./images/menu/img_recipe_b06.jpg" />
+								<img alt="플랫브레드" src="/images/menu/img_recipe_b06.jpg" />
 							</div> <strong class="tit">플랫브레드</strong> <span class="eng">Flat
 								Bread</span> <span class="cal">467 kcal</span>
 							<div class="summary">
@@ -191,81 +191,81 @@
 						</li>
 						<li class="vegetable">
 							<div class="img">
-								<img alt="양상추" src="./images/menu/img_recipe_v01.jpg" />
+								<img alt="양상추" src="/images/menu/img_recipe_v01.jpg" />
 							</div> <strong class="tit">양상추</strong> <span class="eng">Lettuce</span>
 							<span class="cal">2.9 kcal</span>
 						</li>
 						<li class="vegetable">
 							<div class="img">
-								<img alt="토마토" src="./images/menu/img_recipe_v02.jpg" />
+								<img alt="토마토" src="/images/menu/img_recipe_v02.jpg" />
 							</div> <strong class="tit">토마토</strong> <span class="eng">Tomatoes</span>
 							<span class="cal">7.7 kcal</span>
 						</li>
 						<li class="vegetable">
 							<div class="img">
-								<img alt="오이" src="./images/menu/img_recipe_v03.jpg" />
+								<img alt="오이" src="/images/menu/img_recipe_v03.jpg" />
 							</div> <strong class="tit">오이</strong> <span class="eng">Cucumbers</span>
 							<span class="cal">1.5 kcal</span>
 						</li>
 						<li class="vegetable">
 							<div class="img">
-								<img alt="피망" src="./images/menu/img_recipe_v04.jpg" />
+								<img alt="피망" src="/images/menu/img_recipe_v04.jpg" />
 							</div> <strong class="tit">피망</strong> <span class="eng">Peppers</span>
 							<span class="cal">1.4 kcal</span>
 						</li>
 						<li class="vegetable">
 							<div class="img">
-								<img alt="양파" src="./images/menu/img_recipe_v05.jpg" />
+								<img alt="양파" src="/images/menu/img_recipe_v05.jpg" />
 							</div> <strong class="tit">양파</strong> <span class="eng">Red
 								Onions</span> <span class="cal">2.8 kcal</span>
 						</li>
 						<li class="vegetable">
 							<div class="img">
-								<img alt="피클" src="./images/menu/img_recipe_v06.jpg" />
+								<img alt="피클" src="/images/menu/img_recipe_v06.jpg" />
 							</div> <strong class="tit">피클</strong> <span class="eng">Pickles</span>
 							<span class="cal">0.4 kcal</span>
 						</li>
 						<li class="vegetable">
 							<div class="img">
-								<img alt="올리브" src="./images/menu/img_recipe_v07.jpg" />
+								<img alt="올리브" src="/images/menu/img_recipe_v07.jpg" />
 							</div> <strong class="tit">올리브</strong> <span class="eng">Olives</span>
 							<span class="cal">3.9 kcal</span>
 						</li>
 						<li class="vegetable">
 							<div class="img">
-								<img alt="할라피뇨" src="./images/menu/img_recipe_v08.jpg" />
+								<img alt="할라피뇨" src="/images/menu/img_recipe_v08.jpg" />
 							</div> <strong class="tit">할라피뇨</strong> <span class="eng">Jalapenos</span>
 							<span class="cal">0.6 kcal</span>
 						</li>
 						<!-- 20180205 -->
 						<li class="vegetable">
 							<div class="img">
-								<img alt="아보카도" src="./images/menu/img_recipe_v09.jpg" />
+								<img alt="아보카도" src="/images/menu/img_recipe_v09.jpg" />
 							</div> <strong class="tit">아보카도</strong> <span class="eng">Avocado</span>
 							<span class="cal">56.5 kcal</span>
 						</li>
 						<li class="cheese">
 							<div class="img">
-								<img alt="아메리칸 치즈" src="./images/menu/img_recipe_c01.jpg" />
+								<img alt="아메리칸 치즈" src="/images/menu/img_recipe_c01.jpg" />
 							</div> <strong class="tit">아메리칸 치즈</strong> <span class="eng">American
 								Cheese</span> <span class="cal">35.3 kcal</span>
 						</li>
 						<li class="cheese">
 							<div class="img">
-								<img alt="슈레드 치즈" src="./images/menu/img_recipe_c02.jpg" />
+								<img alt="슈레드 치즈" src="/images/menu/img_recipe_c02.jpg" />
 							</div> <strong class="tit">슈레드 치즈</strong> <span class="eng">Shredded
 								Cheese</span> <span class="cal">53.6 kcal</span>
 						</li>
 						<li class="cheese">
 							<div class="img">
-								<img alt="모차렐라 치즈" src="./images/menu/img_recipe_c03.jpg" />
+								<img alt="모차렐라 치즈" src="/images/menu/img_recipe_c03.jpg" />
 							</div> <strong class="tit">모차렐라 치즈</strong> <span class="eng">Mozzarella
 								Cheese</span> <span class="cal">43.8 kcal</span>
 						</li>
 
 						<li class="sauce">
 							<div class="img">
-								<img alt="랜치드레싱" src="./images/menu/img_recipe_s01.jpg" />
+								<img alt="랜치드레싱" src="/images/menu/img_recipe_s01.jpg" />
 							</div> <strong class="tit">랜치</strong> <span class="eng">Ranch</span> <span
 							class="cal">116 kcal</span>
 							<div class="summary">
@@ -276,7 +276,7 @@
 						</li>
 						<li class="sauce">
 							<div class="img">
-								<img alt="스윗 어니언" src="./images/menu/img_recipe_s07.jpg" />
+								<img alt="스윗 어니언" src="/images/menu/img_recipe_s07.jpg" />
 							</div> <strong class="tit">스위트 어니언</strong> <span class="eng">Sweet
 								Onion</span> <span class="cal">40.1 kcal</span>
 							<div class="summary">
@@ -285,7 +285,7 @@
 						</li>
 						<li class="sauce">
 							<div class="img">
-								<img alt="마요네즈" src="./images/menu/img_recipe_s02.jpg" />
+								<img alt="마요네즈" src="/images/menu/img_recipe_s02.jpg" />
 							</div> <strong class="tit">마요네즈</strong> <span class="eng">Mayonnaise</span>
 							<span class="cal">158 kcal</span>
 							<div class="summary">
@@ -294,7 +294,7 @@
 						</li>
 						<li class="sauce">
 							<div class="img">
-								<img alt="스윗 칠리" src="./images/menu/img_recipe_s12.jpg" />
+								<img alt="스윗 칠리" src="/images/menu/img_recipe_s12.jpg" />
 							</div> <strong class="tit">스위트 칠리</strong> <span class="eng">Sweet
 								Chilli</span> <span class="cal">40 kcal</span>
 							<div class="summary">
@@ -303,7 +303,7 @@
 						</li>
 						<li class="sauce">
 							<div class="img">
-								<img alt="스모크 바비큐 소스" src="./images/menu/img_recipe_s17.jpg" />
+								<img alt="스모크 바비큐 소스" src="/images/menu/img_recipe_s17.jpg" />
 							</div> <strong class="tit">스모크 바비큐</strong> <span class="eng">Smoke
 								BBQ</span> <span class="cal">32.8 kcal</span>
 							<div class="summary">
@@ -312,7 +312,7 @@
 						</li>
 						<li class="sauce">
 							<div class="img">
-								<img alt="핫 칠리" src="./images/menu/img_recipe_s18.jpg" />
+								<img alt="핫 칠리" src="/images/menu/img_recipe_s18.jpg" />
 							</div> <strong class="tit">핫 칠리</strong> <span class="eng">Hot
 								Chilli</span> <span class="cal">41.8 kcal</span>
 							<div class="summary">
@@ -323,7 +323,7 @@
 						</li>
 						<li class="sauce">
 							<div class="img">
-								<img alt="허니 머스터드" src="./images/menu/img_recipe_s03.jpg" />
+								<img alt="허니 머스터드" src="/images/menu/img_recipe_s03.jpg" />
 							</div> <strong class="tit">허니 머스터드</strong> <span class="eng">Honey
 								Mustard</span> <span class="cal">38.4 kcal</span>
 							<div class="summary">
@@ -332,7 +332,7 @@
 						</li>
 						<li class="sauce">
 							<div class="img">
-								<img alt="NEW 사우스웨스트 치폴레" src="./images/menu/img_recipe_s09.jpg" />
+								<img alt="NEW 사우스웨스트 치폴레" src="/images/menu/img_recipe_s09.jpg" />
 							</div> <strong class="tit">사우스웨스트 치폴레</strong> <span class="eng">Southwest
 								Chipotle</span> <span class="cal">96.5 kcal</span>
 							<div class="summary">
@@ -343,7 +343,7 @@
 						</li>
 						<li class="sauce">
 							<div class="img">
-								<img alt="홀스래디쉬" src="./images/menu/img_recipe_s04.jpg" />
+								<img alt="홀스래디쉬" src="/images/menu/img_recipe_s04.jpg" />
 							</div> <strong class="tit">홀스래디쉬</strong> <span class="eng">Horseradish</span>
 							<span class="cal">106 kcal</span>
 							<div class="summary">
@@ -354,7 +354,7 @@
 						</li>
 						<li class="sauce">
 							<div class="img">
-								<img alt="머스타드" src="./images/menu/img_recipe_s11.jpg" />
+								<img alt="머스타드" src="/images/menu/img_recipe_s11.jpg" />
 							</div> <strong class="tit">머스타드</strong> <span class="eng">Yellow
 								Mustard</span> <span class="cal">15.3 kcal</span>
 							<div class="summary">
@@ -363,7 +363,7 @@
 						</li>
 						<li class="sauce">
 							<div class="img">
-								<img alt="올리브 오일" src="./images/menu/img_recipe_s06.jpg" />
+								<img alt="올리브 오일" src="/images/menu/img_recipe_s06.jpg" />
 							</div> <strong class="tit">엑스트라 버진 올리브 오일</strong> <span class="eng">Extra
 								Virgin Olive Oil</span> <span class="cal">124 kcal</span>
 							<div class="summary">
@@ -374,7 +374,7 @@
 						</li>
 						<li class="sauce">
 							<div class="img">
-								<img alt="레드와인식초" src="./images/menu/img_recipe_s05.jpg" />
+								<img alt="레드와인식초" src="/images/menu/img_recipe_s05.jpg" />
 							</div> <strong class="tit">레드 와인 식초</strong> <span class="eng">Red
 								Wine Vinaigrette</span> <span class="cal">0.7 kcal</span>
 							<div class="summary">
@@ -383,12 +383,12 @@
 						</li>
 						<li class="sauce">
 							<div class="img">
-								<img alt="소금" src="./images/menu/img_recipe_s13.jpg" />
+								<img alt="소금" src="/images/menu/img_recipe_s13.jpg" />
 							</div> <strong class="tit">소금</strong> <span class="eng">Salt</span>
 						</li>
 						<li class="sauce">
 							<div class="img">
-								<img alt="후추" src="./images/menu/img_recipe_s14.jpg" />
+								<img alt="후추" src="/images/menu/img_recipe_s14.jpg" />
 							</div> <strong class="tit">후추</strong> <span class="eng">Black
 								Pepper</span>
 						</li>
@@ -398,7 +398,7 @@
 					<!-- 영양성분표 -->
 					<div class="btns_fresh_list_wrapper">
 						<a class="btn_list_pop btn bgc_point i_arr"
-							href="freshNutritionFacts.do" link-type="popup"
+							href="freshNutritionFacts" link-type="popup"
 							onclick="popup_open(this,900,740); return false;"
 							style="width: 180px;"> <span>영양 성분표 보기</span>
 						</a>
@@ -412,6 +412,6 @@
 		</div>
 		<!--// sub content e -->
 	</div>
-	<%@ include file="/jsp/include/footer.jsp"%>
+	<%@ include file="../include/footer.jsp"%>
 </body>
 </html>
