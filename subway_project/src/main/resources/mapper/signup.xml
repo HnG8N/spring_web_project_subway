@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springlec.base.dao.signupDao">
+
+	<!-- 회원 정보 삽입 -->
+	<insert id="signup">
+		INSERT INTO member
+		(mid,mpw,mname,maddress,mtel,mbirth,memail,mregdate) VALUES
+		(#{mid},#{mpw},#{mname},#{maddress},#{mtel},#{mbirth},#{memail},now())
+	</insert>
+	
+	<!-- 아이디 중복 체크 -->
+	<select id="checkId">
+		SELECT count(mid) FROM member WHERE mid = #{mid}
+	</select>
+	
+	<!-- 이메일 중복 체크 -->
+	<select id="checkEmail">
+		SELECT count(memail) FROM member WHERE mid = #{memail}
+	</select>
+</mapper>
