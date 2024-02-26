@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.springlec.base.service.signupService;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class signupController {
@@ -50,7 +53,29 @@ public class signupController {
 				+ (day.length() == 1 ? "0" + day : day);
 		String memail = request.getParameter("email1") + "@" + request.getParameter("email2");
 		service.signup(mid, mpw, mname, maddress, mtel, mbirth, memail);
-		return "signup/test";
+		
+		return "signup/login";
 	}
+	
+	@PostMapping("loginDo")
+	public String loginDo(HttpServletRequest request) throws Exception{
+		String mid = request.getParameter("id");
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("userId", mid);
+		
+		return "index";
+	}
+	
+	@GetMapping("logout")
+	public String logout(HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		return "index";
+	}
+	
+	
 
 }

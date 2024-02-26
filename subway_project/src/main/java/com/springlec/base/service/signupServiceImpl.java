@@ -30,4 +30,10 @@ public class signupServiceImpl implements signupService {
 		return dao.checkEmail(memail);
 	}
 
+	@Override
+	public String checkPw(String mid) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.checkPw(mid);
+	}
+
 }

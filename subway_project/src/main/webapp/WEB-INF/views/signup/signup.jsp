@@ -31,7 +31,7 @@
     <script type="text/javascript" src="./js/waffle/waffle.utils.js?v=2023051202"></script> -->
   </head>
   <body>
-  	<%-- <%@ include file="/jsp/include/header.jsp"%> --%>
+  	<%@ include file="../include/header.jsp"%>
 	<!-- container s -->
 	<div id="container">
   	<h1>회원가입</h1>
@@ -94,6 +94,6 @@
     <input type="submit" value="회원가입">
     </form>
     </div>
-	<%-- <%@ include file="/jsp/include/footer.jsp"%> --%>
+	<%@ include file="../include/footer.jsp"%>
   </body>
 </html>
