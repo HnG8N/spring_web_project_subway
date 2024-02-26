@@ -3,16 +3,20 @@
  */
 $(document).ready(function() {
 	$("#findId").click(function() {
+		
 		var name = $("#name").val();
+		
 		var year = $("#yearSelect").val();
 		var month = $("#monthSelect").val();
 		var day = $("#daySelect").val();
-		var date = year + "-" + month + "-" + day
+		var birth = year + "-" + month + "-" + day;
+		
 		var email1 = $("#email1").val();
 		var email2 = $("#email2").val();
 		var email = email1 + "@" + email2;
+		
 		var form = document.findIdForm;
-
+		
 		// 이메일 중복 확인
 		$.ajax({
 			type: "POST",
@@ -21,7 +25,7 @@ $(document).ready(function() {
 			success: function(response) {
 				if (response > 0) {
 					$.ajax({
-						type: "GET",
+						type: "POST",
 						url: "SendId",
 						data: { name: name, date: date, email: email },
 						success: function(data) {

@@ -36,4 +36,28 @@ public class signupServiceImpl implements signupService {
 		return dao.checkPw(mid);
 	}
 
+	@Override
+	public int checkIdInfo(String mname, String mbirth, String memail) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.checkIdInfo(mname, mbirth, memail);
+	}
+
+	@Override
+	public String SendId(String mname, String mbirth, String memail) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.SendId(mname, mbirth, memail);
+	}
+
+	@Override
+	public int checkPwInfo(String mid, String mname, String mbirth, String memail) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.checkPwInfo(mid, mname, mbirth, memail);
+	}
+
+	@Override
+	public String SendPw(String mid, String mname, String mbirth, String memail) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.SendPw(mid, mname, mbirth, memail);
+	}
+
 }

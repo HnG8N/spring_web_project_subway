@@ -16,14 +16,17 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/SendEmail")
-public class SendEmail extends HttpServlet {
+@WebServlet("/SendId")
+public class SendId extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
 	private JavaMailSender javaMailSender; // JavaMailSender 주입
 
-	public SendEmail() {
+	@Autowired
+	signupService service;
+
+	public SendId() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -31,6 +34,9 @@ public class SendEmail extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+
+		String name = request.getParameter("name");
+		String date = request.getParameter("date");
 		String email = request.getParameter("email");
 
 		try {
@@ -38,27 +44,14 @@ public class SendEmail extends HttpServlet {
 			simpleMailMessage.setTo(email);
 
 			// 2. 메일 제목 설정
-			simpleMailMessage.setSubject("[subway] 회원가입 인증 번호 입니다.");
+			simpleMailMessage.setSubject("[subway] 회원님의 아이디 입니다.");
 
-			// 3. 인증 번호 생성기
-			StringBuffer temp = new StringBuffer();
-			Random rnd = new Random();
-			for (int i = 0; i < 4; i++) {
-				temp.append(rnd.nextInt(10)); // 0부터 9까지의 숫자 중 하나를 랜덤하게 선택하여 추가
-			}
-			String authenticationKey = temp.toString();
-			System.out.println("인증 번호: " + authenticationKey);
+			// 3. 메일 내용 설정
+			simpleMailMessage.setText("회원님의 아이디는 [ " + service.SendId(name, date, email) + " ] 입니다.");
 
-			// 4. 메일 내용 설정
-			simpleMailMessage.setText("인증번호는 [ " + authenticationKey + " ] 입니다.");
-
-			// 5. 메일 전송
+			// 4. 메일 전송
 			javaMailSender.send(simpleMailMessage); // JavaMailSender 인스턴스로 메일 전송
-			
-			//session
-			HttpSession code = request.getSession();
-			code.setAttribute("CODE", authenticationKey);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

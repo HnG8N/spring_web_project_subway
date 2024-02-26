@@ -34,7 +34,7 @@
 	<%-- <%@ include file="/jsp/include/header.jsp"%> --%>
 	<!-- container s -->
 	<div id="container">
-	<form action="login_view.do" method="post" name="findIdForm">
+	<form action="findIdDo" method="post" name="findIdForm">
 	
 	이름 : <input type="text" id="name" name="name"><br>
 	

@@ -14,11 +14,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class CheckEmail
- */
-@WebServlet("/CheckEmail")
-public class CheckEmail extends HttpServlet {
+@WebServlet("/FindPw")
+public class FindPw extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
@@ -27,7 +24,7 @@ public class CheckEmail extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public CheckEmail() {
+	public FindPw() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -39,16 +36,20 @@ public class CheckEmail extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String email = request.getParameter("email");
-		response.setContentType("text/html;charset=UTF-8");
-		int count = 0;
 
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		String date = request.getParameter("date");
+		String email = request.getParameter("email");
+
+		int count = 0;
+		
 		try {
-			count = service.checkEmail(email);
+			count = service.checkPwInfo(id, name, date, email);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		// 회원 이메일 중복 여부를 JSON으로 변환하여 응답
+		
 		String json = new Gson().toJson(count);
 		PrintWriter out = response.getWriter();
 		out.print(json);
