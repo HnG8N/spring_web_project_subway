@@ -9,7 +9,6 @@ import com.springlec.base.service.signupService;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -64,17 +63,27 @@ public class signupController {
 		HttpSession session = request.getSession();
 		session.setAttribute("userId", mid);
 		
-		return "index";
+		return "redirect:/";
 	}
 	
 	@GetMapping("logout")
 	public String logout(HttpServletRequest request) {
-		
 		HttpSession session = request.getSession();
 		session.invalidate();
 		
-		return "index";
+		return "redirect:/";
 	}
+	
+	@PostMapping("findIdDo")
+	public String findIdDo() throws Exception{
+		return "redirect:login";
+	}
+	
+	@PostMapping("findPwDo")
+	public String findPwDo() throws Exception{
+		return "redirect:login";
+	}
+	
 	
 	
 

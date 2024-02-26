@@ -9,19 +9,48 @@
 		(mid,mpw,mname,maddress,mtel,mbirth,memail,mregdate) VALUES
 		(#{mid},#{mpw},#{mname},#{maddress},#{mtel},#{mbirth},#{memail},now())
 	</insert>
-	
+
 	<!-- 아이디 중복 체크 -->
 	<select id="checkId">
 		SELECT count(mid) FROM member WHERE mid = #{mid}
 	</select>
-	
+
 	<!-- 로그인 시 비밀번호 체크 -->
 	<select id="checkPw">
 		SELECT mpw FROM member WHERE mid = #{mid}
 	</select>
-	
+
 	<!-- 이메일 중복 체크 -->
 	<select id="checkEmail">
-		SELECT count(memail) FROM member WHERE memail = #{memail}
+		SELECT count(memail) FROM member WHERE memail =
+		#{memail}
+	</select>
+
+	<!-- 아이디 찾기 시 입력한 회원 정보가 있는지 확인 -->
+	<select id="checkIdInfo">
+		SELECT count(mregdate) AS count
+		FROM member
+		WHERE mname = #{mname} AND mbirth = #{mbirth} AND memail = #{memail}
+	</select>
+
+	<!-- 아이디 찾기 -->
+	<select id="SendId">
+		SELECT mid
+		FROM member
+		WHERE mname = #{mname} AND mbirth = #{mbirth} AND memail = #{memail}
+	</select>
+	
+	<!-- 비밀먼호 찾기 시 입력한 회원 정보가 있는지 확인 -->
+	<select id="checkPwInfo">
+		SELECT count(mregdate) AS count
+		FROM member
+		WHERE mid = #{mid} AND mname = #{mname} AND mbirth = #{mbirth} AND memail = #{memail}
+	</select>
+
+	<!-- 비밀번호 찾기 -->
+	<select id="SendPw">
+		SELECT mpw
+		FROM member
+		WHERE mid = #{mid} AND mname = #{mname} AND mbirth = #{mbirth} AND memail = #{memail}
 	</select>
 </mapper>

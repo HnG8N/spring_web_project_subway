@@ -48,7 +48,6 @@ public class CheckPw extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		// 회원 아이디 중복 여부를 JSON으로 변환하여 응답
 		String json = new Gson().toJson(pw);
 		PrintWriter out = response.getWriter();
 		out.print(json);
