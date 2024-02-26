@@ -8,33 +8,33 @@
 <title>Subway</title>
     <link href="http://subway.co.kr/" rel="canonical" /><!-- 20180221 -->
     <meta content="신선하고 건강한 글로벌 NO.1 샌드위치 브랜드, 써브웨이" name="description" /><!-- 20181212 -->
-    <link rel="shortcut icon" type="image/x-icon" href="./images/common/subway_favicon.ico?v=2023051202" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/common/subway_favicon.ico?v=2023051202" />
         <!-- 20180131 -->
-        <link rel="stylesheet" type="text/css" href="./css/ui.common.css?v=2023051202" />
-        <link rel="stylesheet" type="text/css" href="./css/jquery.mCustomScrollbar.min.css?v=2023051202" />
+        <link rel="stylesheet" type="text/css" href="/css/ui.common.css?v=2023051202" />
+        <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.min.css?v=2023051202" />
         
         
 
-        <script type="text/javascript" src="./js/jquery/jquery-1.12.4.min.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/jquery/jquery-ui-1.12.0.min.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/jquery/jquery.easing.1.3.min.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/jquery/jquery.bxslider.min.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/jquery/jquery.mCustomScrollbar.concat.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery-1.12.4.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery-ui-1.12.0.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.easing.1.3.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.bxslider.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.mCustomScrollbar.concat.min.js?v=2023051202"></script>
         <!-- block ui -->
-        <script type="text/javascript" src="./js/jquery/jquery.blockUI.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.blockUI.min.js?v=2023051202"></script>
 
-        <script type="text/javascript" src="./js/jquery/TweenMax.min.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/jquery/jquery.cookie.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/TweenMax.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.cookie.js?v=2023051202"></script>
         <!--<script type="text/javascript" th:src="'/js/lottie.js?v=' + ${cacheParam}"></script>-->
-        <script type="text/javascript" src="./js/ui.common.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/subway.common.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/util/jsrender.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
-        <script type="text/javascript" src="./js/waffle/waffle.utils.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/ui.common.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/subway.common.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/util/jsrender.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
+        <script type="text/javascript" src="/js/waffle/waffle.utils.js?v=2023051202"></script>
         
-        <link href="./css/ui.menu.css" rel="stylesheet" type="text/css" />
+        <link href="/css/ui.menu.css" rel="stylesheet" type="text/css" />
 		<!-- 메뉴소개 css -->
-		<script src="./js/menu/menuList.js" type="text/javascript"></script>
+		<script src="/js/menu/menuList.js" type="text/javascript"></script>
 		<script type="text/javascript">
 	            tab = null;
 	        </script>
@@ -81,7 +81,7 @@
 <!-- 추가적인 스타일 및 스크립트 파일들을 여기에 추가 -->
 </head>
 <body>
-<%@ include file="/jsp/include/header.jsp" %>
+<%@ include file="../include/header.jsp" %>
 	<!-- container s -->
 	<div id="container">
 
@@ -93,9 +93,9 @@
 				<div class="sub_loc">
 					<!-- 메뉴소개 -->
 					<ul>
-						<li><a href="sandwich.do">샌드위치</a></li>
-						<li><a href="unit.do">랩ㆍ기타</a></li>
-						<li class="active"><a href="salad.do">샐러드</a></li>
+						<li><a href="sandwich">샌드위치</a></li>
+						<li class="active"><a href="salad">샐러드</a></li>
+						<li><a href="unit">랩ㆍ기타</a></li>
 					</ul>
 					<!-- 이용방법 -->
 
@@ -152,8 +152,8 @@
 								data-menumainsort="${status.count}"
 								class="ITEM_SANDWICH.PREMIUM">
 								<div class="img">
-									<img onError="this.src='./images/common/noneImage.jpg'"
-										src="./upload/menu/${dto.mnimg}" alt="${dto.mnname}" /></div>
+									<img onError="this.src='/images/common/noneImage.jpg'"
+										src="/views/upload/menu/${dto.mnimg}" alt="${dto.mnname}" /></div>
 								<strong class="tit">${dto.mnname}</strong> <span class="eng">${dto.mnengname}</span>
 								<span class="cal">${dto.mnprice}</span>
 								<div class="summary">
@@ -171,6 +171,6 @@
 		</div>
 		<!--// sub content e -->
 	</div>
-	<%@ include file="/jsp/include/footer.jsp" %>
+	<%@ include file="../include/footer.jsp" %>
 </body>
 </html>
