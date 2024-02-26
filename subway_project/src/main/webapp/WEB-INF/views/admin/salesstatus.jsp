@@ -17,10 +17,10 @@
 	<p><h2>매출 현황</h2>
 </div>
 <div>
-    <form action="daystatus.do" style="display: inline;" method="post">
+    <form action="daystatus" style="display: inline;" method="post">
         <input type="submit" id="daystatus" value="일일 매출 현황 검색">
     </form>&nbsp;&nbsp;&nbsp;
-    <form action="piestatus.do" style="display: inline;" method="post">
+    <form action="piestatus" style="display: inline;" method="post">
         <input type="submit" id="piestatus" value="일일 메뉴판매 현황 검색">
     </form>
 </div>

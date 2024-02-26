@@ -36,7 +36,6 @@ public class SalesStatusServlet extends HttpServlet {
 		
 		String startDay = request.getParameter("startDay");
 		String endDay = request.getParameter("endDay");
-		System.out.println(startDay + endDay);
 		
 		List<SalesStatusDto> dtos = null;
 
@@ -44,8 +43,7 @@ public class SalesStatusServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		// List에 담겨 있는 데이터를 JSON으로 변경하여 전송
 		try {
-			dtos = service.monthlySalesChartDataTask();
-			System.out.println(dtos);
+			dtos = service.salesChartDataTask(startDay, endDay);
 			out.print(gson.toJson(dtos));	// Json형태로 변환
 			out.flush();	// 실행 시키는 명령어
 		} catch (Exception e) {

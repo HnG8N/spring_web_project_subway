@@ -11,7 +11,7 @@
 </head>
 <body>
 <div>
-	<c:import url="../headerfooter/header.jsp" />
+	<c:import url="../adminheaderfooter/header.jsp" />
 </div>
 <div class="content">
 	<p><h2>일일 메뉴판매 현황</h2>
