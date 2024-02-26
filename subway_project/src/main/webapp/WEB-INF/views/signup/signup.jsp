@@ -36,7 +36,7 @@
 	<div id="container">
   	<h1>회원가입</h1>
   	
-  	<form action="signup" method="post" onsubmit="return validation()">
+  	<form action="signupDo" method="post" onsubmit="return validation()">
   	아이디 : <input type="text" id="id" name="id">
   			<button type="button" id="checkid">아이디 중복 검사</button><br>
   			<div id="result"></div>
