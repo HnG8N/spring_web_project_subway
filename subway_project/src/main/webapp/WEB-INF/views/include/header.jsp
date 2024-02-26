@@ -6,7 +6,7 @@
 	<div id="header">
 		<div class="content">
 			<h1 class="logo">
-				<a href="home.do">SUBWAY</a>
+				<a href="home">SUBWAY</a>
 			</h1>
 			<!-- gnb -->
 			<nav id="gnb">
@@ -14,16 +14,16 @@
 					<li><a class="dp1" href="#none">메뉴소개</a>
 						<div class="dp2">
 							<ul>
-								<li><a href="sandwich.do">샌드위치</a></li>
-								<li><a href="unit.do">랩ㆍ기타</a></li>
-								<li><a href="salad.do">샐러드</a></li>
+								<li><a href="sandwich">샌드위치</a></li>
+								<li><a href="salad">샐러드</a></li>
+								<li><a href="unit">랩ㆍ기타</a></li>
 							</ul>
 						</div></li>
 					<li><a href="#none" class="dp1">이용방법</a>
 						<div class="dp2">
 							<ul>
-								<li><a href="utilizationSubway.do">써브웨이 이용방법</a></li>
-								<li><a href="freshInfo.do">신선한 재료 소개</a></li>
+								<li><a href="utilizationSubway">써브웨이 이용방법</a></li>
+								<li><a href="freshInfo">신선한 재료 소개</a></li>
 							</ul>
 						</div></li>
 					<li><a href="#none" class="dp1">게시판</a>
@@ -31,21 +31,21 @@
 							<ul>
 								<li><a href="newsList">공지사항</a></li>
 								<li><a href="board">이용후기</a></li>
-								<li><a href="faq.do">FAQ</a></li>
-								<li><a href="qna.do">1:1문의</a></li>
+								<li><a href="faq">FAQ</a></li>
+								<li><a href="qna">1:1문의</a></li>
 							</ul>
 						</div></li>
 					<li><a href="#none" class="dp1">써브웨이</a>
 						<div class="dp2">
 							<ul>
-								<li><a href="history.do">서브웨이 역사</a></li>
-								<li><a href="storeSearch.do">매장찾기</a></li>
+								<li><a href="history">서브웨이 역사</a></li>
+								<li><a href="storeSearch">매장찾기</a></li>
 							</ul>
 						</div></li>
 					<li><a class="dp1" href="javascript:void(0);">온라인 주문</a>
 						<div class="dp2">
 							<ul>
-								<li><a href="step2.do">FAST-SUB</a></li>
+								<li><a href="step2">FAST-SUB</a></li>
 							</ul>
 						</div></li>
 				</ul>
@@ -70,7 +70,7 @@
 					}
 					%>
 					<li class="icon_menu cart on">
-						<!-- 장바구니담았을때 class="on"추가 --> <a href="cart.do"> <span
+						<!-- 장바구니담았을때 class="on"추가 --> <a href="cart"> <span
 							class="blind">장바구니</span> <strong>1</strong>
 					</a>
 					</li>

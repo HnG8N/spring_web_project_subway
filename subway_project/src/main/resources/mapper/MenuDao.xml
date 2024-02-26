@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springlec.base.dao.subway.MenuDao">
+	<select id="getMenuList" resultType="com.springlec.base.model.subway.MenuDto">
+		SELECT mncode, mnname, mnengname, mninfo, mnimg, mnprice 
+		  FROM menu 
+		 WHERE mnctg = #{mnctg}
+	</select>
+	<select id="getMenuDetail" resultType="com.springlec.base.model.subway.MenuDto">
+		SELECT m.mncode, m.mnctg, m.mnname, m.mnengname, m.mninfo, m.mnimg, m.mnprice, s.mngram, s.mnkcal, s.mnprotein, s.mnfat, s.mnsugar, s.mnnatrum 
+		  FROM menu m, menuspec s 
+		 WHERE m.mncode = s.mncode 
+	  	   AND m.mncode = #{mncode}	
+	</select>
+</mapper>
