@@ -10,5 +10,6 @@ public interface SalesStatusService {
 	public List<SalesStatusDto> salesChartDataTask(
 			String chart, String startDay, String endDay) throws Exception;
 	
-	public List<MemberInformationDto> memberInfoList() throws Exception;
+	public List<MemberInformationDto> memberInfoList(String userInfo) throws Exception;
+	
 }
