@@ -85,7 +85,7 @@ var cart = {
 			selectTarget.parents("[data-target=row], [data-target=soldout]").each(function() {
 				cartIdxArr.push($(this).data("cartidx"));
 			});
-			alert(cartIdxArr);
+			//alert(cartIdxArr);
 			console.log(cartIdxArr);
 			data.cartUpdate("deleteCartItem", {"cartIdxArr[]" : cartIdxArr}, function() {
 				alert("선택한 " + cartIdxArr.length +"개의 상품이 삭제되었습니다.");
@@ -97,7 +97,7 @@ var cart = {
 	// 매뉴추가하기
 	addMenu : function() {
 		var orderForm = $("[name=orderForm]");
-		data.addStorInfo($("[name=orderForm]").serialize(), "step2.do");
+		data.addStorInfo($("[name=orderForm]").serialize(), "step2");
 	},
 
 	// 픽업매장 변경하기
@@ -142,9 +142,10 @@ var cart = {
 
 			// 주문 실행
 			data.cartUpdate("GetOrderNum", {"cartIdxArr[]" : cartIdxArr, "cartType" : $(this).data("cart-type")}, function(data) {
-
+			 	//alert("return data : "+data);
 				if(data != null) {
-					location.href = "gotoorder?ordNo="+data;
+					data = data.replace(/"/g, '');
+					location.href = "gotoOrder?ordNo="+data;
 				}
 			});
 		}

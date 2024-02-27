@@ -51,7 +51,7 @@ public class CartController {
 
 		service.addCart(cmid, cmncode, clength, cbread, ctoast, ccheese, cvegetables, csauce, eachPrice, cqty);	// 장바구니에 상품 추가. 
 		
-		return "redirect:/cart";
+		return "redirect:cart";
 	}
 
 	// 장바구니에 담은 내역 보여주기.
@@ -61,15 +61,15 @@ public class CartController {
 		
 		String cmid = ((String)session.getAttribute("userId")==null)? "james" : (String)session.getAttribute("userId");
 		
-		List<CartDto> listCartMenu = service.getMyCart(cmid);
+//		List<CartDto> listCartMenu = service.getMyCart(cmid);
 		
-		model.addAttribute(listCartMenu);
+		model.addAttribute("listCartMenu",service.getMyCart(cmid));
 		
-		return "/cart/fastsub";
+		return "cart/fastsub";
 	}
 	
-	@GetMapping("gotoorder")
-	public String gotoorder(HttpServletRequest request)  throws Exception {
+	@GetMapping("gotoOrder")
+	public String gotoorder(HttpServletRequest request, Model model)  throws Exception {
 		String ordNo = request.getParameter("ordNo");
 		
 		HttpSession session = request.getSession();
@@ -77,6 +77,11 @@ public class CartController {
 		String mid = ((String)session.getAttribute("userId")==null)? "james" : (String)session.getAttribute("userId");
 		List<CartDto> listCartMenu = service.getMyCart(mid);	//	로그인한 ID의 장바구니에 담은 주문 가져오기.
 		String memberTelno = service.getTelNo(mid);		// 로그인한 사용자의 전화번호 가져오기.
+		
+		model.addAttribute("ordNo",ordNo);
+		model.addAttribute("listCartMenu",listCartMenu);
+		model.addAttribute("memberTelno",memberTelno);
+		
 		return "order/progress/bill/checkout";
 	}
 	

@@ -134,7 +134,7 @@
 						<dl class="total_sum">
 							<dt>총 주문금액</dt>
 							<dd>
-								<strong class="eachTotalPrice">${dto.ctotprice * dto.cqty}</strong> <span>원</span>
+								<strong class="eachTotalPrice">${dto.cprice * dto.cqty}</strong> <span>원</span>
 							</dd>
 						</dl>
 					</div>
@@ -149,7 +149,7 @@
 					<dt>최종 결제 금액</dt>
 					<dd>
 						<strong id="totalPrice">
-						${dto.ctotprice * dto.cqty}</strong> <span>원</span>
+						${dto.price * dto.cqty}</strong> <span>원</span>
 					</dd>
 				</dl>
 				<div class="btn_area">
@@ -160,7 +160,7 @@
 
 					</form>
 					<a class="btn bgc_white" href="javascript:void(0);" id="addMenu"><span>메뉴추가하기</span></a>
-					<a class="btn bgc_point i_reg" href="checkout"
+					<a class="btn bgc_point i_reg" href="javascript:void(0);"
 						id="setOrder" data-cart-type="CART_TYPE.FAST_SUB"><span>주문하기</span></a>
 				</div>
 			</div>

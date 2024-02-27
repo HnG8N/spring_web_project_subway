@@ -9,11 +9,20 @@
 	</insert>
 	<select id="getMyCart" resultType="com.springlec.base.model.subway.CartDto">
 		SELECT c.cseq, c.cmid, c.cmncode, m.mnctg, m.mnname, m.mnimg, m.mnprice, c.clength, c.cbread, c.ctoast, c.ccheese, c.cvegetables, c.csauce, c.cprice, c.cqty 
-		FROM cart c, menu m 
-		WHERE c.cmncode = m.mncode 
-		AND c.cmid = #{cmid}
+		  FROM cart c, menu m 
+		 WHERE c.cmncode = m.mncode 
+		   AND c.cmid = #{cmid}
+	</select>
+	<select id="getTelNo">
+		SELECT mtel 
+		  FROM member 
+		 WHERE mid =#{mid};
 	</select>
 	<update id="chageQty">
 		UPDATE cart SET cqty = #{cqty}  WHERE cseq = #{cseq}  AND cmid = #{cmid} 
 	</update>
+	<delete id="deleteCartItem">
+		DELETE FROM cart
+		      WHERE cseq = #{cseq} AND cmid = #{cmid}
+	</delete>
 </mapper>
