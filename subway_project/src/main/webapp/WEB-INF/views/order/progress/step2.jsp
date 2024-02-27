@@ -33,7 +33,6 @@
 	<script type="text/javascript" src="/js/waffle/waffle.utils.js?v=2023051202"></script>
 	
 	<link rel="stylesheet" type="text/css" href="/css/ui.order.css?v=2023051202" />
-	<script type="text/javascript" src="/js/order/common/item-list.js?v=2023051202"></script>
 	<script>
 		var imagePath = null
 	</script>
@@ -69,21 +68,10 @@
 				</ol>
 				<div class="tab02">
 					<ul>
-						<li><a href="javascript:;" name="itemMenu"
-							data-category-code="ITEM_FAVORITE">즐겨찾는 메뉴</a></li>
-						<li><a href="javascript:;" name="itemMenu"
-							data-category-code="ITEM_PROMOTION">프로모션</a></li>
-						<!-- 아침메뉴 탭 제거 #200917
-							<li th:class="${itemSearchVO.cateCd eq 'ITEM_MORNING' ? 'active' : ''}" th:if="${'Y' == franchiseInfoVO.morningTimeYn}">
-								<a href="javascript:;" name="itemMenu" th:attr="data-category-code=${'ITEM_MORNING'}" >아침메뉴</a>
-							</li>-->
-						<li class="active"><a href="step2?item=sandwich" name="itemMenu"
-							data-category-code="ITEM_SANDWICH">샌드위치</a></li>
-						<!-- #211019 FAST-SUB/HOME-SUB 샐러드 일시 판매 중지로 인한 주석처리, #211104 판매 재개 -->
-						<li><a href="step2?item=salad" name="itemMenu"
-							data-category-code="ITEM_SALAD">샐러드</a></li>
-						<li><a href="step2?item=wrap" name="itemMenu"
-							data-category-code="ITEM_UNIT" data-grilled-sale-yn="N">랩ㆍ기타</a>
+						<li class="active">
+						<a href="step2?item=sandwich" name="itemMenu" data-category-code="ITEM_SANDWICH">샌드위치</a></li>
+						<li><a href="step2?item=salad" name="itemMenu" data-category-code="ITEM_SALAD">샐러드</a></li>
+						<li><a href="step2?item=wrap" name="itemMenu" data-category-code="ITEM_UNIT" data-grilled-sale-yn="N">랩ㆍ기타</a>
 						</li>
 					</ul>
 				</div>
@@ -112,127 +100,6 @@
 		</div>
 		<!--// sub content e -->
 		<!-- 메뉴리스트 -->
-		<script id="normal-itemList-tmpl" type="text/x-jsrender">
-				{{if ~root.cateCd == 'ITEM_FAVORITE'}}
-					<p class="menu_favorites">즐겨찾기 메뉴는 최대 3개까지 등록 가능합니다.</p>	<!-- issues/501 -->
-				{{/if}}
-				<ul class="list">
-					{{for results}}
-						{{if groupCd != null}}
-							<li {{:~root.cateCd == 'ITEM_FAVORITE' && 'N' == usableItemFg ? 'onclick="item.noticeNotUsable();"' : ''}}>
-								{{if 'ITEM_SPECIAL' == itemDiv1}}
-									{{if 'Y' != soldoutYn}}
-										<a href="javascript:item.nextPromotionProgress('{{:'ITEM_MORNING' == ~root.cateCd || 'ITEM_SIDEDRINK' == ~root.cateCd ? baseItemCode : itemCode}}','{{:groupCd}}','{{:itemDiv1}}', '{{:baseItemIdx}}','{{:itemName}}', '{{:imgFileUrl}}', '{{:evntDisplayType}}');"
-										 name="itemDetailBtn" data-item-idx="{{:itemIdx}}" data-category-code="{{:~root.cateCd}}"
-										 data-group-cd="{{:groupCd}}" data-menu-type="{{:displayCategoryCodeMain}}">
-										<img src="{{:itemFileName != null ? itemFileName : itemBaseImage}}?{{:imgCache}}" alt="{{:itemName}}" onError="this.src='/images/common/noneImage.jpg'">
-									{{else}}
-										<a href="javascript:void(0);"
-										 name="itemDetailBtn" data-item-idx="{{:itemIdx}}" data-category-code="{{:~root.cateCd}}"
-										 data-group-cd="{{:groupCd}}" data-menu-type="{{:displayCategoryCodeMain}}">
-										<img src="{{:itemFileName != null ? itemFileName : itemBaseImage}}?{{:imgCache}}" alt="{{:itemName}}" onError="this.src='/images/common/noneImage.jpg'">
-									{{/if}}
-
-								{{else 'ITEM_SIDEDRINK' == displayCategoryCodeMain}}
-									<a href="javascript:item.nextProgress('{{:baseItemCode}}','{{:groupCd}}','{{:displayCategoryCodeMain}}', '{{:baseItemIdx}}', '{{:~root.cateCd}}');"
-									 name="itemDetailBtn" data-item-idx="{{:itemIdx}}" data-category-code="{{:~root.cateCd}}"
-									 data-group-cd="{{:groupCd}}" data-menu-type="{{:displayCategoryCodeMain}}">
-									<img src="{{:itemBaseImage}}?{{:imgCache}}" alt="{{:itemShortName}}" onError="this.src='/images/common/noneImage.jpg'">
-
-								{{else ~root.cateCd != 'ITEM_FAVORITE'}}
-									<a href="javascript:item.nextProgress('{{:itemIdx}}','{{:groupCd}}','{{:itemDiv1}}', '{{:baseItemIdx}}', '{{:~root.cateCd}}');"
-									 name="itemDetailBtn" data-item-idx="{{:itemIdx}}" data-category-code="{{:~root.cateCd}}"
-									 data-group-cd="{{:groupCd}}" data-menu-type="{{:displayCategoryCodeMain}}">
-									<img src="{{:itemFileName != null && itemFileName != '' ? itemFileName : itemBaseImage}}?{{:imgCache}}" alt="{{:itemName}}" onError="this.src='/images/common/noneImage.jpg'">
-
-								{{else}}
-									<a href="javascript:item.delFavoriteItem('{{:itemIdx}}', '{{:favoriteItemIdx}}');"
-									class="btn_del" onclick="event.cancelBubble=true"><span class="blind">삭제</span></a>	<!-- [D]즐겨찾기 삭제버튼 추가 -->
-										{{if ~root.cateCd == 'ITEM_FAVORITE' && 'N' == usableItemFg}}
-											<a href="#none" name="itemDetailBtn" data-item-idx="{{:itemIdx}}" data-category-code="{{:~root.cateCd}}"
-											 data-group-cd="{{:groupCd}}" data-menu-type="{{:displayCategoryCodeMain}}" onError="this.src='/images/common/noneImage.jpg'">
-										{{else}}
-											<a href="javascript:item.nextProgress('{{:itemIdx}}','{{:groupCd}}','{{:displayCategoryCodeMain}}', '{{:baseItemIdx}}', '{{:cateCd}}');"
-											 name="itemDetailBtn" data-item-idx="{{:itemIdx}}" data-category-code="{{:~root.cateCd}}"
-											 data-group-cd="{{:groupCd}}" data-menu-type="{{:displayCategoryCodeMain}}" onError="this.src='/images/common/noneImage.jpg'">
-										{{/if}}
-									<img src="{{:itemBaseImage}}?{{:imgCache}}" alt="{{:itemName}}" {{:~root.cateCd == 'ITEM_FAVORITE' && 'N' == usableItemFg ? 'class="close"' : ''}}>
-								{{/if}}
-									{{if ('ITEM_MORNING' == ~root.cateCd || 'ITEM_SPECIAL' != itemDiv1) || ('ITEM_SPECIAL' == itemDiv1 && (evntDisplayType != null && evntDisplayType == 'N'))}}
-										<p>
-											{{if 'ITEM_SIDEDRINK' == displayCategoryCodeMain}}
-												<strong>{{:itemShortName}}</strong>
-											{{else}}
-												<strong {{:~root.cateCd == 'ITEM_FAVORITE' && 'N' == usableItemFg ? 'class="close"' : ''}}>{{:itemName}}{{if 'ITEM_SPECIAL' == itemDiv1 && evntDisplayType == null}} 세트{{/if}}</strong>
-											{{/if}}
-											{{if itemEngName != null && itemEngName != ''}}
-												<span class="eng_name {{:~root.cateCd == 'ITEM_FAVORITE' && 'N' == usableItemFg ? 'close' : ''}}">{{:itemEngName}}</span>
-											{{/if}}
-											{{if 'ITEM_SIDEDRINK.DRINK' != displayCategoryCodeSub}}
-												<span class="kcal {{:~root.cateCd == 'ITEM_FAVORITE' && 'N' == usableItemFg ? 'close' : ''}}">
-													{{if itemCalorie.indexOf('/') > 0 || itemCalorie > 0}}
-														<em>{{:itemCalorie}}</em>kcal
-													{{/if}}
-												</span>
-											{{/if}}
-										</p>
-										<div class="label" {{:itemDiv1 == 'ITEM_SPECIAL' && (evntDisplayType != null && evntDisplayType == 'P') ? 'style="width:106px;"' : ''}}>
-											{{if itemDiv1 == 'ITEM_SPECIAL' && (evntDisplayType != null && evntDisplayType == 'P')}}
-												{{if evntType == 'EVNT_TYPE.HEAD_EVENT'}}
-													<span class="common" style="background-color:#ffc300;">전국 매장 공통</span>
-												{{/if}}
-												{{if evntType == 'EVNT_TYPE.BRANCH_EVENT'}}
-													<span class="local" style="background-color:#ff8300;">지사 매장 공통</span>
-												{{/if}}
-												{{if evntType == 'EVNT_TYPE.STORE_EVENT'}}
-													<span class="store" style="background-color:#009223;">매장 전용</span>
-												{{/if}}
-											{{/if}}
-											{{for labelArr}}
-												<span class="{{:labelClassName}}" style="background-color: {{:labelColor}}">{{:labelName}}</span>
-											{{/for}}
-										</div>
-									{{else}}
-										<p>
-											<strong>{{:itemName}}</strong>
-										</p>
-										<p class="price">
-											<!--<del>{{:sale}}</del>-->
-											<strong>{{:pric}}</strong>
-										</p>
-										<div class="date">
-											<span>{{:evntSt}}</span>
-											<span>{{:evntEt}}</span>
-										</div>
-										<div class="label">
-											{{if evntType == 'EVNT_TYPE.HEAD_EVENT'}}
-												<span class="common">전국 매장 공통</span>
-											{{/if}}
-											{{if evntType == 'EVNT_TYPE.BRANCH_EVENT'}}
-												<span class="local">지사 매장 공통</span>
-											{{/if}}
-											{{if evntType == 'EVNT_TYPE.STORE_EVENT'}}
-												<span class="store">매장 전용</span>
-											{{/if}}
-										</div>
-										{{if 'Y' == soldoutYn}}
-											<div class="label not_order"><!-- 주문불가class="not_order" -->
-												<span>주문불가</span>
-											</div>
-										{{/if }}
-									{{/if}}
-								</a>
-							</li>
-						{{/if}}
-					{{/for}}
-				</ul>
-			</script>
-		<!-- 리스트 없을때 -->
-		<script id="emptyList-tmpl" type="text/x-jsrender">
-				<div class="data_none">
-					<p>{{:menuGubun}}(이/가) 없습니다.</p>
-				</div>
-			</script>
 	</div>
 	<%@ include file="../../include/footer.jsp" %>
 </body>

@@ -131,12 +131,12 @@
 									메뉴를 고르세요.<br />샌드위치(15cm 또는 30cm)와<br />샐러드 중 선택 가능합니다.
 								</p>
 								<div class="btns_wrapper">
-									<a class="btn bgc_bw size1" href="sandwich.do"
+									<a class="btn bgc_bw size1" href="sandwich"
 										style="width: 142px;" target="_blank"> <span>샌드위치
 											메뉴</span><i class="i_mag">&nbsp;</i>
 									</a>
 									<!-- 18.02.01 텍스트 및 아이콘 수정 -->
-									<a class="btn bgc_bw size1" href="salad.do"
+									<a class="btn bgc_bw size1" href="salad"
 										style="width: 142px;" target="_blank"> <span>샐러드 메뉴</span><i
 										class="i_mag">&nbsp;</i>
 									</a>
@@ -147,7 +147,7 @@
 									매장에서 직접 구운 6가지 종류 중<br />고객님이 원하는 빵으로<br />추가비용 없이 선택 가능합니다.
 								</p>
 								<div class="btns_wrapper">
-									<a class="btn bgc_bw size1" href="freshInfo.do?tab=bread"
+									<a class="btn bgc_bw size1" href="freshInfo?tab=bread"
 										style="width: 105px;" target="_blank"><span>빵 종류</span><i
 										class="i_mag">&nbsp;</i></a>
 									<!-- 18.02.01 텍스트 및 아이콘 수정 -->
@@ -156,7 +156,7 @@
 								<p class="txt1">나만의 메뉴를 더욱 풍성하게 즐기세요.</p>
 								<div class="btns_wrapper">
 									<a class="btn bgc_bw size1"
-										href="sandwich.do?tab=ITEM_SANDWICH.TOPPING"
+										href="sandwich?tab=ITEM_SANDWICH.TOPPING"
 										style="width: 142px;" target="_blank"><span>추가토핑 메뉴</span><i
 										class="i_mag">&nbsp;</i></a>
 									<!-- 18.02.01 아이콘 수정 -->
@@ -167,11 +167,11 @@
 									기분에 맞는 소스를 선택해주세요.
 								</p>
 								<div class="btns_wrapper">
-									<a class="btn bgc_bw size1" href="freshInfo.do?tab=vegetable"
+									<a class="btn bgc_bw size1" href="freshInfo?tab=vegetable"
 										style="width: 122px;" target="_blank"><span>야채 종류</span><i
 										class="i_mag">&nbsp;</i></a>
 									<!-- 18.02.01 아이콘 수정 -->
-									<a class="btn bgc_bw size1" href="freshInfo.do?tab=sauce"
+									<a class="btn bgc_bw size1" href="freshInfo?tab=sauce"
 										style="width: 122px;" target="_blank"><span>소스 종류</span><i
 										class="i_mag">&nbsp;</i></a>
 									<!-- 18.02.01 아이콘 수정 -->
@@ -181,7 +181,7 @@
 									세트로 구매하시면 할인혜택을 <br />받으실 수 있습니다. 세트로 <br />더욱 든든하고 알차게 즐기세요.
 								</p>
 								<div class="btns_wrapper">
-									<a class="btn bgc_bw size1" href="sidedrink.do"
+									<a class="btn bgc_bw size1" href="#"
 										style="width: 133px;" target="_blank"> <span>스마일 썹</span><i
 										class="i_mag">&nbsp;</i>
 									</a>
