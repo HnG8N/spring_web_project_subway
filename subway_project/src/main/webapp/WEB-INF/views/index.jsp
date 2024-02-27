@@ -101,7 +101,7 @@
 						<strong>매장찾기</strong>
 					</a>
 				</div>
-				<div class="#">
+				<div class="franchise">
 					<a href="#"><strong>가맹신청ㆍ문의</strong></a>
 				</div>
 			</div>
