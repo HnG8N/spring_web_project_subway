@@ -1,12 +1,12 @@
 package com.springlec.base.ajaxservlet.subway;
 
 import java.io.IOException;
-import java.util.List;
+import java.io.PrintWriter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.springlec.base.model.subway.OrderDto;
-import com.springlec.base.service.subway.OrderDaoService;
+import com.google.gson.Gson;
+import com.springlec.base.service.subway.CartDaoService;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -15,16 +15,17 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/GotoOrder")
-public class GotoOrder extends HttpServlet {
+/**
+ * Servlet implementation class chageQty
+ */
+@WebServlet("/chageQty")
+public class chageQty extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	@Autowired
-	OrderDaoService service;
+    @Autowired CartDaoService service;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GotoOrder() {
+    public chageQty() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,10 +37,24 @@ public class GotoOrder extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		
-		String omid = ((String)session.getAttribute("userId")==null)? "james" : (String)session.getAttribute("userId");
-		
-		List<OrderDto> orderInfo = service.getMyOrder(omid);
-		
+		String cmid = ((String)session.getAttribute("userId")==null)? "james" : (String)session.getAttribute("userId");
+		int cseq = Integer.parseInt(request.getParameter("cartIdx"));
+		int qty = Integer.parseInt(request.getParameter("qty"));
+
+		int execnt = 0;
+		try {
+			execnt = service.chageQty(qty, cseq, cmid);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		// 변경되었는지 확인하고 결과를 전송.
+		String json = new Gson().toJson(execnt);
+		PrintWriter out = response.getWriter();
+		out.print(json);
+
+		out.flush();
 	}
 
 }
