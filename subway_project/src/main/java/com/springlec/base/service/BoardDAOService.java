@@ -3,6 +3,7 @@ package com.springlec.base.service;
 import java.util.List;
 
 import com.springlec.base.model.BoardDTO;
+import com.springlec.base.model.CommentDto;
 
 public interface BoardDAOService {
 	
@@ -18,7 +19,16 @@ public interface BoardDAOService {
 	
 	public List<BoardDTO> listQuery(String query, String content) throws Exception;
 
+	public List<CommentDto> commentList(String boardID) throws Exception;
 
+	public Integer commentGroup(String boardID) throws Exception;
 
+	public void commentInsert(String postId, String commentuserid,
+			String commentcontent, String commentId, int commentGroup, int commentLevel) throws Exception;
 	
+	public void commentUpdate(
+			String commentContent, String commentId)throws Exception;
+	
+	public void commentDelete(String commentId)throws Exception;
+
 }
