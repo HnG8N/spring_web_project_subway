@@ -60,4 +60,10 @@ public class SignupServiceImpl implements SignupService {
 		return dao.sendPw(mid, mname, mbirth, memail);
 	}
 
+	@Override
+	public int deleteIdCheck(String mid) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.deleteIdCheck(mid);
+	}
+
 }

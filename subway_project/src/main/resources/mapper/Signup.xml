@@ -54,4 +54,8 @@
 		WHERE mid = #{mid} AND mname = #{mname} AND mbirth = #{mbirth} AND memail = #{memail}
 	</select>
 	
+	<select id="deleteIdCheck">
+		SELECT count(menddate) AS count FROM member WHERE mid=#{mid};
+	</select>
+	
 </mapper>

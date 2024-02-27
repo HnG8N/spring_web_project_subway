@@ -26,4 +26,7 @@ public interface SignupService {
 
 	// 회원에게 찾은 아이디를 전송
 	public String sendPw(String mid, String mname, String mbirth, String memail) throws Exception;
+	
+	// 탈퇴한 아이디인지 확인
+	public int deleteIdCheck(String mid) throws Exception;
 }

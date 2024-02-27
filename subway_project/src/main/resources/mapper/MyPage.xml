@@ -8,9 +8,9 @@
 		WHERE mid=#{mid}
 	</select>
 	
-	<delete id="deleteInfo">
-		DELETE FROM member WHERE mid=#{mid}
-	</delete>
+	<update id="deleteInfo">
+		UPDATE member SET menddate = now() WHERE mid = #{mid}
+	</update>
 	
 	<update id="updateInfo">
 		UPDATE member SET mpw = #{mpw}, maddress = #{maddress} WHERE mid = #{mid}
