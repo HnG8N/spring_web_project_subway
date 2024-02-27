@@ -1,9 +1,14 @@
 package com.springlec.base.controller.subway;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.springlec.base.model.subway.CartDto;
 import com.springlec.base.service.subway.CartDaoService;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,7 +22,7 @@ public class CartController {
 	CartDaoService service;
 	
 	// 장바구니에 추가하기.
-	@PostMapping("addCart")
+	@PostMapping("addcart")
 	public String addCart(HttpServletRequest request)  throws Exception {
 		//TODO: process POST request
 		int clength = Integer.parseInt(request.getParameter("breadLength"));
@@ -46,21 +51,34 @@ public class CartController {
 
 		service.addCart(cmid, cmncode, clength, cbread, ctoast, ccheese, cvegetables, csauce, eachPrice, cqty);	// 장바구니에 상품 추가. 
 		
-		return "addCart";
+		return "redirect:/cart";
 	}
 
 	// 장바구니에 담은 내역 보여주기.
-	@PostMapping("cart")
-	public String cart(HttpServletRequest request) throws Exception{
+	@GetMapping("cart")
+	public String cart(HttpServletRequest request, Model model) throws Exception{
 		HttpSession session = request.getSession();
 		
 		String cmid = ((String)session.getAttribute("userId")==null)? "james" : (String)session.getAttribute("userId");
 		
-		service.getMyCart(cmid);
+		List<CartDto> listCartMenu = service.getMyCart(cmid);
 		
-		return "cart";
+		model.addAttribute(listCartMenu);
+		
+		return "/cart/fastsub";
 	}
 	
+	@GetMapping("gotoorder")
+	public String gotoorder(HttpServletRequest request)  throws Exception {
+		String ordNo = request.getParameter("ordNo");
+		
+		HttpSession session = request.getSession();
+		
+		String mid = ((String)session.getAttribute("userId")==null)? "james" : (String)session.getAttribute("userId");
+		List<CartDto> listCartMenu = service.getMyCart(mid);	//	로그인한 ID의 장바구니에 담은 주문 가져오기.
+		String memberTelno = service.getTelNo(mid);		// 로그인한 사용자의 전화번호 가져오기.
+		return "order/progress/bill/checkout";
+	}
 	
 	
 }

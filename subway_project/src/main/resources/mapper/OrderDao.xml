@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper>
+	<select id="">
+	</select>
+	<insert id="addOrder">
+		INSERT INTO orderpurchase (omid, omncode, omnname, olength, obread, otoast, ocheese, ovegetables, osauce, oprice, oqty, odate) 
+	 						SELECT cmid, cmncode, mn.mnname, clength, cbread, ctoast, ccheese, cvegetables, csauce, cprice, cqty, NOW() 
+							  FROM cart c, menu mn
+							 WHERE c.cmncode = mn.mncode
+							   AND cmid = #{cmid} AND cseq = #{cseq}
+	</insert>
+	<delete id="deleteCartItem">
+		DELETE FROM cart
+		 WHERE cseq = #{cseq} AND cmid = #{cmid}
+	</delete>
+	
+	<select id="getOrderNumber">
+		SELECT CONCAT(DATE_FORMAT(NOW(), '%y%m%d'), LPAD(IFNULL(MAX(SUBSTR(SEQ, -5)), 1), 5, '0')) AS orderMaxNo 
+    	  FROM (
+				SELECT MAX(CAST(oseq AS SIGNED))+1 AS SEQ 
+				  FROM orderpurchase) AA 
+				 WHERE AA.SEQ LIKE CONCAT(DATE_FORMAT(NOW(), '%y%m%d'), '%'
+				)
+	</select>
+	<select id="getMyOrder">
+		SELECT oseq, omid, omncode, omnname, olength, obread, otoast, ocheese, ovegetables, osauce, oprice, oqty, odate 
+		  FROM orderpurchase 
+		 WHERE omid = #{mid} AND odate>curdate()
+	</select>
+	<select id="getTelNo">
+		SELECT mtel 
+		  FROM member 
+		 WHERE mid = #{mid};
+	</select>
+</mapper>
