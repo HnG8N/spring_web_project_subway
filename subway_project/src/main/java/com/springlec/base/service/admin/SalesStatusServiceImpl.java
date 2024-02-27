@@ -39,15 +39,12 @@ public class SalesStatusServiceImpl implements SalesStatusService {
 	}
 
 	@Override
-	public List<MemberInformationDto> memberInfoList() throws Exception {
-		return dao.memberInfoList();
-	}
-
-	@Override
-	public List<MemberInformationDto> memberSearch(String userInfo) throws Exception {
-	
+	public List<MemberInformationDto> memberInfoList(String userInfo) throws Exception {
 		List<MemberInformationDto> memberDao = null;
-		switch(userInfo) {
+		if(userInfo == null) {
+			memberDao = dao.memberInfoList();
+		}else {
+			switch(userInfo) {
 			case("endUser"):
 				memberDao = dao.memberEndUser();
 			break;
@@ -55,11 +52,10 @@ public class SalesStatusServiceImpl implements SalesStatusService {
 				memberDao = dao.memberRegDate();
 			break;
 			default:
-			break;
+				break;
+			}
 		}
-		
 		return memberDao;
-		
 	}
 
 }

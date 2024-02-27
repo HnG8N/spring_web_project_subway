@@ -44,20 +44,26 @@
 	<c:import url="../adminheaderfooter/header.jsp" />
 </div>
 <h2 id="title">회원 정보</h2><br>
-<form action="membersearch" method="post">
 	<div class="container">
 		<div class="select-container">
-			<select name="userInfo">
-				<option value="endUser">탈퇴회원</option>
-				<option value="regDate">가입일자</option>
-			</select>&nbsp;&nbsp;&nbsp;&nbsp;
+		<form action="usersearch" method="post">
+			<select name="userSearch">
+				<option value="MID">아이디</option>
+				<option value="MNAME">이름</option>
+				<option value="MADDRESS">주소</option>
+			</select>
 			<input type="submit" value="검색">
+		</form>
+		<c:forEach begin="1" end="125" >
+			&nbsp;
+		</c:forEach>
+			<a href="memberinfo?userInfo=endUser">탈퇴회원조회</a>
+			&nbsp;&nbsp;&nbsp;
+			<a href="memberinfo?userInfo=regDate">가입일자순</a>
+			&nbsp;&nbsp;&nbsp;
+			<a href="memberinfo">초기화면</a>
 		</div>
 	</div>
-</form>
-<form action="memberinfo" method="get">
-	<input type="submit" value="초기화">
-</form>
 <br>
 <table style="width: 100%;">
     <tr>

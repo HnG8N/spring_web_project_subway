@@ -37,17 +37,16 @@ public class AdminStatusController {
 	}
 	
 	@GetMapping("/memberinfo")
-	public String memberinfo(Model model) throws Exception {
-		List<MemberInformationDto> dtos = service.memberInfoList();
+	public String memberinfo(HttpServletRequest request, Model model) throws Exception {
+		List<MemberInformationDto> dtos = service.memberInfoList(request.getParameter("userInfo"));
+		model.addAttribute("MEMBER", dtos);
+		return "/admin/memberinfo";
+	}
+	@PostMapping("/usersearch")
+	public String usersearch(HttpServletRequest request, Model model) throws Exception {
+		List<MemberInformationDto> dtos = service.memberInfoList(request.getParameter("userSearch"));
 		model.addAttribute("MEMBER", dtos);
 		return "/admin/memberinfo";
 	}
 	
-	@PostMapping("/membersearch")
-	public String membersearch(HttpServletRequest request, Model model) throws Exception {
-		List<MemberInformationDto> dtos = service.memberSearch(request.getParameter("userInfo"));
-		model.addAttribute("MEMBER", dtos);
-		return "/admin/memberinfo";
-	}
-
 }
