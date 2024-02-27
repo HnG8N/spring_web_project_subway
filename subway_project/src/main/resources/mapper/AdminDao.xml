@@ -99,11 +99,22 @@
 		GROUP BY m.mnname
 	</select>
 	<!-- *******************monthlySalesChartData Task End****************** -->
-
 	<!-- ************************SalesStatus End************************ -->
+	
+	<!-- ************************ memberInfo ******************************* -->
 	<select id="memberInfoList" resultType="com.springlec.base.model.admin.MemberInformationDto">
 		SELECT mid ,mpw ,mname ,maddress ,mtel ,mbirth ,memail ,mregdate ,menddate
 		FROM member
 	</select>
-	<!-- *************************************************************** -->
+	<select id="memberEndUser" resultType="com.springlec.base.model.admin.MemberInformationDto">
+		SELECT mid ,mpw ,mname ,maddress ,mtel ,mbirth ,memail ,mregdate ,menddate
+		FROM member
+		WHERE menddate IS NOT NULL
+	</select>
+	<select id="memberRegDate" resultType="com.springlec.base.model.admin.MemberInformationDto">
+		SELECT mid ,mpw ,mname ,maddress ,mtel ,mbirth ,memail ,mregdate ,menddate
+		FROM member
+		ORDER BY mregdate DESC
+	</select>
+	<!-- ********************** memberInfo End ***************************** -->
 </mapper>

@@ -32,6 +32,11 @@
 	#insertBtnForm {
 		margin-left: auto; /* 검색 버튼을 맨 오른쪽에 배치합니다. */
 	}
+	/* 추가된 부분 */
+	.select-container {
+		display: flex;
+		justify-content: flex-end;
+	}
   </style>
 </head>
 <body>
@@ -39,35 +44,50 @@
 	<c:import url="../adminheaderfooter/header.jsp" />
 </div>
 <h2 id="title">회원 정보</h2><br>
-		<table style="width: 100%;">
-			<tr>
-				<td style="width: 10%;">아이디</td>
-				<td style="width: 10%;">비밀번호</td>
-				<td style="width: 10%;">이름</td>
-				<td style="width: 20%;">주소</td>
-				<td style="width: 10%;">전화번호</td>
-				<td style="width: 10%;">생년월일</td>
-				<td style="width: 10%;">이메일</td>
-				<td style="width: 10%;">가입날짜</td>
-				<td style="width: 10%;">탈퇴날짜</td>
-			</tr>
-		</table>
-<c:forEach var="dtos" items="${MEMBER }">
-	<div class="card">
-		<table style="width: 100%;">
-			<tr>
-				<td style="width: 10%;">${dtos.mid }</td>
-				<td style="width: 10%;">${dtos.mpw }</td>
-				<td style="width: 10%;">${dtos.mname }</td>
-				<td style="width: 20%;">${dtos.maddress }</td>
-				<td style="width: 10%;">${dtos.mtel }</td>
-				<td style="width: 10%;">${dtos.mbirth }</td>
-				<td style="width: 10%;">${dtos.memail }</td>
-				<td style="width: 10%;">${dtos.mregdate }</td>
-				<td style="width: 10%;">${dtos.menddate }</td>
-			</tr>
-		</table>
+<form action="membersearch" method="post">
+	<div class="container">
+		<div class="select-container">
+			<select name="userInfo">
+				<option value="endUser">탈퇴회원</option>
+				<option value="regDate">가입일자</option>
+			</select>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="submit" value="검색">
+		</div>
 	</div>
+</form>
+<form action="memberinfo" method="get">
+	<input type="submit" value="초기화">
+</form>
+<br>
+<table style="width: 100%;">
+    <tr>
+        <td style="width: 10%;">아이디</td>
+        <td style="width: 10%;">비밀번호</td>
+        <td style="width: 10%;">이름</td>
+        <td style="width: 20%;">주소</td>
+        <td style="width: 10%;">전화번호</td>
+        <td style="width: 10%;">생년월일</td>
+        <td style="width: 10%;">이메일</td>
+        <td style="width: 10%;">가입날짜</td>
+        <td style="width: 10%;">탈퇴날짜</td>
+    </tr>
+</table>
+<c:forEach var="dtos" items="${MEMBER }">
+    <div class="card">
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 10%;">${dtos.mid }</td>
+                <td style="width: 10%;">${dtos.mpw }</td>
+                <td style="width: 10%;">${dtos.mname }</td>
+                <td style="width: 20%;">${dtos.maddress }</td>
+                <td style="width: 10%;">${dtos.mtel }</td>
+                <td style="width: 10%;">${dtos.mbirth }</td>
+                <td style="width: 10%;">${dtos.memail }</td>
+                <td style="width: 10%;">${dtos.mregdate }</td>
+                <td style="width: 10%;">${dtos.menddate }</td>
+            </tr>
+        </table>
+    </div>
 </c:forEach>
 <div>
 	<c:import url="../adminheaderfooter/footer.jsp" />
