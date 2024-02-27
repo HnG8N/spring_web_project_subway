@@ -14,17 +14,29 @@ $(document).ready(function() {
 
 			$.ajax({
 				type: "POST",
-				url: "CheckPw", // 비밀번호 확인을 위한 서블릿 또는 URL
+				url: "DeleteIdCheck", // 비밀번호 확인을 위한 서블릿 또는 URL
 				data: { mid: id },
 				success: function(response) {
-					if (response.replaceAll("\"","") === pw) {
-						// 비밀번호가 일치할 경우 로그인 액션을 실행
-						form.submit();
+					if (response > 0) {
+						alert("탈퇴한 아이디 입니다. 회원가입을 진행해주세요");
 					} else {
-						alert("비밀번호가 일치하지 않습니다.");
+						$.ajax({
+							type: "POST",
+							url: "CheckPw", // 비밀번호 확인을 위한 서블릿 또는 URL
+							data: { mid: id },
+							success: function(response) {
+								if (response.replaceAll("\"", "") === pw) {
+									// 비밀번호가 일치할 경우 로그인 액션을 실행
+									form.submit();
+								} else {
+									alert("비밀번호가 일치하지 않습니다.");
+								}
+							}
+						});
 					}
 				}
 			});
+
 		}
 	});
 });
