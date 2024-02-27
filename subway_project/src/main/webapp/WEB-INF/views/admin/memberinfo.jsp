@@ -54,7 +54,7 @@
 			</select>
 			<input type="submit" value="검색">
 		</form>
-		<c:forEach begin="1" end="125" >
+		<c:forEach begin="1" end="115" >
 			&nbsp;
 		</c:forEach>
 			<a href="memberinfo?userInfo=endUser">탈퇴회원조회</a>
