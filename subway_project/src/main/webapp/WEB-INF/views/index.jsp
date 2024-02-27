@@ -26,7 +26,7 @@
     <script type="text/javascript" src="/js/jquery/jquery.blockUI.min.js?v=2023051202"></script>
 
     <script type="text/javascript" src="/js/jquery/TweenMax.min.js?v=2023051202"></script>
-    <script type="text/javascript" src="./js/jquery/jquery.cookie.js?v=2023051202"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.cookie.js?v=2023051202"></script>
     <!--<script type="text/javascript" th:src="'/js/lottie.js?v=' + ${cacheParam}"></script>-->
     <script type="text/javascript" src="/js/ui.common.js?v=2023051202"></script>
     <script type="text/javascript" src="/js/subway.common.js?v=2023051202"></script>
@@ -64,7 +64,7 @@
 			<li>
 				<div class="wrap">
 					
-						<a href="/eventView?eventIdx=243">
+						<a href="#">
 							<div class="img"><img alt="SUBPICK" src="/views/upload/banner/썹픽_PC 메인 배너_20240205093541800.jpg" /></div>
 						</a>
 					
@@ -74,7 +74,7 @@
 			<li>
 				<div class="wrap">
 					
-						<a href="/eventView?eventIdx=241">
+						<a href="#">
 							<div class="img"><img alt="써브웨이 오늘의 수프" src="/views/upload/banner/오늘의수프_PC 메인 배너_20231204091713189.jpg" /></div>
 						</a>
 					
@@ -84,7 +84,7 @@
 			<li>
 				<div class="wrap">
 					
-						<a href="/eventView?eventIdx=180">
+						<a href="#">
 							<div class="img"><img alt="02.내손안의 작은 써브웨이" src="/views/upload/banner/main_PC_1920x440_20201006040046969.jpg" /></div>
 						</a>
 					
@@ -97,11 +97,11 @@
 		<div class="quick_link">
 			<div class="quick_link_content">
 				<div class="store">
-					<a href="storeSearch.do">
+					<a href="storeSearch">
 						<strong>매장찾기</strong>
 					</a>
 				</div>
-				<div class="franchise">
+				<div class="#">
 					<a href="#"><strong>가맹신청ㆍ문의</strong></a>
 				</div>
 			</div>
@@ -347,14 +347,14 @@
 			<!-- 이용방법 -->
 			<div class="utilization">
 				<p>써브웨이를<br />제대로 즐기는 방법!</p>
-				<a class="btn" href="utilizationSubway.do"><span>이용방법</span></a>
+				<a class="btn" href="utilizationSubway"><span>이용방법</span></a>
 			</div>
 			<!--// 이용방법 -->
 
 			<!-- 써브웨이 역사 -->
 			<div class="history">
 				<p>50년 역사를 가진<br />No.1 프랜차이즈의 성장기</p>
-				<a class="btn" href="history.do"><span>써브웨이 역사</span></a>
+				<a class="btn" href="history"><span>써브웨이 역사</span></a>
 				<img src="/images/main/img_subway_history.png" />
 			</div>
 			<!--// 써브웨이 역사 -->
@@ -432,7 +432,7 @@
 				</a>
 			</li>
 			<li class="qm04">
-				<a href="faq.do">
+				<a href="faq">
 					<div class="icon"></div>
 					<strong>고객문의</strong>
 					<span>자주하는 질문/1:1문의</span>
