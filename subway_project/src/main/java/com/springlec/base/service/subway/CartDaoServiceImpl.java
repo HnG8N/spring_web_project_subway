@@ -32,4 +32,16 @@ public class CartDaoServiceImpl implements CartDaoService{
 		return dao.chageQty(cqty, cseq, cmid);
 	}
 
+	@Override
+	public int deleteCartItem(int cseq, String cmid) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.deleteCartItem(cseq, cmid);
+	}
+
+	@Override
+	public String getTelNo(String mid) {
+		// TODO Auto-generated method stub
+		return dao.getTelNo(mid);
+	}
+
 }

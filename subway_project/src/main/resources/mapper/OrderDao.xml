@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper>
-	<select id="">
-	</select>
+<mapper  namespace="com.springlec.base.dao.subway.OrderDao">
 	<insert id="addOrder">
 		INSERT INTO orderpurchase (omid, omncode, omnname, olength, obread, otoast, ocheese, ovegetables, osauce, oprice, oqty, odate) 
 	 						SELECT cmid, cmncode, mn.mnname, clength, cbread, ctoast, ccheese, cvegetables, csauce, cprice, cqty, NOW() 
@@ -24,7 +22,7 @@
 				 WHERE AA.SEQ LIKE CONCAT(DATE_FORMAT(NOW(), '%y%m%d'), '%'
 				)
 	</select>
-	<select id="getMyOrder">
+	<select id="getMyOrder" resultType="com.springlec.base.model.subway.OrderDto">
 		SELECT oseq, omid, omncode, omnname, olength, obread, otoast, ocheese, ovegetables, osauce, oprice, oqty, odate 
 		  FROM orderpurchase 
 		 WHERE omid = #{mid} AND odate>curdate()
@@ -32,6 +30,6 @@
 	<select id="getTelNo">
 		SELECT mtel 
 		  FROM member 
-		 WHERE mid = #{mid};
+		 WHERE mid = #{mid}
 	</select>
 </mapper>
