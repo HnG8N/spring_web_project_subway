@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springlec.base.dao.BoardDAO">
+	<select id="blistDao" resultType="com.springlec.base.model.BoardDTO">
+		SELECT * FROM board	ORDER BY boardID DESC	
+	</select>
+	<insert id="writeDao">
+		INSERT INTO board (bmID, boTitle, boDate, boContent, boAvailable, boardHit, boardGroup, boardSeq, boardLevel)
+		VALUES (#{bmID}, #{boTitle}, now(),#{boContent}, 1, 0, 0, 0 ,0)
+	</insert>
+	<select id="viewDao" resultType="com.springlec.base.model.BoardDTO">
+		SELECT boardID, bmID, boTitle, boContent FROM board WHERE boardID = #{boardID}	
+	</select>
+	<update id="updateDao" parameterType="map">
+    UPDATE board SET boTitle = #{boTitle}, boContent = #{boContent} WHERE boardID = #{boardID}	
+	</update>
+	<delete id="deleteMDao">
+	DELETE FROM board WHERE boardID= #{boardID}
+	</delete>
+		<select id="listQuery" resultType="com.springlec.base.model.BoardDTO">
+		SELECT boardID, bmId, boTitle, boContent, boDate, boardHit
+		FROM board
+		WHERE ${query} LIKE #{content} 
+	</select>
+
+</mapper>
+	
