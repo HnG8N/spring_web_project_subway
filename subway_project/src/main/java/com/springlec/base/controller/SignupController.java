@@ -53,7 +53,7 @@ public class SignupController {
 		String memail = request.getParameter("email1") + "@" + request.getParameter("email2");
 		service.signup(mid, mpw, mname, maddress, mtel, mbirth, memail);
 		
-		return "signup/login";
+		return "redirect:login";
 	}
 	
 	@PostMapping("loginDo")
