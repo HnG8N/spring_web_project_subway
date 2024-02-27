@@ -38,115 +38,93 @@
     <script type="text/javascript" src="/js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
 	<script type="text/javascript" src="/js/waffle/waffle.utils.js?v=2023051202"></script>
 	
-	<style type="text/css">
-		#container {
-		    position: absolute;
-		    top: 200px; /* 상단 여백 */
-		    bottom: 200px; /* 하단 여백 */
-		    left: 50%;
-		    transform: translate(-50%, 0);
-		    overflow-y: auto; /* 세로 스크롤바가 필요할 때만 표시 */
-		    width: 50%;
-		    height: 500px; /* 높이 조정 (화면 전체 높이에서 상하 여백 제외) */
-		    padding: 20px;
-		    border: 1px solid #ccc;
-		    background-color: #f9f9f9;
-		}
-		
-		#container h1 {
-		    text-align: center; /* 제목 가운데 정렬 */
-		     margin-bottom: 50px;
-		}
-		
-		#container form > * {
-		    margin-bottom: 30px; /* 항목들 사이에 하단 간격 추가 */
-		    margin-left : 200px;
-		}
-		
-
-	</style>
   </head>
   <body>
   	<%@ include file="../include/header.jsp"%>
 	<!-- container s -->
 	<div id="container">
-  	<h1>회원가입</h1>
-  	
-  	<form action="signupDo" method="post" onsubmit="return validation()">
-  	
-  	<div id="value">
-  	아이디 : <input type="text" id="id" name="id">
-  			<button type="button" id="checkid">아이디 중복 검사</button><br>
-  			<div id="result"></div>
-  	</div>
-  	
-  	<div id="value">
-  	비밀번호 : <input type="password" id="pw" oninput="pwCheck()" name="pw"><br>
-  	비밀번호 확인 : <input type="password" id="pwcheck" oninput="pwCheck()" name="pwcheck"><br>
-  			<div id="result4"></div>
-  	</div>
-  	
-  	<div id="value">
- 	이름 : <input type="text" id="name" name="name"><br>
-  	</div>
-  	
-  	<div id="value">
-    주소 : <input type="text" id="postcode" name="postcode" placeholder="우편번호" readonly="readonly">
-    	  <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
-    	  <input type="text" id="address" name="address" placeholder="주소"readonly="readonly"><br>
-    	  <input type="text" id="detailAddress" name="detailAddress" placeholder="상세주소" >
-    	  <input type="text" id="extraAddress" name="extraAddress" placeholder="참고항목" readonly="readonly"><br>
-    </div>
-    
-    <div id="value">
-    생년월일 : <select name="year" id="yearSelect" name="year">
-        		<c:forEach var="i" begin="1924" end="2024">
-            		<option><c:out value="${i}" /></option>
-        	 	</c:forEach>
-    		 </select>년
-    
-    		<select name="month" id="monthSelect" name="month" onchange="updateDays()">
-		        <c:forEach var="i" begin="1" end="12">
-		            <option><c:out value="${i}" /></option>
-		        </c:forEach>
-		    </select>월
-
-		    <select name="day" id="daySelect" name="day">
-		        <c:forEach var="i" begin="1" end="31">
-		            <option><c:out value="${i}" /></option>
-		        </c:forEach>
-		    </select>일<br>
-	</div>
+		<div id="content">
+			<h1>회원가입</h1>
 	
-	<div id="value">
-	전화번호 : <select name="start">
-				<option>010</option>
-				<option>011</option>
-			</select>
-			-
-    		<input type="text" id="mid" name="mid" maxlength="4">
-    		-
-    		<input type="text" id="end" name="end" maxlength="4"><br>
-    </div>
-    
-    <div id="value">
-   	이메일 : <input type="text" id="email1" name="email1"> @ <select id="email2" name="email2">
-   												<option>naver.com</option>
-   												<option>gmail.com</option>
-   											</select>
-   			<button type="button" id="sendemail">인증번호 발송</button><br>
-   	<div id="result2"></div>
-   	</div>
-   	
-   	<div id="value">		
-    인증번호 : <input type="text" id="emailcode" maxlength="4">
-    <button type="button" id="codecheck" >인증확인</button><br>
-    <div id="result3"></div>
-    </div>
-    
-    <input type="submit" value="회원가입">
-    </form>
-    </div>
+			<form action="signupDo" method="post" onsubmit="return validation()">
+	
+				<div id="value">
+					아이디 : <input type="text" id="id" name="id">
+					<button type="button" id="checkid">아이디 중복 검사</button>
+					<br>
+					<div id="result"></div>
+				</div>
+	
+				<div id="value">
+					비밀번호 : <input type="password" id="pw" oninput="pwCheck()" name="pw"><br>
+					비밀번호 확인 : <input type="password" id="pwcheck" oninput="pwCheck()"
+						name="pwcheck"><br>
+					<div id="result4"></div>
+				</div>
+	
+				<div id="value">
+					이름 : <input type="text" id="name" name="name"><br>
+				</div>
+	
+				<div id="value">
+					주소 : <input type="text" id="postcode" name="postcode"
+						placeholder="우편번호" readonly="readonly"> <input
+						type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
+					<input type="text" id="address" name="address" placeholder="주소"
+						readonly="readonly"><br> <input type="text"
+						id="detailAddress" name="detailAddress" placeholder="상세주소">
+					<input type="text" id="extraAddress" name="extraAddress"
+						placeholder="참고항목" readonly="readonly"><br>
+				</div>
+	
+				<div id="value">
+					생년월일 : <select name="year" id="yearSelect" name="year">
+						<c:forEach var="i" begin="1924" end="2024">
+							<option><c:out value="${i}" /></option>
+						</c:forEach>
+					</select>년 <select name="month" id="monthSelect" name="month"
+						onchange="updateDays()">
+						<c:forEach var="i" begin="1" end="12">
+							<option><c:out value="${i}" /></option>
+						</c:forEach>
+					</select>월 <select name="day" id="daySelect" name="day">
+						<c:forEach var="i" begin="1" end="31">
+							<option><c:out value="${i}" /></option>
+						</c:forEach>
+					</select>일<br>
+				</div>
+	
+				<div id="value">
+					전화번호 : <select name="start">
+						<option>010</option>
+						<option>011</option>
+					</select> - <input type="text" id="mid" name="mid" maxlength="4"> - <input
+						type="text" id="end" name="end" maxlength="4"><br>
+				</div>
+	
+				<div id="value">
+					이메일 : <input type="text" id="email1" name="email1"> @ <select
+						id="email2" name="email2">
+						<option>naver.com</option>
+						<option>gmail.com</option>
+					</select>
+					<button type="button" id="sendemail">인증번호 발송</button>
+					<br>
+					<div id="result2"></div>
+				</div>
+	
+				<div id="value">
+					인증번호 : <input type="text" id="emailcode" maxlength="4">
+					<button type="button" id="codecheck">인증확인</button>
+					<br>
+					<div id="result3"></div>
+				</div>
+	
+				<input type="submit" value="회원가입">
+			</form>
+		</div>
+	</div>
+	<!-- end -->
 	<%@ include file="../include/footer.jsp"%>
   </body>
 </html>

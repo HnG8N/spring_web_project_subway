@@ -18,6 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/ui.menu.css?v=2023051202" />
 	<link rel="stylesheet" type="text/css" href="/css/ui.order.css?v=2023051202" />
 	<link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.min.css?v=2023051202" />
+	<link rel="stylesheet" type="text/css" href="/css/ui.member.css?v=2023051202" />
 
     <script type="text/javascript" src="/js/jquery/jquery-1.12.4.min.js?v=2023051202"></script>
     <script type="text/javascript" src="/js/jquery/jquery-ui-1.12.0.min.js?v=2023051202"></script>

@@ -4,7 +4,7 @@ var view = {
     },
 
     view : function(id,path) {
-        location.href= path +"View.do?menuItemIdx=" + id;
+        location.href= path +"menuView?mncode=" + id;
     }
 }
 //메뉴소개 상세페이지 진입
