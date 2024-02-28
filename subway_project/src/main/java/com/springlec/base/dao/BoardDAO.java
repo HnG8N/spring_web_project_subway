@@ -14,6 +14,8 @@ public interface BoardDAO {
 
 	public BoardDTO viewDao(String boardID) throws Exception;
 	
+	public void boardHitUpdate(String boardID) throws Exception;
+	
 	public void updateDao(String boardID, String boTitle, String boContent) throws Exception;
 	
 	public void deleteMDao(String boardID) throws Exception;

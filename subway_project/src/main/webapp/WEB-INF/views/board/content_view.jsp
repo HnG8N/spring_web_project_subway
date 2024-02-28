@@ -62,7 +62,8 @@
 				</c:forEach>
 			<c:choose>
 				<c:when test="${dtos.commentdelete == 1 }">
-				<b style="color: rgba(128, 128, 128, 0.5);">삭제된 메세지 입니다.</b>
+				<b style="color: rgba(128, 128, 128, 0.5)
+				;">삭제된 메세지 입니다.</b>
 				</c:when>
 				<c:when test="${dtos.commentdelete == 0}">
 				&nbsp;&nbsp;&nbsp;content : ${dtos.commentcontent } 

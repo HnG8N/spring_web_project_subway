@@ -1,15 +1,20 @@
 package com.springlec.base.service;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.google.common.collect.Lists;
 import com.springlec.base.dao.BoardDAO;
 import com.springlec.base.model.BoardDTO;
 import com.springlec.base.model.CommentDto;
 
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class BoardDAOServiceImpl implements BoardDAOService {
 	
 	@Autowired
@@ -17,7 +22,6 @@ public class BoardDAOServiceImpl implements BoardDAOService {
 	
 	@Override
 	public List<BoardDTO> blistDao() throws Exception {
-		// TODO Auto-generated method stub
 		return dao.blistDao();
 	}
 
@@ -30,7 +34,7 @@ public class BoardDAOServiceImpl implements BoardDAOService {
 
 	@Override
 	public BoardDTO viewDao(String boardID) throws Exception {
-		// TODO Auto-generated method stub
+		dao.boardHitUpdate(boardID);
 		return dao.viewDao(boardID);
 	}
 
@@ -57,6 +61,35 @@ public class BoardDAOServiceImpl implements BoardDAOService {
 
 	@Override
 	public List<CommentDto> commentList(String boardID) throws Exception {
+		
+		List<Integer> integer = Arrays.asList(1, 2, 3, 4, 5);
+		
+		List<CommentDto> list = dao.commentList(boardID);
+		
+		// 게시판 댓글 순서 정렬 기능
+		for (int i = 0; i < list.size(); i++) {
+		    int commentId = list.get(i).getCommentid();
+
+		    for (int j = list.size()-1; j >= i + 1; j--) {
+		        if (list.get(j).getCommentparentid() == commentId) {
+		            // 같은 parentId를 가진 댓글 발견
+		            list.add(i+1, list.remove(j));
+		        }
+		    }
+		}
+
+		for(int i=0; i<list.size(); i++) {
+			System.out.print(list.get(i).getCommentid() + "\t");
+			System.out.print(list.get(i).getCommentparentid() + "\t");
+			System.out.print(list.get(i).getCommentlevel() + "\t");
+			System.out.println(list.get(i).getCommentgroup());
+		}
+		System.out.println("**********************************");
+		
+		
+		
+		
+		
 		return dao.commentList(boardID);
 	}
 
