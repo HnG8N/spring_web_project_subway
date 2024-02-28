@@ -62,9 +62,7 @@
 						<span>픽업매장</span>
 					</dt>
 					<dd>
-						<strong>강남우성점 (서울특별시 강남구 강남대로66길 6)</strong> <a
-							href="javascript:void(0);" id="changeStore"
-							data-url="store" data-stor="64444"> 변경
+						<strong>강남우성점 (서울특별시 강남구 강남대로66길 6)</strong> 
 						</a>
 					</dd>
 				</dl>
@@ -164,7 +162,7 @@
 						<input name="paveFg" type="hidden" value="Y" />
 
 					</form>
-					<a class="btn bgc_white" href="javascript:void(0);" id="addMenu"><span>메뉴추가하기</span></a>
+					<a class="btn bgc_white" href="step2?item=sandwich" id="addMenu"><span>메뉴추가하기</span></a>
 					<a class="btn bgc_point i_reg" href="javascript:void(0);"
 						id="setOrder" data-cart-type="CART_TYPE.FAST_SUB"><span>주문하기</span></a>
 				</div>
