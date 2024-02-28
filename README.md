@@ -70,7 +70,7 @@ JSP에서 구현된 프로젝트를 SPRING으로 변환하는 작업을 수행. 
 5. 게시물에는 댓글 기능이 존재 (대댓글 포함)
 6. 댓글과 대댓글을 구현하기 위해 DB comment 테이블의 열을 추가
 7. commentid(PK,AI), parentid(댓글의 댓글을 달 시 윗댓글의 commentid를 참조해 insert), groupid(댓글의 댓글이 여러개 달릴 시 제일 상위 레벨의 groupid를 참조해 insert), commentlevel(한 단계 상위 댓글의 level을 참조해 +1)
-<img width="600" alt="댓글 달기 답글 수정" src="https://github.com/HnG8N/spring_web_project_subway/assets/151720731/89a08eeb-41f9-48dc-94d1-104cd0328ecc">
+<img width="300" alt="댓글 달기 답글 수정" src="https://github.com/HnG8N/spring_web_project_subway/assets/151720731/89a08eeb-41f9-48dc-94d1-104cd0328ecc"><br>
 8. 댓글 작성자와 로그인 아이디가 동일할 경우 수정과 삭제가 가능
 9. 삭제 시 "삭제되었습니다."라는 메시지가 출력 (DB에서는 삭제되지 않음)
 
