@@ -68,11 +68,12 @@
 				</ol>
 				<div class="tab02">
 					<ul>
-						<li class="active">
-						<a href="step2?item=sandwich" name="itemMenu" data-category-code="ITEM_SANDWICH">샌드위치</a></li>
+						<li><a href="javascript:;" name="itemMenu"
+							data-category-code="ITEM_FAVORITE">즐겨찾는 메뉴</a></li>
+						<li><a href="step2?item=sandwich" name="itemMenu" data-category-code="ITEM_SANDWICH">샌드위치</a></li>
 						<li><a href="step2?item=salad" name="itemMenu" data-category-code="ITEM_SALAD">샐러드</a></li>
-						<li><a href="step2?item=wrap" name="itemMenu" data-category-code="ITEM_UNIT" data-grilled-sale-yn="N">랩ㆍ기타</a>
-						</li>
+						<li><a href="step2?item=wrap" name="itemMenu" data-category-code="ITEM_UNIT" data-grilled-sale-yn="N">랩ㆍ기타</a></li>
+						
 					</ul>
 				</div>
 				<!-- 컨텐츠 리스트 -->
