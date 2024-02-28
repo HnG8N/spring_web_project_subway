@@ -37,7 +37,7 @@
 	
 	<a href="write_view">글등록</a>
 	<br>
-		<form action="/board/listQuery" method="post">
+		<form action="/listQuery" method="post">
 	검색 선택 :
 	<select name="query">
 		<option value="bmID">사용자</option>	

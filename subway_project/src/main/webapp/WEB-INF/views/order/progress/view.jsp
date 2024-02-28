@@ -77,6 +77,8 @@
 				</ol>
 				<div class="tab02">
 					<ul>
+						<li><a href="javascript:;" name="itemMenu"
+								data-category-code="ITEM_FAVORITE">즐겨찾는 메뉴</a></li>
 						<li data-cate-cd="ITEM_SANDWICH" class="active"><a	data-cate-cd="ITEM_SANDWICH" href="javascript:;" name="itemMenu">샌드위치</a></li>
 						<!-- #211019 FAST-SUB/HOME-SUB 샐러드 일시 판매 중지로 인한 주석처리, #211104 판매 재개 -->
 						<li data-cate-cd="ITEM_SALAD"><a	data-cate-cd="ITEM_SALAD" href="javascript:void(0);" name="itemMenu">샐러드</a></li>

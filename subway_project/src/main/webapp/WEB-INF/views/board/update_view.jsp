@@ -60,7 +60,7 @@
 				<tr>
 					<td colspan="2"><input type="submit" value="수정하기">
 						&nbsp;&nbsp; <a href="/board/list">목록보기</a> &nbsp;&nbsp; <a
-						href="/board/delete?boardID=${update_view.boardID}">삭제</a>
+						href="/delete?boardID=${update_view.boardID}">삭제</a>
 						&nbsp;&nbsp;</td>
 				</tr>
 			</table>
