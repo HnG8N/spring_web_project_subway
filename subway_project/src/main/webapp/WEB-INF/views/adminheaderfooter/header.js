@@ -24,4 +24,11 @@ $(document).ready(function() {
 			event.preventDefault(); // "No"일 경우 form submit 중지
 	    }
 	});
+	//매장 리스트 버튼을 클릭 했을 때 alert 띄우기
+	$("#storeLink").on("click",function(event) {
+		event.preventDefault(); // "No"일 경우 form submit 중지
+		alert("구현 중 입니다.")
+	});
+
+	
 }); 

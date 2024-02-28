@@ -8,12 +8,14 @@
 	<div id=logoutForm>
 	</div>
     <h1>Subway Management</h1>
+    <c:if test="${Logged_in_ID != null }">
     <div class="header-buttons">
         <a href="salesstatus">매출현황</a>
         <a href="productlist">상품 리스트</a>
-        <a href="#">매장 리스트</a>
+        <a href="#" id="storeLink">매장 리스트</a>
         <a href="memberinfo">회원정보조회</a>
     </div>
+    </c:if>
 </header>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="/views/adminheaderfooter/header.js"></script>

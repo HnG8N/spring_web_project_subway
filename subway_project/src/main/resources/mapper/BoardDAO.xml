@@ -12,6 +12,9 @@
 	<select id="viewDao" resultType="com.springlec.base.model.BoardDTO">
 		SELECT boardID, bmID, boTitle, boContent FROM board WHERE boardID = #{boardID}	
 	</select>
+	<update id="boardHitUpdate">
+		UPDATE board SET boardHit = boardHit+1 WHERE boardID = #{boardID}
+	</update>
 	<update id="updateDao" parameterType="map">
     UPDATE board SET boTitle = #{boTitle}, boContent = #{boContent} WHERE boardID = #{boardID}	
 	</update>
@@ -26,10 +29,11 @@
 	
 	<select id="commentList" resultType="com.springlec.base.model.CommentDto">
 		SELECT commentid, commentpostid, commentuserid, commentcontent, 
-		commentdate, commentparentid, commentgroup, commentlevel, commentdelete
+			commentdate, commentparentid, commentgroup, 
+			commentlevel, commentdelete
 		FROM comment
 		WHERE commentpostid = #{boardID}
-		ORDER BY commentgroup
+		ORDER BY commentgroup, commentid ASC
 	</select>
 	
 	<select id="commentGroup">
