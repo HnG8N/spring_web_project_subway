@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,7 +113,9 @@
 							<br>
 							<dd>
 								<strong> 
-									<em>${dto.mnprice}</em> <span>원</span>
+									<em>
+									<fmt:formatNumber value="${dto.mnprice}" groupingUsed="true" />
+									</em> <span>원</span>
 								</strong>
 							</dd>
 						</div>
@@ -134,7 +137,9 @@
 						<dl class="total_sum">
 							<dt>총 주문금액</dt>
 							<dd>
-								<strong class="eachTotalPrice">${dto.cprice * dto.cqty}</strong> <span>원</span>
+								<strong class="eachTotalPrice">
+								<fmt:formatNumber value="${dto.cprice * dto.cqty}" groupingUsed="true" />
+								</strong> <span>원</span>
 							</dd>
 						</dl>
 					</div>

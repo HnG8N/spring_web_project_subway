@@ -31,7 +31,8 @@
 	<script type="text/javascript" src="/js/util/jsrender.js?v=2023051202"></script>
 	<script type="text/javascript" src="/js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
 	<script type="text/javascript" src="/js/waffle/waffle.utils.js?v=2023051202"></script>
-		<link rel="stylesheet" type="text/css" href="/css/ui.order.css?v=2023051202" />
+	<link rel="stylesheet" type="text/css" href="/css/ui.order.css?v=2023051202" />
+	<link rel="stylesheet" type="text/css" href="/css/ui.popup.css?v=2023051202" />
 		
 </head>
 <body>
@@ -57,20 +58,21 @@
 				</ol>
 				<div class="tab02">
 					<ul>
+						<li><a href="javascript:;" name="itemMenu"
+								data-category-code="ITEM_FAVORITE">즐겨찾는 메뉴</a></li>					
 						<li data-cate-cd="ITEM_SANDWICH" class="active"><a
 							data-cate-cd="ITEM_SANDWICH" href="javascript:;" name="itemMenu">샌드위치</a></li>
-						<!-- #211019 FAST-SUB/HOME-SUB 샐러드 일시 판매 중지로 인한 주석처리, #211104 판매 재개 -->
 						<li data-cate-cd="ITEM_SALAD"><a data-cate-cd="ITEM_SALAD"
 							href="javascript:void(0);" name="itemMenu">샐러드</a></li>
 						<li data-cate-cd="ITEM_UNIT"><a data-cate-cd="ITEM_UNIT"
 							href="javascript:;" name="itemMenu">랩ㆍ기타</a></li>
 					</ul>
 				</div>
-				<div class="order_con">
+				<div class="order_popup" id="popup_wrap">
 				<form action="addcart" method="post">
 					<table>
 						<tr>
-							<td>빵 길이 선택</td>
+							<td><h2>빵 길이 선택</h2></td>
 						</tr>
 						<tr>
 							<td>
@@ -79,16 +81,32 @@
 							</td>
 						</tr>
 						<tr>
-							<td>빵 선택</td>
+							<td><h2>빵 선택</h2></td>
 						</tr>
 						<tr>
-							<td><c:forEach items="${breadDtos}" var="breadDto"
-									varStatus="status">
-									<input name="bread" type="radio" value="${breadDto.iname}"> ${breadDto.iname}
-					</c:forEach></td>
+							<td>
+								<div class="popup_content bread meterial">
+									<div class="scroll_wrap">
+										<ul>
+											<c:forEach items="${breadDtos}" var="breadDto"	varStatus="status">
+												<li>
+													<label class="select_recipe">
+														<input name="bread" type="radio" data-ingredientsCode="${breadDto.icode}" data-ingredientsName="${breadDto.iname}" value="${breadDto.iname}" />
+														<span class="shape"></span>
+														<div class="info">
+															<img alt="${breadDto.iname}" src="/images/menu/${breadDto.iimg}" />
+															<em>${breadDto.iname}</em>
+														</div>
+													</label>		
+												</li>
+											</c:forEach>
+										</ul>
+									</div>
+								</div>
+							</td>
 						</tr>
 						<tr>
-							<td>토스팅 선택</td>
+							<td><h2>토스팅 선택</h2></td>
 						</tr>
 						<tr>
 							<td><input name="warm" type="radio" checked="checked"
@@ -96,35 +114,91 @@
 								value="토스트 안함"> 토스트 안함</td>
 						</tr>
 						<tr>
-							<td>치즈 선택</td>
+							<td><h2>치즈 선택</h2></td>
 						</tr>
 						<tr>
-							<td><c:forEach items="${cheeseDtos}" var="cheeseDto"
-									varStatus="status">
-									<input name="cheese" type="radio" value="${cheeseDto.iname}"> ${cheeseDto.iname}
-					</c:forEach></td>
+							<td>
+								<div class="popup_content cheese meterial">
+									<div class="scroll_wrap">
+										<ul>	
+											<c:forEach items="${cheeseDtos}" var="cheeseDto" varStatus="status">
+												<li>
+													<label class="select_recipe">
+														<input name="cheese" type="radio" data-ingredientsCode="${cheeseDto.icode}" data-ingredientsName="${cheeseDto.iname}" value="${cheeseDto.iname}" />
+														<span class="shape"></span>
+														<div class="info">
+															<img class="" alt="${cheeseDto.iname}" src="/images/menu/${cheeseDto.iimg}" />
+															<em>${cheeseDto.iname}</em>
+														</div>
+													</label>
+												</li>
+											</c:forEach>
+										</ul>
+									</div>
+								</div>
+							</td>
 						</tr>
 						<tr>
-							<td>야채 선택</td>
+							<td><h2>야채 선택 (여러개 선택 가능 )</h2></td>
 						</tr>
 						<tr>
-							<td><c:forEach items="${vegitableDtos}" var="vegitableDto"
-									varStatus="status">
-									<input name="vegetable${status.count}" type="checkbox"
-										value="${vegitableDto.iname}"> ${vegitableDto.iname}
-					</c:forEach></td>
+							<td>
+								<div class="popup_content vegetable meterial">
+									<div class="scroll_wrap">
+										<ul>
+											<c:forEach items="${vegitableDtos}" var="vegitableDto" varStatus="status">
+												<li>
+													<label class="select_recipe">
+														<input data-ingredientsCode="${vegitableDto.icode}" data-ingredientsName="${vegitableDto.iname}" name="vegetable${status.count}" type="checkbox" value="${vegitableDto.iname}" />
+														<span class="shape"></span>
+														<div class="info">
+															<img class="" src="/images/menu/${vegitableDto.iimg}" />
+															<em>${vegitableDto.iname}</em>        <!-- #210906 문구 변경 요청 -->
+														</div>
+													</label>
+													<div class="icon_sold">
+														<span>품절</span>
+													</div>
+												</li>
+											</c:forEach>
+										</ul>
+									</div>
+								</div>
+							</td>
 						</tr>
 						<tr>
-							<td>소스 선택</td>
+							<td><h2>소스 선택</h2></td>
 						</tr>
 						<tr>
-							<td><c:forEach items="${sauceDtos}" var="sauceDto"
-									varStatus="status">
-									<input name="sauce" type="radio" value="${sauceDto.iname}"> ${sauceDto.iname}
-					</c:forEach></td>
+							<td>
+								<div class="popup_content cheese meterial">
+									<div class="scroll_wrap">						
+										<ul>
+											<c:forEach items="${sauceDtos}" var="sauceDto" varStatus="status">
+												<li>
+													<label class="select_recipe">
+														<input name="sauce" type="radio" data-ingredientsCode="${sauceDto.icode}" data-ingredientsName="${sauceDto.iname}" value="${sauceDto.iname}" />
+														<span class="shape"></span>
+														<div class="info">
+															<img alt="${sauceDto.iname}" src="/images/menu/${sauceDto.iimg}" />
+															<strong></strong>
+															<em>${sauceDto.iname}</em>
+														</div>
+													</label>				
+													
+												</li>	
+											</c:forEach>
+										</ul>
+									</div>
+								</div>
+							</td>
 						</tr>
 						<tr>
-							<td><input type="submit" value="장바구니담기"></td>
+							<td>
+								<div class="btn_area">
+									<input class="btn bgc_point i_reg" type="submit" value="장바구니담기">
+								</div>
+							</td>
 						</tr>
 
 					</table>
