@@ -201,6 +201,4 @@ JSP에서 구현된 프로젝트를 SPRING으로 변환하는 작업을 수행. 
   <li>Ajax 사용으로 글 제목 검색 기능 구현</li>
   <li>댓글 및 대댓글 기능 구현</li>
 </ul>
-
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=HnG8N&show_icons=true&theme=dracula)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=spring_web_project_subway&layout=compact&theme=dracula)
+<img width="400" alt="스크린샷 2024-02-28 오후 11 58 42" src="https://github.com/HnG8N/spring_web_project_subway/assets/151720731/bb5121ff-5e90-4195-9829-81f97f1036b5">
