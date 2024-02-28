@@ -54,8 +54,8 @@
 				</tr>
 				<tr>
 					<td>작성내용</td>
-					<td><textarea name="boContent" rows="20" cols="100" 
-					readonly="readonly">${content_view.boContent}</textarea></td>
+					<td><textarea name="boContent" rows="20" cols="100">
+					${content_view.boContent}</textarea></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" value="수정확인">
