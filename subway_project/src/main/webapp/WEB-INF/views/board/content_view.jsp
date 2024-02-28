@@ -65,11 +65,8 @@
 				</tr>
 				<c:if test="${userId == content_view.bmID}">
 					<tr>
-						<td colspan="2"><input type="submit" value="수정">
-							&nbsp;&nbsp; <a
-							href="/delete?boardID=${content_view.boardID}">삭제</a>
+						<td colspan="2"><input type="submit" value="수정하기">
 							&nbsp;&nbsp;</td>
-
 					</tr>
 				</c:if>
 			</table>
@@ -134,7 +131,7 @@
 			<input type="submit" value="댓글 작성">
 		</form>
 	</div>
-	<a href="/list">목록보기</a>
+	<a href="board">목록보기</a>
 	<br><br><br>
 	<%@ include file="../include/footer.jsp"%>
 </body>

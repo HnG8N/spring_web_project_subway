@@ -44,17 +44,19 @@
 					<td><input type="text" name="boTitle" size="50"></td>
 				</tr>
 				<tr>
-
 					<td>작성내용</td>
-					<td><input type="text" name="boContent" size="50"></td>
+					<td><textarea name="boContent" rows="20" cols="100" 
+					readonly="readonly"></textarea></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" value="입력">
-						&nbsp;&nbsp; <a href="/list">목록보기</a></td>
+						&nbsp;&nbsp;
 				</tr>
 			</form>
 		</table>
 	</div>
+	<a href="board">목록보기</a>
+	<br><br><br>
 <%@ include file="../include/footer.jsp"%>
 </body>
 </html>
