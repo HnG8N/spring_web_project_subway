@@ -68,14 +68,10 @@
 		WHERE mncode = #{mncode}
 	</update>
 	<!--************************ ProductInsertDB TASK query End *********************-->
-	
 	<!-- ************************ Product End ************************ -->
-	<!-- ************************************************************* -->
 
 
-	<!-- ************************************************************* -->
 	<!-- ************************SalesStatus************************** -->
-	
 	<!-- ********************monthlySalesChartData Task******************** -->
 	<select id="monthlySalesChartData" resultType="com.springlec.base.model.admin.SalesStatusDto">
 		SELECT MONTH (odate) as omonth, SUM(oprice) as omonthsum

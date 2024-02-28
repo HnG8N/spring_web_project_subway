@@ -57,12 +57,11 @@
 				<tr>
 					<td>제목</td>
 					<td><input type="text" name="boTitle"
-						value="${content_view.boTitle}"></td>
+						value="${content_view.boTitle}" readonly="readonly"></td>
 				</tr>
 				<tr>
 					<td>작성내용</td>
-					<td><input type="text" name="boContent"
-						value="${content_view.boContent}"></td>
+					<td><textarea name="boContent" rows="20" cols="100" readonly="readonly">${content_view.boContent}</textarea></td>
 				</tr>
 				<c:if test="${userId == content_view.bmID}">
 					<tr>
@@ -73,9 +72,6 @@
 
 					</tr>
 				</c:if>
-				<tr>
-					<td><a href="/board/list">목록보기</a></td>
-				</tr>
 			</table>
 
 		</form>
@@ -83,16 +79,17 @@
 			<ul>
 				<li><c:forEach begin="1" end="${dtos.commentlevel }">
 					&nbsp;&nbsp;&nbsp;
-				</c:forEach> -> group : ${dtos.commentgroup } id : ${dtos.commentuserid } date :
-					${dtos.commentdate } <br> <c:forEach begin="1"
-						end="${dtos.commentlevel }">
+				</c:forEach> -> id : ${dtos.commentuserid } 
+				date :${dtos.commentdate } <br> 
+				<c:forEach begin="1" end="${dtos.commentlevel }">
 					&nbsp;&nbsp;&nbsp;
-				</c:forEach> <c:choose>
+				</c:forEach> 
+					<c:choose>
 						<c:when test="${dtos.commentdelete == 1 }">
-							<b style="color: rgba(128, 128, 128, 0.5);">삭제된 메세지 입니다.</b>
+				&nbsp;&nbsp;&nbsp;<b style="color: rgba(128, 128, 128, 0.5);">삭제된 메세지 입니다.</b>
 						</c:when>
 						<c:when test="${dtos.commentdelete == 0}">
-				&nbsp;&nbsp;&nbsp;content : ${dtos.commentcontent } 
+				&nbsp;&nbsp;&nbsp;${dtos.commentcontent } 
 				<button onclick="showReplyForm(${dtos.commentid})">답글</button>
 							<c:if test="${userId == dtos.commentuserid}">
 								<tr>
@@ -115,15 +112,15 @@
 						<input type="hidden" name="commentId" value="${dtos.commentid}">
 						<input type="hidden" name="commentLevel"
 							value="${dtos.commentlevel}">
-						<textarea name="commentContent" rows="4" cols="50"
-							placeholder="답글"></textarea>
+						<textarea name="commentContent" rows="2" cols="50"
+							placeholder="답글을 작성해 주세요."></textarea>
 						<input type="submit" value="답글 작성">
 					</form>
 					<form id="replyUpdateForm${dtos.commentid}" action="replyUpdate"
 						method="post" style="display: none;">
 						<input type="hidden" name="commentId" value="${dtos.commentid}">
-						<textarea name="commentContent" rows="4" cols="50"
-							placeholder="수정">${dtos.commentcontent }</textarea>
+						<textarea name="commentContent" rows="2" cols="50"
+							placeholder="답글을 수정해 주세요.">${dtos.commentcontent }</textarea>
 						<input type="hidden" name="postId" value="${content_view.boardID}">
 						<input type="submit" value="답글 수정">
 					</form></li>
@@ -133,10 +130,12 @@
 			<input type="hidden" name="postId" value="${content_view.boardID}">
 			<input type="hidden" name="commentId" value="${dtos.commentid}">
 			<input type="hidden" name="commentGroup" value="${comment_group}">
-			<textarea name="commentContent" rows="4" cols="50" placeholder="댓글"></textarea>
+			<textarea name="commentContent" rows="2" cols="50" placeholder="댓글을 작성해 주세요."></textarea>
 			<input type="submit" value="댓글 작성">
 		</form>
 	</div>
+	<a href="/board/list">목록보기</a>
+	<br><br><br>
 	<%@ include file="../include/footer.jsp"%>
 </body>
 <script>
