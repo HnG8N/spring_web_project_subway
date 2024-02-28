@@ -36,7 +36,7 @@
 		
 </head>
 <body>
-<%@ include file="../../include/header.jsp" %>
+	<%@ include file="../../include/header.jsp"%>
 	<!-- container s -->
 	<div id="container">
 		<!-- sub content s -->
@@ -59,7 +59,7 @@
 				<div class="tab02">
 					<ul>
 						<li><a href="javascript:;" name="itemMenu"
-								data-category-code="ITEM_FAVORITE">즐겨찾는 메뉴</a></li>					
+							data-category-code="ITEM_FAVORITE">즐겨찾는 메뉴</a></li>
 						<li data-cate-cd="ITEM_SANDWICH" class="active"><a
 							data-cate-cd="ITEM_SANDWICH" href="javascript:;" name="itemMenu">샌드위치</a></li>
 						<li data-cate-cd="ITEM_SALAD"><a data-cate-cd="ITEM_SALAD"
@@ -68,147 +68,216 @@
 							href="javascript:;" name="itemMenu">랩ㆍ기타</a></li>
 					</ul>
 				</div>
-				<div class="order_popup" id="popup_wrap">
-				<form action="addcart" method="post">
-					<table>
-						<tr>
-							<td><h2>빵 길이 선택</h2></td>
-						</tr>
-						<tr>
-							<td>
-								<input name="breadLength" type="radio" checked="checked" value="15"> 15cm 
-								<input name="breadLength" type="radio" value="30"> 30cm
-							</td>
-						</tr>
-						<tr>
-							<td><h2>빵 선택</h2></td>
-						</tr>
-						<tr>
-							<td>
-								<div class="popup_content bread meterial">
-									<div class="scroll_wrap">
-										<ul>
-											<c:forEach items="${breadDtos}" var="breadDto"	varStatus="status">
-												<li>
-													<label class="select_recipe">
-														<input name="bread" type="radio" data-ingredientsCode="${breadDto.icode}" data-ingredientsName="${breadDto.iname}" value="${breadDto.iname}" />
-														<span class="shape"></span>
-														<div class="info">
-															<img alt="${breadDto.iname}" src="/images/menu/${breadDto.iimg}" />
-															<em>${breadDto.iname}</em>
-														</div>
-													</label>		
-												</li>
-											</c:forEach>
-										</ul>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td><h2>토스팅 선택</h2></td>
-						</tr>
-						<tr>
-							<td><input name="warm" type="radio" checked="checked"
-								value="토스트"> 토스트 <input name="warm" type="radio"
-								value="토스트 안함"> 토스트 안함</td>
-						</tr>
-						<tr>
-							<td><h2>치즈 선택</h2></td>
-						</tr>
-						<tr>
-							<td>
-								<div class="popup_content cheese meterial">
-									<div class="scroll_wrap">
-										<ul>	
-											<c:forEach items="${cheeseDtos}" var="cheeseDto" varStatus="status">
-												<li>
-													<label class="select_recipe">
-														<input name="cheese" type="radio" data-ingredientsCode="${cheeseDto.icode}" data-ingredientsName="${cheeseDto.iname}" value="${cheeseDto.iname}" />
-														<span class="shape"></span>
-														<div class="info">
-															<img class="" alt="${cheeseDto.iname}" src="/images/menu/${cheeseDto.iimg}" />
-															<em>${cheeseDto.iname}</em>
-														</div>
-													</label>
-												</li>
-											</c:forEach>
-										</ul>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td><h2>야채 선택 (여러개 선택 가능 )</h2></td>
-						</tr>
-						<tr>
-							<td>
-								<div class="popup_content vegetable meterial">
-									<div class="scroll_wrap">
-										<ul>
-											<c:forEach items="${vegitableDtos}" var="vegitableDto" varStatus="status">
-												<li>
-													<label class="select_recipe">
-														<input data-ingredientsCode="${vegitableDto.icode}" data-ingredientsName="${vegitableDto.iname}" name="vegetable${status.count}" type="checkbox" value="${vegitableDto.iname}" />
-														<span class="shape"></span>
-														<div class="info">
-															<img class="" src="/images/menu/${vegitableDto.iimg}" />
-															<em>${vegitableDto.iname}</em>        <!-- #210906 문구 변경 요청 -->
-														</div>
-													</label>
-													<div class="icon_sold">
-														<span>품절</span>
-													</div>
-												</li>
-											</c:forEach>
-										</ul>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td><h2>소스 선택</h2></td>
-						</tr>
-						<tr>
-							<td>
-								<div class="popup_content cheese meterial">
-									<div class="scroll_wrap">						
-										<ul>
-											<c:forEach items="${sauceDtos}" var="sauceDto" varStatus="status">
-												<li>
-													<label class="select_recipe">
-														<input name="sauce" type="radio" data-ingredientsCode="${sauceDto.icode}" data-ingredientsName="${sauceDto.iname}" value="${sauceDto.iname}" />
-														<span class="shape"></span>
-														<div class="info">
-															<img alt="${sauceDto.iname}" src="/images/menu/${sauceDto.iimg}" />
-															<strong></strong>
-															<em>${sauceDto.iname}</em>
-														</div>
-													</label>				
-													
-												</li>	
-											</c:forEach>
-										</ul>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="btn_area">
-									<input class="btn bgc_point i_reg" type="submit" value="장바구니담기">
-								</div>
-							</td>
-						</tr>
+				<div class="order_con">
+					<div class="menu_info">
+						<div class="menu_info">
+							<div class="order_popup" id="popup_wrap">
+								<form action="addcart" method="post">
+									<table>
+										<tr>
+											<td>
+												<div class="option_display">
+													<dl>
+														<dt>빵 길이 선택</dt>
+													</dl>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="popup_content bread_leng">
+													<ul>
+														<li><label class="form_circle"> 
+														<input	name="breadLength" type="radio" soldout="N"checked="checked" value="15" /> 
+														<span class="icon"></span> <em>15cm</em>
 
-					</table>
-				</form>
+														</label></li>
+
+
+														<li><label class="form_circle"> 
+														<input	name="breadLength" type="radio" soldout="N" value="30" />
+														 <span class="icon"></span>
+																<em>30cm</em>
+														</label></li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="option_display">
+													<dl>
+														<dt>빵 선택</dt>
+													</dl>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="popup_content bread meterial">
+													<div class="scroll_wrap">
+														<ul>
+															<c:forEach items="${breadDtos}" var="breadDto"
+																varStatus="status">
+																<li><label class="select_recipe"> <input
+																		name="bread" type="radio"
+																		data-ingredientsCode="${breadDto.icode}"
+																		data-ingredientsName="${breadDto.iname}"
+																		value="${breadDto.iname}" /> <span class="shape"></span>
+																		<div class="info">
+																			<img alt="${breadDto.iname}"
+																				src="/images/menu/${breadDto.iimg}" /> <em>${breadDto.iname}</em>
+																		</div>
+																</label></li>
+															</c:forEach>
+														</ul>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="option_display">
+													<dl>
+														<dt>빵 토스팅 선택</dt>
+													</dl>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="popup_content bread_leng">
+													<ul>
+														<li><label class="form_circle"> <input
+																name="warm" type="radio" data-ingredientsCode="H0001"
+																data-ingredientsName="토스팅" checked="checked" value="토스팅" />
+																<span class="icon"></span> <em>토스팅</em>
+														</label></li>
+														<li><label class="form_circle"> <input
+																name="warm" type="radio" data-ingredientsCode="H0002"
+																data-ingredientsName="토스팅 안 함" value="토스팅 안 함" /> <span
+																class="icon"></span> <em>토스팅 안 함</em>
+														</label></li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="option_display">
+													<dl>
+														<dt>치즈 선택</dt>
+													</dl>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="popup_content cheese meterial">
+													<div class="scroll_wrap">
+														<ul>
+															<c:forEach items="${cheeseDtos}" var="cheeseDto"
+																varStatus="status">
+																<li><label class="select_recipe"> <input
+																		name="cheese" type="radio"
+																		data-ingredientsCode="${cheeseDto.icode}"
+																		data-ingredientsName="${cheeseDto.iname}"
+																		value="${cheeseDto.iname}" /> <span class="shape"></span>
+																		<div class="info">
+																			<img class="" alt="${cheeseDto.iname}"
+																				src="/images/menu/${cheeseDto.iimg}" /> <em>${cheeseDto.iname}</em>
+																		</div>
+																</label></li>
+															</c:forEach>
+														</ul>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="option_display">
+													<dl>
+														<dt>야채 선택 (여러개 선택 가능)</dt>
+													</dl>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="popup_content vegetable meterial">
+													<div class="scroll_wrap">
+														<ul>
+															<c:forEach items="${vegitableDtos}" var="vegitableDto"
+																varStatus="status">
+																<li><label class="select_recipe"> <input
+																		data-ingredientsCode="${vegitableDto.icode}"
+																		data-ingredientsName="${vegitableDto.iname}"
+																		name="vegetable${status.count}" type="checkbox"
+																		value="${vegitableDto.iname}" /> <span class="shape"></span>
+																		<div class="info">
+																			<img class="" src="/images/menu/${vegitableDto.iimg}" />
+																			<em>${vegitableDto.iname}</em>
+																			<!-- #210906 문구 변경 요청 -->
+																		</div>
+																</label></li>
+															</c:forEach>
+														</ul>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td><div class="option_display">
+													<dl>
+														<dt>소스 선택</dt>
+													</dl>
+												</div></td>
+										</tr>
+										<tr>
+											<td>
+												<div class="popup_content cheese meterial">
+													<div class="scroll_wrap">
+														<ul>
+															<c:forEach items="${sauceDtos}" var="sauceDto"
+																varStatus="status">
+																<li><label class="select_recipe"> <input
+																		name="sauce" type="radio"
+																		data-ingredientsCode="${sauceDto.icode}"
+																		data-ingredientsName="${sauceDto.iname}"
+																		value="${sauceDto.iname}" /> <span class="shape"></span>
+																		<div class="info">
+																			<img alt="${sauceDto.iname}"
+																				src="/images/menu/${sauceDto.iimg}" /> <strong></strong>
+																			<em>${sauceDto.iname}</em>
+																		</div>
+																</label></li>
+															</c:forEach>
+														</ul>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="btn_area">
+													<input class="btn bgc_point i_reg" type="submit"
+														value="장바구니담기">
+												</div>
+											</td>
+										</tr>
+
+									</table>
+								</form>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
+			<!--// sub content e -->
 		</div>
-		<!--// sub content e -->
 	</div>
 	<!--// container -->
-	<%@ include file="../../include/footer.jsp" %>
+	<%@ include file="../../include/footer.jsp"%>
 </body>
 </html>
