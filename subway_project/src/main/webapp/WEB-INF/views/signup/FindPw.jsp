@@ -8,51 +8,28 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="js/signup/findPw.js"></script>
 <title>비밀번호 찾기</title>
-<link rel="shortcut icon" type="image/x-icon"
-	href="/images/common/subway_favicon.ico?v=2023051202" />
-<!-- 20180131 -->
-<link rel="stylesheet" type="text/css"
-	href="/css/ui.common.css?v=2023051202" />
-<link rel="stylesheet" type="text/css"
-	href="/css/jquery.mCustomScrollbar.min.css?v=2023051202" />
-
-<link rel="stylesheet" type="text/css"
-	href="/css/ui.common.css?v=2023051202" />
-<link rel="stylesheet" type="text/css"
-	href="/css/ui.main.css?v=2023051202" />
-<link rel="stylesheet" type="text/css"
-	href="/css/ui.menu.css?v=2023051202" />
-<link rel="stylesheet" type="text/css"
-	href="/css/ui.order.css?v=2023051202" />
-<link rel="stylesheet" type="text/css"
-	href="/css/jquery.mCustomScrollbar.min.css?v=2023051202" />
-
-<script type="text/javascript"
-	src="/js/jquery/jquery-1.12.4.min.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="/js/jquery/jquery-ui-1.12.0.min.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="/js/jquery/jquery.easing.1.3.min.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="/js/jquery/jquery.bxslider.min.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="/js/jquery/jquery.mCustomScrollbar.concat.min.js?v=2023051202"></script>
-<!-- block ui -->
-<script type="text/javascript"
-	src="/js/jquery/jquery.blockUI.min.js?v=2023051202"></script>
-
-<script type="text/javascript"
-	src="/js/jquery/TweenMax.min.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="./js/jquery/jquery.cookie.js?v=2023051202"></script>
-<!--<script type="text/javascript" th:src="'/js/lottie.js?v=' + ${cacheParam}"></script>-->
+<link rel="shortcut icon" type="image/x-icon" href="/images/common/subway_favicon.ico?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/ui.common.css?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.min.css?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/ui.common.css?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/ui.main.css?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/ui.menu.css?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/ui.order.css?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.min.css?v=2023051202" />
+<script type="text/javascript" src="/js/jquery/jquery-1.12.4.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/jquery-ui-1.12.0.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/jquery.easing.1.3.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/jquery.bxslider.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/jquery.mCustomScrollbar.concat.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/jquery.blockUI.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/TweenMax.min.js?v=2023051202"></script>
+<script type="text/javascript" src="./js/jquery/jquery.cookie.js?v=2023051202"></script>
 <script type="text/javascript" src="/js/ui.common.js?v=2023051202"></script>
 <script type="text/javascript" src="/js/subway.common.js?v=2023051202"></script>
 <script type="text/javascript" src="/js/util/jsrender.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="/js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="/js/waffle/waffle.utils.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/waffle/waffle.utils.js?v=2023051202"></script>
+</head>
 
 <style>
 body {
@@ -106,9 +83,10 @@ input[type="button"] {
 	margin-bottom: 10px;
 	font-size: 16px; /* 폰트 크기를 설정합니다. */
 }
-	header {
-	    margin-bottom: 150px; /* 헤더 아래쪽에 20px의 마진을 추가합니다. */
-	}
+
+header {
+	 margin-bottom: 150px; /* 헤더 아래쪽에 20px의 마진을 추가합니다. */
+}
 
 footer {
 	position: fixed;
@@ -121,7 +99,6 @@ footer {
 	 margin-top: 150px; /* 푸터 위쪽에 20px의 마진을 추가합니다. */
 }
 </style>
-</head>
 <body>
 	<%@ include file="../include/header.jsp"%>
 	<!-- container s -->

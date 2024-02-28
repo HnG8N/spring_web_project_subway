@@ -9,54 +9,28 @@
 <script src="js/signup/findId.js"></script>
 <title>아이디 찾기</title>
 <link href="http://subway.co.kr/" rel="canonical" />
-<!-- 20180221 -->
 <meta content="신선하고 건강한 글로벌 NO.1 샌드위치 브랜드, 써브웨이" name="description" />
-<!-- 20181212 -->
-<link rel="shortcut icon" type="image/x-icon"
-	href="/images/common/subway_favicon.ico?v=2023051202" />
-<!-- 20180131 -->
-<link rel="stylesheet" type="text/css"
-	href="/css/ui.common.css?v=2023051202" />
-<link rel="stylesheet" type="text/css"
-	href="/css/jquery.mCustomScrollbar.min.css?v=2023051202" />
-
-<link rel="stylesheet" type="text/css"
-	href="/css/ui.common.css?v=2023051202" />
-<link rel="stylesheet" type="text/css"
-	href="/css/ui.main.css?v=2023051202" />
-<link rel="stylesheet" type="text/css"
-	href="/css/ui.menu.css?v=2023051202" />
-<link rel="stylesheet" type="text/css"
-	href="/css/ui.order.css?v=2023051202" />
-<link rel="stylesheet" type="text/css"
-	href="/css/jquery.mCustomScrollbar.min.css?v=2023051202" />
-
-<script type="text/javascript"
-	src="/js/jquery/jquery-1.12.4.min.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="/js/jquery/jquery-ui-1.12.0.min.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="/js/jquery/jquery.easing.1.3.min.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="/js/jquery/jquery.bxslider.min.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="/js/jquery/jquery.mCustomScrollbar.concat.min.js?v=2023051202"></script>
-<!-- block ui -->
-<script type="text/javascript"
-	src="/js/jquery/jquery.blockUI.min.js?v=2023051202"></script>
-
-<script type="text/javascript"
-	src="/js/jquery/TweenMax.min.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="./js/jquery/jquery.cookie.js?v=2023051202"></script>
-<!--<script type="text/javascript" th:src="'/js/lottie.js?v=' + ${cacheParam}"></script>-->
+<link rel="shortcut icon" type="image/x-icon" href="/images/common/subway_favicon.ico?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/ui.common.css?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.min.css?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/ui.common.css?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/ui.main.css?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/ui.menu.css?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/ui.order.css?v=2023051202" />
+<link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.min.css?v=2023051202" />
+<script type="text/javascript" src="/js/jquery/jquery-1.12.4.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/jquery-ui-1.12.0.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/jquery.easing.1.3.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/jquery.bxslider.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/jquery.mCustomScrollbar.concat.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/jquery.blockUI.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/TweenMax.min.js?v=2023051202"></script>
+<script type="text/javascript" src="./js/jquery/jquery.cookie.js?v=2023051202"></script>
 <script type="text/javascript" src="/js/ui.common.js?v=2023051202"></script>
 <script type="text/javascript" src="/js/subway.common.js?v=2023051202"></script>
 <script type="text/javascript" src="/js/util/jsrender.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="/js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
-<script type="text/javascript"
-	src="/js/waffle/waffle.utils.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
+<script type="text/javascript" src="/js/waffle/waffle.utils.js?v=2023051202"></script>
 </head>
 <style>
 body {
@@ -80,13 +54,12 @@ body {
 	text-align: center; /* 가운데 정렬 추가 */
 }
 
-#container input[type="text"],
-	#container select {
-	    width: 100px; /* 예시로 200px로 크기를 지정합니다. 필요에 따라 조정하세요. */
-	    padding: 5px; /* 입력 요소 주변에 간격을 추가합니다. */
-	    margin-bottom: 10px;
-	    font-size: 16px; /* 폰트 크기를 설정합니다. */
-	}
+#container input[type="text"], #container select {
+	width: 100px; /* 예시로 200px로 크기를 지정합니다. 필요에 따라 조정하세요. */
+	padding: 5px; /* 입력 요소 주변에 간격을 추가합니다. */
+	margin-bottom: 10px;
+	font-size: 16px; /* 폰트 크기를 설정합니다. */
+}
 
 button {
 	position: absolute;
@@ -103,17 +76,17 @@ h1 {
 }
 
 input[type="button"] {
-	    background-color: #4CAF50; /* 초록색 배경색 */
-	    color: white; /* 텍스트 색상 */
-	    padding: 10px 20px; /* 안쪽 여백 설정 */
-	    border: none; /* 테두리 제거 */
-	    border-radius: 5px; /* 모서리를 둥글게 만듭니다. */
-	    cursor: pointer; /* 마우스 커서를 포인터로 변경하여 클릭 가능함을 나타냅니다. */
-	}
-	
-	header {
-	    margin-bottom: 100px; /* 헤더 아래쪽에 20px의 마진을 추가합니다. */
-	}
+	background-color: #4CAF50; /* 초록색 배경색 */
+	color: white; /* 텍스트 색상 */
+	padding: 10px 20px; /* 안쪽 여백 설정 */
+	border: none; /* 테두리 제거 */
+	border-radius: 5px; /* 모서리를 둥글게 만듭니다. */
+	cursor: pointer; /* 마우스 커서를 포인터로 변경하여 클릭 가능함을 나타냅니다. */
+}
+
+header {
+	margin-bottom: 100px; /* 헤더 아래쪽에 20px의 마진을 추가합니다. */
+}
 
 footer {
 	position: fixed;
@@ -123,7 +96,7 @@ footer {
 	color: #fff;
 	text-align: center;
 	padding: 10px 0;
-	 margin-top: 100px; /* 푸터 위쪽에 20px의 마진을 추가합니다. */
+	margin-top: 100px; /* 푸터 위쪽에 20px의 마진을 추가합니다. */
 }
 </style>
 
