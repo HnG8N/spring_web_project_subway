@@ -1,11 +1,10 @@
 # spring_web_project_subway
 
-<details>
-  <summary><strong>프로젝트 개요</strong></summary>
+
+  <strong>프로젝트 개요</strong>
 
 JSP에서 구현된 프로젝트를 SPRING으로 변환하는 작업을 수행하였습니다. 이를 위해 서블릿을 사용하기 위해 Gson을 dependency에 추가하고, `@ServletComponentScan` 어노테이션을 main의 Application 클래스에 추가했습니다.
 
-</details>
 
 <details>
   <summary>회원가입 기능</summary>
