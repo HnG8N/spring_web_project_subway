@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.springlec.base.model.admin.MemberInformationDto;
 import com.springlec.base.service.admin.SalesStatusService;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("/admin")
 public class AdminStatusController {
@@ -35,10 +37,16 @@ public class AdminStatusController {
 	}
 	
 	@GetMapping("/memberinfo")
-	public String memberinfo(Model model) throws Exception {
-		List<MemberInformationDto> dtos = service.memberInfoList();
+	public String memberinfo(HttpServletRequest request, Model model) throws Exception {
+		List<MemberInformationDto> dtos = service.memberInfoList(request.getParameter("userInfo"));
 		model.addAttribute("MEMBER", dtos);
 		return "/admin/memberinfo";
 	}
-
+	@PostMapping("/usersearch")
+	public String usersearch(HttpServletRequest request, Model model) throws Exception {
+		List<MemberInformationDto> dtos = service.memberInfoList(request.getParameter("userSearch"));
+		model.addAttribute("MEMBER", dtos);
+		return "/admin/memberinfo";
+	}
+	
 }

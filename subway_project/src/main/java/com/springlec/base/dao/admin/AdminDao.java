@@ -56,8 +56,12 @@ public interface AdminDao {
 	
 	
 	// ****************************** memberInfo *******************************
-	// memberInfoList Task
+	// memberInfoList
 	public List<MemberInformationDto> memberInfoList() throws Exception;
+	// memberEndUser
+	public List<MemberInformationDto> memberEndUser() throws Exception;
+	// memberRegDate
+	public List<MemberInformationDto> memberRegDate() throws Exception;
 	// **************************** memberInfo End *****************************
 
 }

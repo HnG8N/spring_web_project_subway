@@ -6,8 +6,8 @@
 		SELECT * FROM board	ORDER BY boardID DESC	
 	</select>
 	<insert id="writeDao">
-		INSERT INTO board (bmID, boTitle, boDate, boContent, boAvailable, boardHit, boardGroup, boardSeq, boardLevel)
-		VALUES (#{bmID}, #{boTitle}, now(),#{boContent}, 1, 0, 0, 0 ,0)
+		INSERT INTO board (bmID, boTitle, boDate, boContent, boAvailable, boardHit)
+		VALUES (#{bmID}, #{boTitle}, now(),#{boContent}, 1, 0)
 	</insert>
 	<select id="viewDao" resultType="com.springlec.base.model.BoardDTO">
 		SELECT boardID, bmID, boTitle, boContent FROM board WHERE boardID = #{boardID}	
@@ -18,11 +18,46 @@
 	<delete id="deleteMDao">
 	DELETE FROM board WHERE boardID= #{boardID}
 	</delete>
-		<select id="listQuery" resultType="com.springlec.base.model.BoardDTO">
+	<select id="listQuery" resultType="com.springlec.base.model.BoardDTO">
 		SELECT boardID, bmId, boTitle, boContent, boDate, boardHit
 		FROM board
 		WHERE ${query} LIKE #{content} 
 	</select>
+	
+	<select id="commentList" resultType="com.springlec.base.model.CommentDto">
+		SELECT commentid, commentpostid, commentuserid, commentcontent, 
+		commentdate, commentparentid, commentgroup, commentlevel, commentdelete
+		FROM comment
+		WHERE commentpostid = #{boardID}
+		ORDER BY commentgroup
+	</select>
+	
+	<select id="commentGroup">
+		SELECT MAX(commentgroup)
+		FROM Comment
+		WHERE commentpostid = #{boardID}
+	</select>
+	
+	<insert id="commentInsert">
+		INSERT INTO comment 
+		(commentpostid, commentuserid, commentcontent, 
+			commentdate, commentparentid, commentgroup, commentlevel)
+		VALUES
+		(#{postId}, #{commentuserid}, #{commentcontent}, 
+			NOW(), #{commentId}, #{commentGroup}, #{commentLevel})
+	</insert>
+	
+	<update id="commentUpdate">
+		UPDATE comment
+		SET commentcontent = #{commentContent}
+		WHERE commentid = #{commentId}
+	</update>
+
+	<update id="commentDelete">
+		UPDATE comment
+		SET commentdelete = 1
+		WHERE commentid = #{commentId}
+	</update>
 
 </mapper>
 	

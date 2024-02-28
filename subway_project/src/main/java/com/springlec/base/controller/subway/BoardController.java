@@ -7,11 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.springlec.base.model.BoardDTO;
+import com.springlec.base.model.CommentDto;
 import com.springlec.base.service.BoardDAOService;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class BoardController {
@@ -46,8 +49,13 @@ public class BoardController {
 	    // 서비스를 통해 데이터를 가져와서 모델에 추가
 	    BoardDTO data = service.viewDao(request.getParameter("boardID"));
 	    model.addAttribute("content_view", data); // "content_view"라는 이름으로 모델에 데이터 추가. jsp 파일에 ${content_view.bId}로 명명.
-
-	    // 뷰의 이름 반환 (여기서는 content_view.jsp)
+	    
+	    List<CommentDto> commentData = service.commentList(request.getParameter("boardID"));
+	    model.addAttribute("comment_view", commentData);
+	    
+	    int commentGroup = service.commentGroup(request.getParameter("boardID"));
+	    model.addAttribute("comment_group", commentGroup);
+	    
 	    return "/board/content_view"; //보내줌
 	}
 	
@@ -83,8 +91,75 @@ public class BoardController {
 		return "/board/list";// list.jsp로 보냄. 
 	}
 	
+	@PostMapping("/board/reply")
+	public String reply(HttpServletRequest request, RedirectAttributes redirectAttributes) throws Exception {
+		
+		String boardID = request.getParameter("boardID");
+		int commentGroup = Integer.parseInt(request.getParameter("commentGroup"));
+		HttpSession session = request.getSession();
+		String commentuserid = (String)session.getAttribute("userId");
+		int commentLevel = Integer.parseInt(request.getParameter("commentLevel")) + 1;
+		
+		service.commentInsert(
+				request.getParameter("postId"), 
+				commentuserid, 
+				request.getParameter("commentContent"), 
+				request.getParameter("commentId"),
+				commentGroup,
+				commentLevel);
+        
+		redirectAttributes.addAttribute("boardID", boardID);
+		
+		return "redirect:/board/content_view";
+	}
 	
-	
-	
+	@PostMapping("/board/comment")
+	public String comment(HttpServletRequest request, RedirectAttributes redirectAttributes) throws Exception {
+		String postId = request.getParameter("postId");
+		
+		HttpSession session = request.getSession();
+		String commentuserid = (String)session.getAttribute("userId");
+		
+		String commentContent = request.getParameter("commentContent");
+		
+		String commentParentId = "0";
+		
+		int commentGroup = Integer.parseInt(request.getParameter("commentGroup")) + 1;
 
+		int commentLevel = 0;
+		
+		service.commentInsert(postId, commentuserid, commentContent, commentParentId, commentGroup, commentLevel);
+		
+		redirectAttributes.addAttribute("boardID", postId);
+		
+		return "redirect:/board/content_view";
+	}
+	
+	@PostMapping("/board/replyUpdate")
+	public String replyUpdate(HttpServletRequest request, RedirectAttributes redirectAttributes) throws Exception {
+		String postId = request.getParameter("postId");
+		
+		String commentContent = request.getParameter("commentContent");
+		
+		String commentId = request.getParameter("commentId");
+		
+		service.commentUpdate(commentContent, commentId);
+		
+		redirectAttributes.addAttribute("boardID", postId);
+		
+		return "redirect:/board/content_view";
+	}
+	
+	@GetMapping("/board/commentdelete")
+	public String commentdelete(HttpServletRequest request, RedirectAttributes redirectAttributes) throws Exception {
+		String postId = request.getParameter("postId");
+		
+		String commentId = request.getParameter("commentId");
+		
+		service.commentDelete(commentId);
+		
+		redirectAttributes.addAttribute("boardID", postId);
+		
+		return "redirect:/board/content_view";
+	}
 }

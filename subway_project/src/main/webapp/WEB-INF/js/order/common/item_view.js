@@ -36,7 +36,7 @@ var item  = {
 						h = 690;
 						break;
 				}
-				subwayCommon.popupValidation(target, width, h);
+//				subwayCommon.popupValidation(target, width, h);
 //			}
 //		});
 	},
