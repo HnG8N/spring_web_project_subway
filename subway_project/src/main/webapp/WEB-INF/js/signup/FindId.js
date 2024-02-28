@@ -9,7 +9,7 @@ $(document).ready(function() {
 		var year = $("#yearSelect").val();
 		var month = $("#monthSelect").val();
 		var day = $("#daySelect").val();
-		var birth = year + "-" + month + "-" + day;
+		var date = year + "-" + month + "-" + day;
 		
 		var email1 = $("#email1").val();
 		var email2 = $("#email2").val();
