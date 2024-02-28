@@ -72,7 +72,7 @@
 				<form action="addcart" method="post">
 					<table>
 						<tr>
-							<td>빵 길이 선택</td>
+							<td><h2>빵 길이 선택</h2></td>
 						</tr>
 						<tr>
 							<td>
@@ -81,7 +81,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>빵 선택</td>
+							<td><h2>빵 선택</h2></td>
 						</tr>
 						<tr>
 							<td>
@@ -106,7 +106,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>토스팅 선택</td>
+							<td><h2>토스팅 선택</h2></td>
 						</tr>
 						<tr>
 							<td><input name="warm" type="radio" checked="checked"
@@ -114,7 +114,7 @@
 								value="토스트 안함"> 토스트 안함</td>
 						</tr>
 						<tr>
-							<td>치즈 선택</td>
+							<td><h2>치즈 선택</h2></td>
 						</tr>
 						<tr>
 							<td>
@@ -139,7 +139,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>야채 선택</td>
+							<td><h2>야채 선택 (여러개 선택 가능 )</h2></td>
 						</tr>
 						<tr>
 							<td>
@@ -167,7 +167,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>소스 선택</td>
+							<td><h2>소스 선택</h2></td>
 						</tr>
 						<tr>
 							<td>
