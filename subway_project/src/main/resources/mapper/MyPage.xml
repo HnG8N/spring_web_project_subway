@@ -2,16 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.springlec.base.dao.MypageDao">
+
+	<!-- 회원정보 dto에 불러오기 -->
 	<select id="memberDto" resultType="com.springlec.base.model.SignupDto">
 		SELECT mid, mpw, mname, maddress, mtel, mbirth,memail
 		FROM member
 		WHERE mid=#{mid}
 	</select>
 	
+	<!-- 회원 탈퇴 시 회원 정보에 탈퇴 날짜 삽입 -->
 	<update id="deleteInfo">
 		UPDATE member SET menddate = now() WHERE mid = #{mid}
 	</update>
 	
+	<!-- 비밀번호, 주소 수정시 회원 데이터베이스에 업데이트 -->
 	<update id="updateInfo">
 		UPDATE member SET mpw = #{mpw}, maddress = #{maddress} WHERE mid = #{mid}
 	</update>

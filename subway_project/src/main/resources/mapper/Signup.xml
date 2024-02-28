@@ -54,6 +54,7 @@
 		WHERE mid = #{mid} AND mname = #{mname} AND mbirth = #{mbirth} AND memail = #{memail}
 	</select>
 	
+	<!-- 탈퇴회원 확인 -->
 	<select id="deleteIdCheck">
 		SELECT count(menddate) AS count FROM member WHERE mid=#{mid};
 	</select>
