@@ -7,7 +7,7 @@
   <li>ERD 회의 및 SFD 작성</li>
   <li>업무 분배 및 개별 RND</li>
   
-  <strong>프로젝트 개요</strong>
+<h2>프로젝트 기획</h2>
 
 JSP에서 구현된 프로젝트를 SPRING으로 변환하는 작업을 수행. 이를 위해 서블릿을 사용하기 위해 Gson을 dependency에 추가하고, `@ServletComponentScan` 어노테이션을 main의 Application 클래스에 추가함.
 
