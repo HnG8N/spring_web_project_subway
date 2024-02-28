@@ -105,7 +105,7 @@ public class HomeController {
 		return "ingredientNcountry/allergy";
 	}
 	//[온라인주문]
-	// 랩,기타 메뉴 상세
+	// 재료선택
 	@GetMapping("/selectIngredient")
 	public String selectIngredient(HttpServletRequest request, Model model) throws Exception{
 		
