@@ -131,7 +131,7 @@
 				<div>
 					<ul>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1291">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="에그마요" src="/images/menu/sandwich_cl06_01.jpg" /></div>
 									<strong class="title">에그마요</strong>
@@ -140,7 +140,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1290">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="이탈리안 비엠티" src="/images/menu/sandwich_cl01_01.jpg" /></div>
 									<strong class="title">이탈리안 비엠티</strong>
@@ -149,7 +149,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1289">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="비엘티" src="/images/menu/sandwich_cl02_01.jpg" /></div>
 									<strong class="title">비엘티</strong>
@@ -158,7 +158,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1287">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="햄" src="/images/menu/sandwich_cl04_01.jpg" /></div>
 									<strong class="title">햄</strong>
@@ -169,7 +169,7 @@
 					</ul>
 					<ul>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1286">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="참치" src="/images/menu/sandwich_cl05_01.jpg" /></div>
 									<strong class="title">참치</strong>
@@ -186,7 +186,7 @@
 				<div>
 					<ul>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1406">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="로티세리 바비큐 치킨" src="/images/menu/sandwich_fl01_01.jpg" /></div>
 									<strong class="title">로티세리 바비큐 치킨</strong>
@@ -195,7 +195,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1401">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="로스트 치킨" src="/images/menu/sandwich_fl02_01.jpg" /></div>
 									<strong class="title">로스트 치킨</strong>
@@ -204,7 +204,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1405">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="써브웨이 클럽" src="/images/menu/sandwich_fl04_01.jpg" /></div>
 									<strong class="title">써브웨이 클럽</strong>
@@ -213,7 +213,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1449">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt=" 치킨 슬라이스" src="/images/menu/sandwich_fl05_01.jpg" /></div>
 									<strong class="title">치킨 슬라이스</strong>
@@ -224,7 +224,7 @@
 					</ul>
 					<ul>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1403">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="베지" src="/images/menu/sandwich_fl06_01.jpg" /></div>
 									<strong class="title">베지</strong>
@@ -241,7 +241,7 @@
 				<div>
 					<ul>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1392">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="쉬림프" src="/images/menu/sandwich_pm10_01.jpg" /></div>
 									<strong class="title">쉬림프</strong>
@@ -250,7 +250,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1398">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="풀드 포크 바비큐" src="/images/menu/sandwich_pm08_01.jpg" /></div>
 									<strong class="title">풀드 포크 바비큐</strong>
@@ -259,7 +259,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1391">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="스테이크&amp;치즈" src="/images/menu/sandwich_pm01_01.jpg" /></div>
 									<strong class="title">스테이크&amp;치즈</strong>
@@ -268,7 +268,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1448">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="치킨 베이컨 아보카도" src="/images/menu/sandwich_pm02_01.jpg" /></div>
 									<strong class="title">치킨 베이컨 아보카도</strong>
@@ -289,7 +289,7 @@
                             </a>
                         </li>-->
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1395">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="스파이시 이탈리안" src="/images/menu/sandwich_pm06_01.jpg" /></div>
 									<strong class="title">스파이시 이탈리안</strong>
@@ -298,7 +298,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/menuView/sandwich?menuItemIdx=1394">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="치킨 데리야끼" src="/images/menu/sandwich_pm07_01.jpg" /></div>
 									<strong class="title">치킨 데리야끼</strong>
@@ -315,7 +315,7 @@
 				<div>
 					<ul>
 						<li>
-							<a href="/menuView/morning?menuItemIdx=1339">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="햄, 에그&치즈" src="/images/menu/sandwich_bf01.png" /></div>
 									<strong class="title">햄, 에그&치즈</strong>
@@ -324,7 +324,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/menuView/morning?menuItemIdx=1340">
+							<a href="">
 								<div class="wrap">
 									<div class="img"><img alt="웨스턴, 에그 & 치즈" src="/images/menu/sandwich_bf02.png" /></div>
 									<strong class="title">웨스턴, 에그 & 치즈</strong>
@@ -374,11 +374,11 @@
 				</div>
 				<div class="board_list">
 					<ul>
-						<li><a href="#" onclick="view.noticeView(this);return false;" data-idx="292">써브웨이와 함께하는 JTBC 수목드라마 &#39;이 연애는 불가항력&#39;</a></li>
-						<li><a href="#" onclick="view.noticeView(this);return false;" data-idx="291">써브웨이와 함께하는 SBS 금토드라마 &#39;소방서 옆 경찰서 그리고 국과수&#39;</a></li>
-						<li><a href="#" onclick="view.noticeView(this);return false;" data-idx="290">써브웨이와 함께하는 tvN &#39;이번 생도 잘 부탁해&#39;</a></li>
+						<li><a href="" onclick="" data-idx="292">써브웨이와 함께하는 JTBC 수목드라마 &#39;이 연애는 불가항력&#39;</a></li>
+						<li><a href="" onclick="" data-idx="291">써브웨이와 함께하는 SBS 금토드라마 &#39;소방서 옆 경찰서 그리고 국과수&#39;</a></li>
+						<li><a href="" onclick="" data-idx="290">써브웨이와 함께하는 tvN &#39;이번 생도 잘 부탁해&#39;</a></li>
 					</ul>
-					<a class="more" href="/newsList">more</a>
+					<a class="more" href="">more</a>
 				</div>
 			</div>
 			<!--// whats new -->
@@ -387,13 +387,13 @@
 			<div class="banner_sponsor">
 				<div class="bxslider">
 						<div>
-								<a href="/newsView?noticeIdx=292">
+								<a href="">
 									<img alt="써브웨이와 함께하는 JTBC 수목드라마 &#39;이 연애는 불가항력&#39;" src="/views/upload/banner/270X300 (1)_20230829025721267.jpg" />
 								</a>
 						</div>
 					
 						<div>
-								<a href="/newsView?noticeIdx=291">
+								<a href="">
 									<img alt="써브웨이와 함께하는 SBS 금토드라마 &#39;소방서 옆 경찰서 그리고 국과수&#39;" src="/views/upload/banner/270X300_20230804045136791.jpg" />
 								</a>
 							
@@ -411,28 +411,28 @@
 	<div class="quick_menu">
 		<ul>
 			<li class="qm01">
-				<a href="#">
+				<a href="">
 					<div class="icon"></div>
 					<strong>프랜차이즈</strong>
 					<span>개설절차/투자비용 정보</span>
 				</a>
 			</li>
 			<li class="qm02">
-				<a href="#">
+				<a href="">
 					<div class="icon"></div>
 					<strong>지사안내</strong>
 					<span>수도권/지방 지사정보</span>
 				</a>
 			</li>
 			<li class="qm03">
-				<a href="#">
+				<a href="">
 					<div class="icon"></div>
 					<strong>광고영상</strong>
 					<span>TV광고/동영상</span>
 				</a>
 			</li>
 			<li class="qm04">
-				<a href="faq">
+				<a href="">
 					<div class="icon"></div>
 					<strong>고객문의</strong>
 					<span>자주하는 질문/1:1문의</span>

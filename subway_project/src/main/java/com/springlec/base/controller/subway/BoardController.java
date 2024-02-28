@@ -23,7 +23,7 @@ public class BoardController {
 	BoardDAOService service;
 	
 	//게시판 검색
-	@GetMapping("/board/list")
+	@GetMapping("board")
 	public String blist(Model model) throws Exception{
 		List<BoardDTO> blistDao= service.blistDao();
 		model.addAttribute("list",blistDao);
@@ -31,20 +31,20 @@ public class BoardController {
 	}
 	
 	//게시판 입력 화면
-	@GetMapping("/board/write_view")
+	@GetMapping("/write_view")
 	public String writeview() throws Exception{
 		return "/board/write_view";
 		}
 	
 	//게시판 입력 실행
-	@PostMapping("/board/write")//jsp에 action에 있는 값. Post를 확인 바람.
+	@PostMapping("/write")//jsp에 action에 있는 값. Post를 확인 바람.
 	public String write(HttpServletRequest request) throws Exception{ 
 		service.writeDao(request.getParameter("bmID"),request.getParameter("boTitle"), request.getParameter("boContent"));
-		return "redirect:/board/list"; // 해당 경로로 이동한다.
+		return "redirect:board"; // 해당 경로로 이동한다.
 		}
 	
 	//게시판 보기 실행	
-	@GetMapping("/board/content_view")//jsp에서 받는 값
+	@GetMapping("/content_view")//jsp에서 받는 값
 	public String contentview(HttpServletRequest request, Model model) throws Exception {
 	    // 서비스를 통해 데이터를 가져와서 모델에 추가
 	    BoardDTO data = service.viewDao(request.getParameter("boardID"));
@@ -60,7 +60,7 @@ public class BoardController {
 	}
 	
 	// Update_view 화면
-	@PostMapping("/board/update_view")// 보여주는 화면
+	@PostMapping("/update_view")// 보여주는 화면
 	public String update_view(HttpServletRequest request, Model model) throws Exception {
 		BoardDTO data = service.viewDao(request.getParameter("boardID"));
 		model.addAttribute("update_view", data);
@@ -69,29 +69,29 @@ public class BoardController {
 	}
 	
 	//게시판 수정
-	@PostMapping("/board/update")//jsp에서 ation으로 보내주는 값.
+	@PostMapping("/update")//jsp에서 ation으로 보내주는 값.
 	public String update(HttpServletRequest request) throws Exception{
 		service.updateDao(request.getParameter("boardID"), request.getParameter("boTitle"), request.getParameter("boContent"));
-		return "redirect:/board/list"; // 윗쪽 컨트롤러로 올라간다.
+		return "redirect:board"; // 윗쪽 컨트롤러로 올라간다.
 	}
 	
 	// 삭제 
-	@GetMapping("/board/delete")
+	@GetMapping("/delete")
 	public String delelte(HttpServletRequest request) throws Exception{
 		service.deleteMDao(request.getParameter("boardID"));
-		return "redirect:/board/list";
+		return "redirect:board";
 	}
 	
 	// 주소록 조건 검색, lsit에서 검색 버튼을 눌렀을때
-	@PostMapping("/board/listQuery")
+	@PostMapping("/listQuery")
 	public String listQuery(HttpServletRequest request, Model model) throws Exception {
 		List<BoardDTO> listDao = service.listQuery(request.getParameter("query"), request.getParameter("content"));
 		//BoardDTO 목록 바꿔줌.
 		model.addAttribute("list", listDao); //list의 위의 변수명과 같아야함.
-		return "/board/list";// list.jsp로 보냄. 
+		return "board";// list.jsp로 보냄. 
 	}
 	
-	@PostMapping("/board/reply")
+	@PostMapping("/reply")
 	public String reply(HttpServletRequest request, RedirectAttributes redirectAttributes) throws Exception {
 		
 		String boardID = request.getParameter("boardID");
@@ -110,10 +110,10 @@ public class BoardController {
         
 		redirectAttributes.addAttribute("boardID", boardID);
 		
-		return "redirect:/board/content_view";
+		return "redirect:/content_view";
 	}
 	
-	@PostMapping("/board/comment")
+	@PostMapping("/comment")
 	public String comment(HttpServletRequest request, RedirectAttributes redirectAttributes) throws Exception {
 		String postId = request.getParameter("postId");
 		
@@ -132,10 +132,10 @@ public class BoardController {
 		
 		redirectAttributes.addAttribute("boardID", postId);
 		
-		return "redirect:/board/content_view";
+		return "redirect:/content_view";
 	}
 	
-	@PostMapping("/board/replyUpdate")
+	@PostMapping("/replyUpdate")
 	public String replyUpdate(HttpServletRequest request, RedirectAttributes redirectAttributes) throws Exception {
 		String postId = request.getParameter("postId");
 		
@@ -147,10 +147,10 @@ public class BoardController {
 		
 		redirectAttributes.addAttribute("boardID", postId);
 		
-		return "redirect:/board/content_view";
+		return "redirect:/content_view";
 	}
 	
-	@GetMapping("/board/commentdelete")
+	@GetMapping("/commentdelete")
 	public String commentdelete(HttpServletRequest request, RedirectAttributes redirectAttributes) throws Exception {
 		String postId = request.getParameter("postId");
 		
@@ -160,6 +160,6 @@ public class BoardController {
 		
 		redirectAttributes.addAttribute("boardID", postId);
 		
-		return "redirect:/board/content_view";
+		return "redirect:/content_view";
 	}
 }

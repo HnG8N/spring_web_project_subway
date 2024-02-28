@@ -67,7 +67,7 @@
 					<tr>
 						<td colspan="2"><input type="submit" value="수정">
 							&nbsp;&nbsp; <a
-							href="/board/delete?boardID=${content_view.boardID}">삭제</a>
+							href="/delete?boardID=${content_view.boardID}">삭제</a>
 							&nbsp;&nbsp;</td>
 
 					</tr>
@@ -96,7 +96,7 @@
 									<td colspan="2">
 										<button onclick="showReplyUpdateForm(${dtos.commentid})">수정</button>
 										&nbsp;&nbsp; <a
-										href="/board/commentdelete?commentId=${dtos.commentid}&postId=${content_view.boardID}">삭제</a>
+										href="/commentdelete?commentId=${dtos.commentid}&postId=${content_view.boardID}">삭제</a>
 										&nbsp;&nbsp;
 									</td>
 								</tr>
@@ -134,7 +134,7 @@
 			<input type="submit" value="댓글 작성">
 		</form>
 	</div>
-	<a href="/board/list">목록보기</a>
+	<a href="/list">목록보기</a>
 	<br><br><br>
 	<%@ include file="../include/footer.jsp"%>
 </body>
