@@ -4,7 +4,7 @@ import com.springlec.base.model.SignupDto;
 
 public interface MyPageService {
 	
-	// 로그인 된 회원의 정보를 불러오기 위함
+		// 로그인 된 회원의 정보를 불러오기 위함
 		public SignupDto memberDto (String mid) throws Exception;
 		
 		// 로그인 된 회원의 탈퇴날짜를 update하기 위함
