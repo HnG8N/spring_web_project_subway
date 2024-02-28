@@ -1,10 +1,37 @@
 # spring_web_project_subway
 
-
+<h1>팀원 : 김수진, 김소리, 원도현, 기태우</h1>
+<h2>프로젝트 기획</h2>
+<ul>
+  <li>클론 사이트 리스트업</li>
+  <li>ERD 회의 및 SFD 작성</li>
+  <li>업무 분배 및 개별 RND</li>
+  
   <strong>프로젝트 개요</strong>
 
-JSP에서 구현된 프로젝트를 SPRING으로 변환하는 작업을 수행하였습니다. 이를 위해 서블릿을 사용하기 위해 Gson을 dependency에 추가하고, `@ServletComponentScan` 어노테이션을 main의 Application 클래스에 추가했습니다.
+JSP에서 구현된 프로젝트를 SPRING으로 변환하는 작업을 수행. 이를 위해 서블릿을 사용하기 위해 Gson을 dependency에 추가하고, `@ServletComponentScan` 어노테이션을 main의 Application 클래스에 추가함.
 
+</ul>
+<h2>ERD</h2>
+<img width="865" alt="스크린샷 2024-02-08 오전 10 37 39" src="https://github.com/HnG8N/web_project_subway/assets/151720731/ff76684f-3ae4-4eb3-9f5b-a6ce1c79a8e4">
+<h2>개발 일정(ASANA)</h2>
+<img width="909" alt="스크린샷 2024-02-08 오전 10 45 11" src="https://github.com/HnG8N/web_project_subway/assets/151720731/9a8c9463-855e-4511-b3fb-a9a9996b480b">
+<img width="909" alt="스크린샷 2024-02-08 오전 10 45 22" src="https://github.com/HnG8N/web_project_subway/assets/151720731/a5f83cc5-e093-46df-b26c-14af910fbd1a">
+<img width="909" alt="스크린샷 2024-02-08 오전 10 45 30" src="https://github.com/HnG8N/web_project_subway/assets/151720731/6ef039e9-3484-49d3-8b2a-f8cf17d699cb">
+<h2>개별 개발 현황</h2>
+<h3>원도현</h3>
+
+<h3>김소리</h3>
+
+<h3>김태우</h3>
+<ul>
+  <li>게시판 글 쓰기, 글 수정, 글 지우기 기능 구현</li>
+  <li>글 읽기 기능
+  <li>사용자 ID로 글 수정 가능</li>
+  <li>페이지 구분 기능과 페이지 넘기는 기능 구현</li>
+  <li>Ajax 사용으로 글 제목 검색 기능 구현</li>
+  <li>댓글 및 대댓글 기능 구현</li>
+</ul>
 
 <details>
   <summary>회원가입 기능</summary>
