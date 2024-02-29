@@ -6,12 +6,12 @@
   <li>클론 사이트 리스트업</li>
   <li>ERD 회의 및 SFD 작성</li>
   <li>업무 분배 및 개별 RND</li>
-  
-  <strong>프로젝트 개요</strong>
-
-JSP에서 구현된 프로젝트를 SPRING으로 변환하는 작업을 수행. 이를 위해 서블릿을 사용하기 위해 Gson을 dependency에 추가하고, `@ServletComponentScan` 어노테이션을 main의 Application 클래스에 추가함.
-
 </ul>
+  
+<h2>프로젝트 개요</h2>
+
+JSP에서 구현된 프로젝트를 SPRING으로 변환하는 작업을 수행. JSP에서 사용했던 AJAX와 servlet을 사용하기 위해 Gson을 dependency에 추가하고, `@ServletComponentScan` 어노테이션을 main의 Application 클래스에 추가함.
+
 <h2>ERD</h2>
 <img width="865" alt="스크린샷 2024-02-08 오전 10 37 39" src="https://github.com/HnG8N/web_project_subway/assets/151720731/ff76684f-3ae4-4eb3-9f5b-a6ce1c79a8e4">
 <h2>개발 일정(ASANA)</h2>
@@ -201,8 +201,4 @@ JSP에서 구현된 프로젝트를 SPRING으로 변환하는 작업을 수행. 
   <li>Ajax 사용으로 글 제목 검색 기능 구현</li>
   <li>댓글 및 대댓글 기능 구현</li>
 </ul>
-
-
-
-
-
+<img width="400" alt="스크린샷 2024-02-28 오후 11 58 42" src="https://github.com/HnG8N/spring_web_project_subway/assets/151720731/bb5121ff-5e90-4195-9829-81f97f1036b5">
