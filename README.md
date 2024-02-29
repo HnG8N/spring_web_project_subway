@@ -13,7 +13,9 @@
 JSP에서 구현된 프로젝트를 SPRING으로 변환하는 작업을 수행. JSP에서 사용했던 AJAX와 servlet을 사용하기 위해 Gson을 dependency에 추가하고, `@ServletComponentScan` 어노테이션을 main의 Application 클래스에 추가함.
 
 <h2>ERD</h2>
-<h2>개발 일정(ASANA)</h2>
+<img width="745" alt="스크린샷 2024-02-29 오후 1 03 38" src="https://github.com/HnG8N/spring_web_project_subway/assets/151720731/3802cff7-28e7-43ca-9870-ffa6144385a2">
+<h2>개발 일정</h2>
+<img width="1003" alt="스크린샷 2024-02-29 오후 1 03 27" src="https://github.com/HnG8N/spring_web_project_subway/assets/151720731/878040d2-5269-40b7-922f-2dafa06073c0">
 <h2>개별 개발 현황</h2>
 <h3>원도현</h3>
 <details>
