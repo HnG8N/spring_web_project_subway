@@ -54,18 +54,19 @@
 				</tr>
 				<tr>
 					<td>작성내용</td>
-					<td><input type="text" name="boContent"
-						value="${update_view.boContent}"></td>
+					<td><textarea name="boContent" rows="20" cols="100">
+					${content_view.boContent}</textarea></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="submit" value="수정하기">
-						&nbsp;&nbsp; <a href="/board/list">목록보기</a> &nbsp;&nbsp; <a
-						href="/delete?boardID=${update_view.boardID}">삭제</a>
+					<td colspan="2"><input type="submit" value="수정확인">
+					 &nbsp;&nbsp; <a href="/delete?boardID=${update_view.boardID}">게시글 삭제</a>
 						&nbsp;&nbsp;</td>
 				</tr>
 			</table>
 		</form>
 	</div>
+	<a href="board">목록보기</a>
+	<br><br><br>
 <%@ include file="../include/footer.jsp"%>
 </body>
 </html>

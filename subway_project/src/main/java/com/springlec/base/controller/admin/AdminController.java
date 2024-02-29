@@ -36,7 +36,7 @@ public class AdminController {
 
 	@PostMapping("/home")
 	public String home() throws Exception {
-		return "/admin/home";
+		return "redirect:/admin/salesstatus";
 	}
 	
 	@GetMapping("/productlist")
@@ -85,10 +85,5 @@ public class AdminController {
 		
 		return "redirect:/admin/productlist";
 	}
-	@GetMapping("/memberinformation")
-	public String memberinformation() throws Exception {
-		return "/admin/memberinformation";
-	}
-	
 	
 }

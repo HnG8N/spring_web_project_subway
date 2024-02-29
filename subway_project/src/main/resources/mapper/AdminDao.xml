@@ -73,11 +73,19 @@
 
 	<!-- ************************SalesStatus************************** -->
 	<!-- ********************monthlySalesChartData Task******************** -->
+	<select id="previousSalesChartData" resultType="com.springlec.base.model.admin.SalesStatusDto">
+		SELECT MONTH (odate) as omonth, SUM(oprice) as omonthsum
+		FROM orderpurchase
+		WHERE YEAR (odate) = YEAR (NOW()) -1
+		GROUP BY omonth
+		ORDER BY omonth
+	</select>
 	<select id="monthlySalesChartData" resultType="com.springlec.base.model.admin.SalesStatusDto">
 		SELECT MONTH (odate) as omonth, SUM(oprice) as omonthsum
 		FROM orderpurchase
-		WHERE YEAR (odate) BETWEEN YEAR (NOW())-1 AND YEAR (NOW())
+		WHERE YEAR (odate) = YEAR (NOW())
 		GROUP BY omonth
+		ORDER BY omonth
 	</select>
 	
 	<select id="daySalesChartData" resultType="com.springlec.base.model.admin.SalesStatusDto">

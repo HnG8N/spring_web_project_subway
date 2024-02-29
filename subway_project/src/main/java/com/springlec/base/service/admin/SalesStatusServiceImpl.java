@@ -1,10 +1,12 @@
 package com.springlec.base.service.admin;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.common.collect.Maps;
 import com.springlec.base.dao.admin.AdminDao;
 import com.springlec.base.model.admin.MemberInformationDto;
 import com.springlec.base.model.admin.SalesStatusDto;
@@ -22,9 +24,6 @@ public class SalesStatusServiceImpl implements SalesStatusService {
 		List<SalesStatusDto> chartData = null;
 		
 		switch(chart) {
-			case ("monthlyBarChart") :
-				chartData = dao.monthlySalesChartData();
-			break;
 			case ("dailyLineChart") :
 				chartData = dao.daySalesChartData(startDay, endDay);
 			break;
@@ -56,6 +55,20 @@ public class SalesStatusServiceImpl implements SalesStatusService {
 			}
 		}
 		return memberDao;
+	}
+
+	@Override
+	public HashMap<Object, Object> monthlyBarChart() throws Exception {
+		
+		HashMap<Object, Object> map = Maps.newHashMap();
+		
+		List<SalesStatusDto> thisDto = dao.monthlySalesChartData();
+		List<SalesStatusDto> preDto = dao.previousSalesChartData();
+		
+		map.put("this", thisDto);
+		map.put("pre", preDto);
+
+		return map;
 	}
 
 }
