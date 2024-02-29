@@ -33,7 +33,7 @@
 	<script type="text/javascript" src="/js/waffle/waffle.utils.js?v=2023051202"></script>
 	<link rel="stylesheet" type="text/css" href="/css/ui.order.css?v=2023051202" />
 	<link rel="stylesheet" type="text/css" href="/css/ui.popup.css?v=2023051202" />
-<!-- 	<script type="text/javascript" src="/js/order/common/selectIngredients.js?v=2023051202"></script> -->
+ 	<script type="text/javascript" src="/js/order/common/selectIngredients.js?v=2023051202"></script>
 </head>
 <body>
 	<%@ include file="../../include/header.jsp"%>
