@@ -45,8 +45,7 @@
 				</tr>
 				<tr>
 					<td>작성내용</td>
-					<td><textarea name="boContent" rows="20" cols="100">
-					</textarea></td>
+					<td><textarea name="boContent" rows="20" cols="100"></textarea></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" value="입력">
