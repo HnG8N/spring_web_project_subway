@@ -33,7 +33,7 @@
 	<script type="text/javascript" src="/js/waffle/waffle.utils.js?v=2023051202"></script>
 	<link rel="stylesheet" type="text/css" href="/css/ui.order.css?v=2023051202" />
 	<link rel="stylesheet" type="text/css" href="/css/ui.popup.css?v=2023051202" />
-		
+<!-- 	<script type="text/javascript" src="/js/order/common/selectIngredients.js?v=2023051202"></script> -->
 </head>
 <body>
 	<%@ include file="../../include/header.jsp"%>
@@ -72,7 +72,7 @@
 					<div class="menu_info">
 						<div class="menu_info">
 							<div class="order_popup" id="popup_wrap">
-								<form action="addcart" method="post">
+								<form action="addcart" method="post" onsubmit="return validateForm();">
 									<table>
 										<tr>
 											<td>
