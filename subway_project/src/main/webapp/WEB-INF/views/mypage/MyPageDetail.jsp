@@ -45,7 +45,6 @@
 	src="/js/jquery/jquery.tmpl.min.js?v=2023051202"></script>
 <script type="text/javascript"
 	src="/js/waffle/waffle.utils.js?v=2023051202"></script>
-<script type="text/javascript" src="/js/mypage/mypage.js?v=2023051202"></script>
 <link rel="stylesheet" type="text/css"
 	href="/css/ui.mypage.css?v=2023051202" />
 
