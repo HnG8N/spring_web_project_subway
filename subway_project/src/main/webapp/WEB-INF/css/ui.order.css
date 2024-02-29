@@ -584,7 +584,7 @@
 #popup_wrap.order_popup .popup_content{position: relative; padding: 0;}
 #popup_wrap.order_popup .popup_content.meterial{border-radius: 8px;}
 
-#popup_wrap .option_display{position: relative; padding: 15px 39px 16px 39px; background: #fff; margin-bottom: 14px; border-radius: 10px;}
+#popup_wrap .option_display{position: relative; padding: 15px 39px 16px 39px; background: #ffc300; margin-bottom: 14px; border-radius: 10px;}
 #popup_wrap .option_display dt{padding-bottom: 4px; color: #009223; font-size: 18px; font-weight: 300;}
 #popup_wrap .option_display dd{color: #292929; font-size: 20px; font-weight: bold;}
 #popup_wrap .option_display dd.sum{position: absolute; right: 18px; top: 14px; color: #ffc300; font-size: 18px; font-weight: normal;}

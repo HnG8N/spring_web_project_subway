@@ -81,10 +81,6 @@
 														<dt>빵 길이 선택</dt>
 													</dl>
 												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
 												<div class="popup_content bread_leng">
 													<ul>
 														<li><label class="form_circle"> 
@@ -103,6 +99,7 @@
 												</div>
 											</td>
 										</tr>
+										<tr><td><br><br></td></tr>
 										<tr>
 											<td>
 												<div class="option_display">
@@ -162,6 +159,7 @@
 												</div>
 											</td>
 										</tr>
+										<tr><td><br><br></td></tr>
 										<tr>
 											<td>
 												<div class="option_display">
