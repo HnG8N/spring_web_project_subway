@@ -19,7 +19,7 @@
 	<form action="/admin/home" method="post" id="loginForm" name="loginForm">
 		ID : <input type="text" id="loginID" name="loginID"><br>
 		<br>
-		PW : <input type="text" id="loginPW" name="loginPW"><br>
+		PW : <input type="password" id="loginPW" name="loginPW"><br>
 		<br>
 		<input type="button" name="loginBtn" id="loginBtn" value="Login" >
 	</form>
