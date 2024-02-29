@@ -60,7 +60,7 @@ JSP에서 구현된 프로젝트를 SPRING으로 변환하는 작업을 수행. 
 </details>
 
 <details>
-  <summary><strong>게시판</strong></summary>
+  <summary><strong>게시판(+기태우)</strong></summary>
 
 ### 게시판 기능
 1. DB에서 data를 가져와 보여줌
@@ -296,13 +296,4 @@ JSP에서 구현된 프로젝트를 SPRING으로 변환하는 작업을 수행. 
 2 순위 : 등록한 상점 표시.
 </details>
 
-<h3>김태우</h3>
-<ul>
-  <li>게시판 글 쓰기, 글 수정, 글 지우기 기능 구현</li>
-  <li>글 읽기 기능
-  <li>사용자 ID로 글 수정 가능</li>
-  <li>페이지 구분 기능과 페이지 넘기는 기능 구현</li>
-  <li>Ajax 사용으로 글 제목 검색 기능 구현</li>
-  <li>댓글 및 대댓글 기능 구현</li>
-</ul>
 <img width="400" alt="스크린샷 2024-02-28 오후 11 58 42" src="https://github.com/HnG8N/spring_web_project_subway/assets/151720731/bb5121ff-5e90-4195-9829-81f97f1036b5">
